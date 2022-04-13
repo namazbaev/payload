@@ -1,0 +1,12 @@
+{
+    "lang": "ru",
+    "rubl": "руб",
+    "numbers": "цифр",
+    "search": "Поиск",
+    "terminal": "Терминал",
+    "comission": "Комиссия",
+    "maximum_payment": "Максимальный платеж",
+    "enter_phone_number": "Введите номер телефона",
+    "operator_name": "название оператора",
+    "support_service": "Служба поддержки"
+}
