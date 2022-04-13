@@ -1,12 +1,13 @@
 import React from 'react'
 import Search from '../Buttons/Search'
-import PhoneBtn from '../Buttons/Phone'
 import UzbekFlag from '../Buttons/UzFlag'
 import RussianFlag from '../Buttons/RuFlag'
 import BritainFlag from '../Buttons/BrFlag'
-import QuestionBtn from '../Buttons/Question'
 import { useTranslation } from "react-i18next";
-import { Container, LeftSection, RightSection, Payload, Wrap, IconWrap, Paragraph, SupportText, PhoneText } from './style'
+import {
+    Container, LeftSection, RightSection, Number, Drop, Logo, TerminalWrap,
+    Wrap, Terminal, IconWrap
+} from './style'
 export const Header = () => {
     const { t, i18n } = useTranslation();
     const changeLang = (e) => {
@@ -16,20 +17,17 @@ export const Header = () => {
     return (
         <Container>
             <LeftSection>
+                <TerminalWrap>
+                    <Terminal>{t('terminal')}</Terminal>
+                    <Number>№12345678</Number>
+                </TerminalWrap>
+                <Drop />
                 <Wrap>
-                    <Paragraph>{t('terminal')}</Paragraph>
-                    <Paragraph>№ 12345678</Paragraph>
-                </Wrap>
-                <IconWrap>
-                    <QuestionBtn />
-                    <PhoneBtn />
-                </IconWrap>
-                <Wrap>
-                    <SupportText>{t('support_service')}</SupportText>
-                    <PhoneText>988 88 62 62</PhoneText>
+                    <Terminal>{t('support_service')}</Terminal>
+                    <Number>+998 888 62 62</Number>
                 </Wrap>
             </LeftSection>
-            <Payload>PayLoad</Payload>
+            <Logo />
             <RightSection>
                 <IconWrap>
                     <Search title={t('search')} />

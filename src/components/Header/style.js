@@ -1,11 +1,25 @@
 import styled from "styled-components";
 import { device } from "utils/responsive";
+import { ReactComponent as LogoIcon } from 'assets/icons/logo.svg';
+
+export const Logo = styled(LogoIcon)`
+  width: 150px;
+  height: 50px;
+  cursor: pointer;
+  @media ${device.tablet} {
+    width: 120px;
+    height: 40px;
+  }
+`
 export const Container = styled.div`
-  padding: 15px 0 15px 15px;
+  padding: 36px 0;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: #3b3b3b;
+
+  @media ${device.tablet} {
+    padding: 18px 0;
+  }
 `;
 export const LeftSection = styled.div`
   display: flex;
@@ -14,7 +28,7 @@ export const LeftSection = styled.div`
 `;
 export const Payload = styled.h1`
   margin: 0;
-  color: #fff;
+  color: var(--black);
   font-size: 24px;
   font-weight: bold;
   @media ${device.tablet} {
@@ -29,12 +43,28 @@ export const RightSection = styled.div`
   align-items: center;
   justify-content: space-between;
 `;
+export const Drop = styled.span`
+  width: 2px;
+  height: 65px;
+  margin: 0 24px;
+  background-color: var(--line-color);
+  @media ${device.tablet} {
+    height: 50px;
+    margin: 0 16px;
+  }
+`
+export const TerminalWrap = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+`;
 export const Wrap = styled.div`
   color: #fff;
 `;
 export const SupportText = styled.p`
   margin: 0;
   font-size: 14px;
+  letter-spacing: 0.04em;
   @media ${device.tablet} {
     font-size: 12px;
   }
@@ -42,10 +72,12 @@ export const SupportText = styled.p`
     font-size: 12px;
   }
 `;
-export const PhoneText = styled.p`
+export const Number = styled.p`
   margin: 0;
-  font-size: 20px;
-  font-weight: bold;
+  font-size: 22px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: var(--black1);
   @media ${device.tablet} {
     font-size: 18px;
   }
@@ -53,17 +85,17 @@ export const PhoneText = styled.p`
     font-size: 16px;
   }
 `;
-export const Paragraph = styled.p`
-  margin: 0;
+export const Terminal = styled.span`
   font-size: 16px;
-  font-weight: 600;
+  font-weight: 500;
+  line-height: 32px;
+  color: var(--black);
+  letter-spacing: 0.04em;
+
   @media ${device.tablet} {
-    font-size: 14px;
+    line-height: 20px;
   }
-  @media ${device.mobile} {
-    font-size: 12px;
-  }
-`;
+`
 export const IconButton = styled.div`
   display: flex;
   width: 50px;
@@ -109,5 +141,4 @@ export const IconWrap = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 0 15px;
 `;

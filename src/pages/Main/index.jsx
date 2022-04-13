@@ -1,27 +1,89 @@
 import React from 'react'
-import Ucell from 'components/Operators/Ucell'
-import Mobiuz from 'components/Operators/Mobiuz'
-import Humans from 'components/Operators/Humans'
-import Beeline from 'components/Operators/Beeline'
-import Uztelecom from 'components/Operators/Uztelecom'
-import Perfectum from 'components/Operators/Perfectum'
-import { Container, Operators, Info, Wrap } from './style'
+import Operators from 'components/Operators';
+import { useTranslation } from "react-i18next";
+import {
+    Container, Company, MainSection, Cards, Services, TV, Globe,
+    CardItem, CardNumber, CardName, ExpiryDate, UzCard, Smartphone,
+    Trello, Wallet, Heart, Home, Cast, Fire, Graduation, Medical, Taxi,
+    HumoCard, PayText, UzcardLogos, HumoLogoLogos, Service, ServiceName
+} from './style';
 const Main = () => {
+    const { t } = useTranslation();
     return (
         <Container>
-            <Info>Date</Info>
-            <Operators>
-                <Wrap>
-                    <Humans />
-                    <Beeline />
-                    <Ucell />
-                </Wrap>
-                <Wrap>
-                    <Uztelecom />
-                    <Mobiuz />
-                    <Perfectum />
-                </Wrap>
-            </Operators>
+            <Company>
+                <Operators />
+            </Company>
+            <MainSection>
+                <Cards>
+                    <CardItem>
+                        <UzCard />
+                        <UzcardLogos />
+                        <CardNumber>8600 **** **** ****</CardNumber>
+                        <CardName>shakxzod namazbaev</CardName>
+                        <ExpiryDate>12/23</ExpiryDate>
+                        <PayText>{t('replenishment_uzcard')}</PayText>
+                    </CardItem>
+                    <CardItem>
+                        <HumoCard />
+                        <HumoLogoLogos />
+                        <CardNumber>9860 **** **** ****</CardNumber>
+                        <CardName>shakxzod namazbaev</CardName>
+                        <ExpiryDate>01/25</ExpiryDate>
+                        <PayText>{t('replenishment_humo')}</PayText>
+                    </CardItem>
+                </Cards>
+                <Services>
+                    <Service>
+                        <Smartphone />
+                        <ServiceName>{t('mobile_operators')}</ServiceName>
+                    </Service>
+                    <Service>
+                        <TV />
+                        <ServiceName>{t('online_tv')}</ServiceName>
+                    </Service>
+                    <Service>
+                        <Globe />
+                        <ServiceName>{t('internet_providers')}</ServiceName>
+                    </Service>
+                    <Service>
+                        <Trello />
+                        <ServiceName>{t('advertisement')}</ServiceName>
+                    </Service>
+                    <Service>
+                        <Wallet />
+                        <ServiceName>{t('electronic_wallet')}</ServiceName>
+                    </Service>
+                    <Service>
+                        <Heart />
+                        <ServiceName>{t('charity')}</ServiceName>
+                    </Service>
+                    <Service>
+                        <Home />
+                        <ServiceName>{t('bank_loans')}</ServiceName>
+                    </Service>
+                    <Service>
+                        <Cast />
+                        <ServiceName>{t('online_services')}</ServiceName>
+                    </Service>
+                    <Service>
+                        <Fire />
+                        <ServiceName>{t('utilies_payment')}</ServiceName>
+                    </Service>
+                    <Service>
+                        <Graduation />
+                        <ServiceName>{t('education')}</ServiceName>
+                    </Service>
+                    <Service>
+                        <Medical />
+                        <ServiceName>{t('medicine')}</ServiceName>
+                    </Service>
+                    <Service>
+                        <Taxi />
+                        <ServiceName>{t('taxi')}</ServiceName>
+                    </Service>
+                </Services>
+            </MainSection>
         </Container>
     )
 }
