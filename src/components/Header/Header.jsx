@@ -1,19 +1,24 @@
-import React from 'react'
-import Search from '../Buttons/Search'
-import UzbekFlag from '../Buttons/UzFlag'
-import RussianFlag from '../Buttons/RuFlag'
-import BritainFlag from '../Buttons/BrFlag'
+import Dropdown from 'components/Dropdown'
+import { useCallback, useState } from 'react'
 import { useTranslation } from "react-i18next";
 import {
     Container, LeftSection, RightSection, Number, Drop, Logo, TerminalWrap,
-    Wrap, Terminal, IconWrap
+    Wrap, Terminal
 } from './style'
 export const Header = () => {
     const { t, i18n } = useTranslation();
-    const changeLang = (e) => {
+    const currentLang = localStorage.getItem('lang')
+    const [lang, setLang] = useState(currentLang)
+    const changeLang = useCallback((e) => {
         localStorage.setItem('lang', e)
         i18n.changeLanguage(e);
-    }
+        setLang(e)
+    }, [lang])
+    const langList = [
+        { value: 'uz', label: "O'zbek" },
+        { value: 'ru', label: 'Русский' },
+        { value: 'en', label: 'English' }
+    ]
     return (
         <Container>
             <LeftSection>
@@ -29,12 +34,9 @@ export const Header = () => {
             </LeftSection>
             <Logo />
             <RightSection>
-                <IconWrap>
-                    <Search title={t('search')} />
-                    <RussianFlag onClick={() => changeLang('ru')} title="Рус" />
-                    <BritainFlag onClick={() => changeLang('en')} title="Англ" />
-                    <UzbekFlag onClick={() => changeLang('uz')} title="O'zbek" />
-                </IconWrap>
+                <Dropdown
+                    prefixText="" menu={langList} position="right"
+                    defaultValue={lang} changeValue={changeLang} />
             </RightSection>
         </Container>
     )
