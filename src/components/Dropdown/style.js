@@ -6,29 +6,34 @@ export const ArrowDownIcon = styled(ArrowDown)``;
 export const Dropdown = styled.div`
   display: flex;
   align-items: center;
+  border-radius: 8px;
   color: ${({ active }) => (active ? '#181C32' : '#7E8299')};
   position: relative;
-  
+  height: 60px;
+  padding: 0px 12px;
+  background-color: #fff;
+  box-shadow: 0px 4px 16px rgba(34, 37, 48, 0.08);
   #Path_273 {
     fill: ${({ active }) => (active ? '#181C32' : '#7E8299')};    
   }
 `;
 
 Dropdown.Title = styled.div`
-  font-size: 12px;
-  font-weight: 600;
+  font-size: 18px;
+  font-weight: 400;
   margin-right: 9px;
   cursor: pointer;
 `;
 
 Dropdown.Menu = styled.ul`
+  min-width: 150px;
   position: absolute;
   top: 100%;
   ${({ position }) => (position && position === 'left'
     ? 'left: 0;' : position === 'right' ? 'right: 0;' : 'left: 0;')};
   border-radius: 8px;
   padding: 8px 0;
-  margin: 4px 0 0 0 ;
+  margin: 4px 0 0 0;
   background-color: #fff;
   list-style: none;
   overflow: hidden;
@@ -40,10 +45,10 @@ Dropdown.Menu = styled.ul`
 Dropdown.MenuItem = styled.li`
   cursor: pointer;
   font-weight: 500;
-  font-size: 12px;
+  font-size: 18px;
   color: #181C32;
   line-height: 18px;
-  padding: 4px 16px;
+  padding: 12px;
   white-space: nowrap;
   transition: .2s ease-in;
   
