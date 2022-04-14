@@ -5,6 +5,7 @@ import {
     Container, LeftSection, RightSection, Number, Drop, Logo, TerminalWrap,
     Wrap, Terminal
 } from './style'
+import { RusFlagIcon, UzFlagIcon, EnFlagIcon } from 'components/Buttons/style';
 export const Header = () => {
     const { t, i18n } = useTranslation();
     const currentLang = localStorage.getItem('lang')
@@ -15,9 +16,9 @@ export const Header = () => {
         setLang(e)
     }, [lang])
     const langList = [
-        { value: 'uz', label: "O'zbek" },
-        { value: 'ru', label: 'Русский' },
-        { value: 'en', label: 'English' }
+        { value: 'uz', label: "O'zbek", flag: <UzFlagIcon /> },
+        { value: 'ru', label: 'Русский', flag: <RusFlagIcon /> },
+        { value: 'en', label: 'English', flag: <EnFlagIcon /> }
     ]
     return (
         <Container>

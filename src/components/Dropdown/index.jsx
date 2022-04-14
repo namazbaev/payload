@@ -27,11 +27,9 @@ export default (props) => {
             {
                 menu && menu.length > 0
                     ? menu.map((item) => (
-                        <Dropdown.MenuItem
-                            key={item.value}
-                            onClick={() => handleSelect(item.value)}
-                        >
-                            {item.label}
+                        <Dropdown.MenuItem key={item.value}
+                            onClick={() => handleSelect(item.value)} >
+                            {item.flag} {item.label}
                         </Dropdown.MenuItem>
                     ))
                     : ''
@@ -44,7 +42,7 @@ export default (props) => {
             <Dropdown.Title>
                 {value ? `${prefixText && `${prefixText} `}${value}` : 'not selected'}
             </Dropdown.Title>
-            <ArrowDownIcon />
+            <ArrowDownIcon active={active} />
             {menuList}
         </Dropdown>
     );

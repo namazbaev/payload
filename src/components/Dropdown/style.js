@@ -1,7 +1,11 @@
 import styled from 'styled-components';
 import { ReactComponent as ArrowDown } from 'assets/icons/down-arrow.svg';
+import { device } from 'utils/responsive';
 
-export const ArrowDownIcon = styled(ArrowDown)``;
+export const ArrowDownIcon = styled(ArrowDown)`
+  transition: all 0.3s ease;
+  transform: ${({ active }) => active ? 'rotate(180deg)' : ''} ;
+`;
 
 export const Dropdown = styled.div`
   display: flex;
@@ -13,8 +17,10 @@ export const Dropdown = styled.div`
   padding: 0px 12px;
   background-color: #fff;
   box-shadow: 0px 4px 16px rgba(34, 37, 48, 0.08);
-  #Path_273 {
-    fill: ${({ active }) => (active ? '#181C32' : '#7E8299')};    
+
+  @media ${device.tablet} {
+    height: 40px;
+    border-radius: 6px;
   }
 `;
 
@@ -23,6 +29,10 @@ Dropdown.Title = styled.div`
   font-weight: 400;
   margin-right: 9px;
   cursor: pointer;
+  @media ${device.tablet} {
+    font-size: 14px;
+    margin-right: 5px;
+  }
 `;
 
 Dropdown.Menu = styled.ul`
@@ -34,16 +44,21 @@ Dropdown.Menu = styled.ul`
   border-radius: 8px;
   padding: 8px 0;
   margin: 4px 0 0 0;
-  background-color: #fff;
   list-style: none;
   overflow: hidden;
+  background-color: #fff;
   box-shadow: 0 6px 12px 0 rgba(73,75,116, 0.16);
   display: ${({ active }) => (active ? 'block' : 'none')};
   z-index: 30;
+  @media ${device.tablet} {
+    min-width: 110px;
+  }
 `;
 
 Dropdown.MenuItem = styled.li`
   cursor: pointer;
+  display: flex;
+  align-items: center;
   font-weight: 500;
   font-size: 18px;
   color: #181C32;
@@ -54,5 +69,10 @@ Dropdown.MenuItem = styled.li`
   
   &:hover {
     background-color: #F8F8F8;
+  }
+  @media ${device.tablet} {
+    font-size: 14px;
+    line-height: 12px;
+    padding: 6px;
   }
 `;
