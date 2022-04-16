@@ -12,13 +12,14 @@ export const Logo = styled(LogoIcon)`
   }
 `
 export const Container = styled.div`
-  padding: 36px 0;
+  padding: 36px 48px;
   display: flex;
   align-items: center;
+  background-color: #fff;
   justify-content: space-between;
-
+  box-shadow: 0px 4px 16px rgba(90, 90, 90, 0.08);
   @media ${device.tablet} {
-    padding: 18px 0;
+    padding: 18px 24px;
   }
 `;
 export const LeftSection = styled.div`

@@ -20,6 +20,7 @@ export const Header = () => {
         { value: 'ru', label: 'Русский', flag: <RusFlagIcon /> },
         { value: 'en', label: 'English', flag: <EnFlagIcon /> }
     ]
+    const selected = langList.find(x => x.value === currentLang)
     return (
         <Container>
             <LeftSection>
@@ -36,7 +37,7 @@ export const Header = () => {
             <Logo />
             <RightSection>
                 <Dropdown
-                    prefixText="" menu={langList} position="right"
+                    prefixText={selected.flag} menu={langList} position="right"
                     defaultValue={lang} changeValue={changeLang} />
             </RightSection>
         </Container>

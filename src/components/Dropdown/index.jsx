@@ -5,7 +5,6 @@ export default (props) => {
     const { menu, position, prefixText, changeValue, defaultValue } = props;
     const [active, setActive] = useState(false);
     const [value, setValue] = useState(undefined);
-
     useEffect(() => {
         if (defaultValue) {
             const selected = menu && menu.length > 0
@@ -24,15 +23,14 @@ export default (props) => {
 
     const menuList = (
         <Dropdown.Menu position={position} active={active}>
-            {
-                menu && menu.length > 0
-                    ? menu.map((item) => (
-                        <Dropdown.MenuItem key={item.value}
-                            onClick={() => handleSelect(item.value)} >
-                            {item.flag} {item.label}
-                        </Dropdown.MenuItem>
-                    ))
-                    : ''
+            {menu && menu.length > 0
+                ? menu.map((item) => (
+                    <Dropdown.MenuItem key={item.value}
+                        onClick={() => handleSelect(item.value)}>
+                        {item.flag} {item.label}
+                    </Dropdown.MenuItem>
+                ))
+                : ''
             }
         </Dropdown.Menu>
     );
@@ -40,7 +38,7 @@ export default (props) => {
     return (
         <Dropdown active={active} onClick={() => setActive(!active)}>
             <Dropdown.Title>
-                {value ? `${prefixText && `${prefixText} `}${value}` : 'not selected'}
+                {prefixText} {value?.substring(0, 3)}
             </Dropdown.Title>
             <ArrowDownIcon active={active} />
             {menuList}

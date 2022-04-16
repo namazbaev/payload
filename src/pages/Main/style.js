@@ -138,13 +138,12 @@ export const Container = styled.div`
 export const Company = styled.div`
     width: 100%;
     display: flex;
-    padding: 36px 0;
+    padding: 36px 0 36px 48px;
     justify-content: space-between;
-    border-top: 2px solid var(--line-color);
     border-bottom: 2px solid var(--line-color);
     @media ${device.tablet} {
-        padding: 14px 0;
-        border-top: 1.5px solid var(--line-color);
+        padding: 18px 0;
+        padding: 18px 0 18px 24px;
         border-bottom: 1.5px solid var(--line-color);
     }
 `
@@ -152,8 +151,9 @@ export const MainSection = styled.div`
     display: flex;
     margin-top: 36px;
     height: 530px;
-
+    padding: 0 48px;
     @media ${device.tablet} {
+        padding: 0 24px;
         margin-top: 16px;
         height: 320px;
     }
@@ -169,14 +169,14 @@ export const CardItem = styled.div`
     padding: 20px;
     display: flex;
     color: #343437;
-    margin-bottom: ${({ bottom }) => bottom || 0};
+    cursor: pointer;
     align-items: center;
     flex-direction: column;
     justify-content: space-around;
     border-radius: 8px;
     background-color: #fff;
+    margin-bottom: ${({ bottom }) => bottom || 0};
     filter: drop-shadow(0px 4px 20px rgba(34, 37, 48, 0.1));
-
     @media ${device.tablet} {
         width: 200px;
         height: auto;
@@ -191,7 +191,7 @@ export const Services = styled.div`
     flex-wrap: wrap;
     justify-content: space-between;
     @media ${device.tablet} {
-        justify-content: space-around;
+        padding-left: 16px;
     }
 `
 export const Service = styled.div`

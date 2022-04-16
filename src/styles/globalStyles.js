@@ -4,9 +4,7 @@ export const GlobalStyle = createGlobalStyle`
     html, body, #root{
         height: 100vh;
         margin: 0 auto;
-        padding: 0 10px;
-        max-width: 1300px;
-        /* overflow: hidden; */
+        width: 100%;
         background-color: #fff;
     }
     * {
@@ -28,7 +26,7 @@ export const GlobalStyle = createGlobalStyle`
         --card-brd-radius: 8px;
         --card-min-width: 120px;
         --card-min-height: 70px;
-        --card-min-brd-radius: 10px;
+        --card-min-brd-radius: 4px;
         --card-box-shadow: 0px 11px 17px 10px rgba(34, 60, 80, 0.2);
     }
 `
