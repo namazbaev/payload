@@ -3,7 +3,7 @@ import { useCallback, useState } from 'react'
 import { useTranslation } from "react-i18next";
 import {
     Container, LeftSection, RightSection, Number, Drop, Logo, TerminalWrap,
-    Wrap, Terminal
+    Wrap, Terminal, Search, SearchIcons, Input
 } from './style'
 import { RusFlagIcon, UzFlagIcon, EnFlagIcon } from 'components/Buttons/style';
 export const Header = () => {
@@ -36,8 +36,12 @@ export const Header = () => {
             </LeftSection>
             <Logo />
             <RightSection>
+                <Search>
+                    <Input placeholder='Поиск' />
+                    <SearchIcons />
+                </Search>
                 <Dropdown
-                    prefixText={selected.flag} menu={langList} position="right"
+                    prefixText={selected?.flag} menu={langList} position="right"
                     defaultValue={lang} changeValue={changeLang} />
             </RightSection>
         </Container>

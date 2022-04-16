@@ -33,10 +33,9 @@ const serviceCommon = css`
     width: 32px;
     height: 32px;
     margin-right: 16px;
-
     @media ${device.tablet} {
-        width: 28px;
-        height: 28px;
+        width: 26px;
+        height: 26px;
         margin-right: 10px;
     }
 `
@@ -168,23 +167,43 @@ export const CardItem = styled.div`
     height: 252px;
     padding: 20px;
     display: flex;
-    color: #343437;
     cursor: pointer;
     align-items: center;
     flex-direction: column;
     justify-content: space-around;
+    color: var(--card-text-color);
     border-radius: 8px;
     background-color: #fff;
+    transition: var(--card-transition);
     margin-bottom: ${({ bottom }) => bottom || 0};
     filter: drop-shadow(0px 4px 20px rgba(34, 37, 48, 0.1));
+    &:hover  {
+        box-shadow: var(--card-hover-shadow);
+    }
+    &:focus, &:active {
+        p {
+            font-size: 21.9px;
+        }
+        color: #000;
+        transition: var(--card-click-transition);
+        box-shadow: 0px 4px 20px rgba(34, 37, 48, 0.10);
+    }
     @media ${device.tablet} {
         width: 200px;
         height: auto;
         padding: 12px;
+        &:focus, &:active {
+        p {
+            font-size: 13.9px;
+        }
+        color: #000;
+        transition: var(--card-click-transition);
+        box-shadow: 0px 4px 20px rgba(34, 37, 48, 0.10);
+    }
     }
 `
 export const Services = styled.div`
-    width: 75%;
+    width: 100%;
     height: 105%;
     padding-left: 34px;
     display: flex;
@@ -197,26 +216,53 @@ export const Services = styled.div`
 export const Service = styled.div`
     width: 256px;
     height: 112px;
+    padding: 40px;
     display: flex;
     align-items: center;
     background: #FFFFFF;
     border-radius: 8px;
-    padding: 40px;
+    cursor: pointer;
+    transition: var(--card-transition);
     box-shadow: 0px 4px 20px rgba(34, 37, 48, 0.09);
-
+    &:hover  {
+        box-shadow: var(--card-hover-shadow);
+    }
+    &:focus, &:active {
+        p {
+            font-size: 17.9px;
+        }
+        svg {
+            width: 31px;
+            height: 31px;
+        }
+        color: #000;
+        transition: var(--card-click-transition);
+        box-shadow: 0px 4px 20px rgba(34, 37, 48, 0.10);
+    }
     @media ${device.tablet} {
         width: 160px;
         height: 70px;
         padding: 20px;
+        &:focus, &:active {
+        p {
+            font-size: 13.9px;
+        }
+        svg {
+            width: 27px;
+            height: 27px;
+        }
+        color: #000;
+        transition: var(--card-click-transition);
+        box-shadow: 0px 4px 20px rgba(34, 37, 48, 0.10);
+    }
     }
 `
 export const ServiceName = styled.p`
     margin: 0;
-    color: #343437;
     font-size: 18px;
     font-weight: 400;
     line-height: 24px;
-
+    color: var(--card-text-color);
     @media ${device.tablet} {
         font-size: 14px;
         font-weight: 400;

@@ -23,7 +23,7 @@ export const Dropdown = styled.div`
 
   @media ${device.tablet} {
     height: 36px;
-    width: 100px;
+    width: 90px;
   }
 `;
 

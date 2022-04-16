@@ -1,5 +1,5 @@
 export const langTypes = {
-    uz: "O’zbekcha",
-    ru: "Русский",
-    en: "English",
+    uz: "uz",
+    ru: "ru",
+    en: "en",
 };

@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { device } from "utils/responsive";
 import { ReactComponent as LogoIcon } from 'assets/icons/logo.svg';
+import { ReactComponent as SearchIcon } from 'assets/icons/search.svg';
 
 export const Logo = styled(LogoIcon)`
   width: 150px;
@@ -9,6 +10,25 @@ export const Logo = styled(LogoIcon)`
   @media ${device.tablet} {
     width: 120px;
     height: 40px;
+  }
+`
+export const SearchIcons = styled(SearchIcon)`
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+  position: absolute;
+  top: 25%;
+  right: 5%;
+  &:hover {
+    path {
+      fill: #000;
+    }
+  }
+  @media ${device.tablet} {
+    width: 19px;
+    height: 19px;
+    top: 21%;
+    right: 6%;
   }
 `
 export const Container = styled.div`
@@ -143,3 +163,38 @@ export const IconWrap = styled.div`
   align-items: center;
   justify-content: center;
 `;
+export const Search = styled.div`
+  display: flex;
+  position: relative;
+  margin-right: 32px;
+  @media ${device.tablet} {
+    margin-right: 16px;
+  }
+`
+export const Input = styled.input`
+  width: 256px;
+  height: 48px;
+  outline: none;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 24px;
+  border-radius: 4px;
+  padding: 12px 40px 12px 16px;
+  border: 1px solid #D0CFCF;
+  color: var(--card-text-color);
+  &::placeholder {
+    color: #C4C4C4;
+  }
+  &:focus {
+    transition: var(--card-click-transition);
+    box-shadow: 0 0 5px rgb(196, 196, 196);
+    border: 1px solid rgb(196, 196, 196);
+  }
+  @media ${device.tablet} {
+    width: 160px;
+    height: 36px;
+    font-size: 16px;
+    font-weight: 400;
+    padding: 12px 30px 12px 16px;
+  }
+`

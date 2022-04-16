@@ -11,7 +11,7 @@ const languageDetector = {
     detect: (callback) => {
         return getLanguage()
             .then((r) => callback(r))
-            .catch(() => callback(langCode.en));
+            .catch(() => callback(langCode.ru));
     },
     init: () => { },
     cacheUserLanguage: () => { },
@@ -23,14 +23,13 @@ i18n
     .init({
         debug: false,
         compatibilityJSON: "v3",
-        fallbackLng: langCode.en,
+        fallbackLng: langCode.ru,
         react: { useSuspense: false },
         interpolation: { escapeValue: false },
         resources: {
             uz: { translation: uz },
             ru: { translation: ru },
             en: { translation: en },
-        },
+        }
     })
-    .then(() => { });
 export default i18n;

@@ -27,6 +27,10 @@ export const GlobalStyle = createGlobalStyle`
         --card-min-width: 120px;
         --card-min-height: 70px;
         --card-min-brd-radius: 4px;
+        --card-text-color: #343437;
         --card-box-shadow: 0px 11px 17px 10px rgba(34, 60, 80, 0.2);
+        --card-hover-shadow: 0 16px 16px rgb(0 0 0 / 7%);
+        --card-transition: .5s;
+        --card-click-transition: .3s;
     }
 `

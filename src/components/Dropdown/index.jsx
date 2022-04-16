@@ -40,7 +40,7 @@ export default (props) => {
             <Dropdown.Title>
                 {prefixText} {value?.substring(0, 3)}
             </Dropdown.Title>
-            <ArrowDownIcon active={active} />
+            <ArrowDownIcon active={active ? 'true' : ''} />
             {menuList}
         </Dropdown>
     );

@@ -6,7 +6,7 @@ export const getLanguage = async (langState) => {
     if (langState) {
         lang = langState;
     } else {
-        lang = await localStorage.getItem('lang');
+        lang = localStorage.getItem('lang');
     }
     let result = langCode.uz;
     switch (lang) {
