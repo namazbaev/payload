@@ -5,7 +5,7 @@ import {
     Container, Company, MainSection, Cards, Services, TV, Globe,
     CardItem, CardNumber, CardName, ExpiryDate, UzCard, Smartphone,
     Trello, Wallet, Heart, Home, Cast, Fire, Graduation, Medical, Taxi,
-    HumoCard, PayText, UzcardLogos, HumoLogoLogos, Service, ServiceName
+    HumoCard, PayText, UzcardLogos, HumoLogoLogos, Service, ServiceName, Hr, LinkTo
 } from './style';
 const Main = () => {
     const { t } = useTranslation();
@@ -14,13 +14,14 @@ const Main = () => {
             <Company>
                 <Operators />
             </Company>
+            <Hr />
             <MainSection>
                 <Cards>
                     <CardItem>
                         <UzCard />
                         <UzcardLogos />
                         <CardNumber>8600 **** **** ****</CardNumber>
-                        <CardName>shakxzod namazbaev</CardName>
+                        <CardName>shaxzod namazbaev</CardName>
                         <ExpiryDate>12/23</ExpiryDate>
                         <PayText>{t('replenishment_uzcard')}</PayText>
                     </CardItem>
@@ -28,7 +29,7 @@ const Main = () => {
                         <HumoCard />
                         <HumoLogoLogos />
                         <CardNumber>9860 **** **** ****</CardNumber>
-                        <CardName>shakxzod namazbaev</CardName>
+                        <CardName>shaxzod namazbaev</CardName>
                         <ExpiryDate>01/25</ExpiryDate>
                         <PayText>{t('replenishment_humo')}</PayText>
                     </CardItem>
@@ -42,10 +43,12 @@ const Main = () => {
                         <TV />
                         <ServiceName>{t('online_tv')}</ServiceName>
                     </Service>
-                    <Service>
-                        <Globe />
-                        <ServiceName>{t('internet_providers')}</ServiceName>
-                    </Service>
+                    <LinkTo to='/providers'>
+                        <Service>
+                            <Globe />
+                            <ServiceName>{t('internet_providers')}</ServiceName>
+                        </Service>
+                    </LinkTo>
                     <Service>
                         <Trello />
                         <ServiceName>{t('advertisement')}</ServiceName>

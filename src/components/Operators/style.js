@@ -21,9 +21,8 @@ export const Operator = styled.button`
         box-shadow: var(--card-hover-shadow);
     }
     &:active {
-        transform: translateY(1px);
         transition: .2s;
-        /* box-shadow: 0px 2px 20px rgba(34, 37, 48, 0.5); */
+        transform: translateY(1px);
     }
     @media ${device.tablet} {
         width: var(--card-min-width);

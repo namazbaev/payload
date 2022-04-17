@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { device } from "utils/responsive";
 import styled, { css } from "styled-components";
 import { ReactComponent as TVIcon } from 'assets/icons/tv.svg';
@@ -135,15 +136,19 @@ export const Container = styled.div`
     width: 100%;
 `
 export const Company = styled.div`
-    width: 100%;
     display: flex;
-    padding: 36px 0 36px 48px;
+    margin: 36px 0 36px 48px;
     justify-content: space-between;
-    border-bottom: 2px solid var(--line-color);
     @media ${device.tablet} {
-        padding: 18px 0;
-        padding: 18px 0 18px 24px;
-        border-bottom: 1.5px solid var(--line-color);
+        margin: 18px 0 18px 24px;
+    }
+`
+export const Hr = styled.hr`
+    border: 0;
+    margin: 40px 48px;
+    border-top: 2px solid var(--line-color);
+    @media ${device.tablet} {
+        margin: 20px 30px;
     }
 `
 export const MainSection = styled.div`
@@ -216,7 +221,7 @@ export const Services = styled.div`
 export const Service = styled.div`
     width: 256px;
     height: 112px;
-    padding: 40px;
+    padding: 0 40px;
     display: flex;
     align-items: center;
     background: #FFFFFF;
@@ -268,4 +273,7 @@ export const ServiceName = styled.p`
         font-weight: 400;
         line-height: 15px;
     }
+`
+export const LinkTo = styled(Link)`
+    text-decoration: none;
 `

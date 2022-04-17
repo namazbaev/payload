@@ -26,3 +26,21 @@ export const EnFlagIcon = styled(EnFlag)`
 export const RusFlagIcon = styled(RusFlag)`
     ${iconCommon};
 `
+export const LinkBtn = styled.button`
+    border: none;
+    outline: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #D8D8D8;
+    padding: 10px 20px;
+    border-radius: var(--card-brd-radius);
+`
+export const Text = styled.p`
+    color: #fff;
+    font-size: 26px;
+    font-weight: 500;
+    line-height: 40px;
+    letter-spacing: 0.04em;
+`
