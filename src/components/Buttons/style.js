@@ -46,6 +46,10 @@ export const LinkBtn = styled.button`
         transition: 0.3s;
         background-color: #BFBEBE;
     }
+    &:active {
+        transition: 0.2s;
+        background-color: #A1A1A1;
+    }
     @media ${device.tablet1} {
         min-width: 180px;
         min-height: 55px;

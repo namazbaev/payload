@@ -1,14 +1,5 @@
 import React from 'react'
-import { Container } from './style'
-import Provider from 'components/Provider'
-import LinkButton from 'components/Buttons/LinkButton'
+import Card from 'components/Card'
+import { providers } from "utils/json"
 
-const Providers = () => {
-    return (
-        <>
-            <Provider />
-        </>
-    )
-}
-
-export default Providers
+export const Providers = () => <Card data={providers} />

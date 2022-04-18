@@ -18,6 +18,45 @@ import Citynet from 'assets/images/providers/citynet.svg'
 import Beeline from 'assets/images/providers/beeline.svg'
 import FreeLink from 'assets/images/providers/freelink.svg'
 import Uztelecom from 'assets/images/providers/uztelecom.svg'
+
+import UZA from 'assets/images/tv/uza.svg'
+import ITV5 from 'assets/images/tv/itv5.svg'
+import Megogo from 'assets/images/tv/megogo.svg'
+import AllPlay from 'assets/images/tv/allplay.svg'
+import Kinopro from 'assets/images/tv/kinopro.svg'
+import KinoXit from 'assets/images/tv/kinoxit.svg'
+import Mediabay from 'assets/images/tv/mediabay.svg'
+import Smartcom from 'assets/images/tv/smartcom.svg'
+import Cinerama from 'assets/images/tv/cinerama.svg'
+import Rizanova from 'assets/images/tv/rizanova.svg'
+import HamkorTV from 'assets/images/tv/hamkor_tv.svg'
+import KinoPoisk from 'assets/images/tv/kinopoisk.svg'
+import AllMovies from 'assets/images/tv/allmovies.svg'
+import Kinopokaz from 'assets/images/tv/kinopokaz.svg'
+import Uzdigital from 'assets/images/tv/uzdigital.svg'
+import UztelecomIPTV from 'assets/images/tv/uztelecom_iptv.svg'
+export const tv = [
+    { path: "/operators/tv/kinopokaz", name: "Kinopokaz", img: Kinopokaz },
+    { path: "/operators/tv/netco", name: "Netco", img: Netco },
+    { path: "/operators/tv/megogo", name: "Megogo", img: Megogo },
+    { path: "/operators/tv/rizanova", name: "Rizanova", img: Rizanova },
+    { path: "/operators/tv/allmovies", name: "AllMovies", img: AllMovies },
+    { path: "/operators/tv/allplay", name: "AllPlay", img: AllPlay },
+    { path: "/operators/tv/smartcom", name: "Smartcom", img: Smartcom },
+    { path: "/operators/tv/cinerama", name: "Cinerama", img: Cinerama },
+    { path: "/operators/tv/istv", name: "Istv", img: Istv },
+    { path: "/operators/tv/kinopro", name: "Kinopro", img: Kinopro },
+    { path: "/operators/tv/kinoxit", name: "KinoXit", img: KinoXit },
+    { path: "/operators/tv/free-link", name: "Free Link", img: FreeLink },
+    { path: "/operators/tv/uztelecom-iptv", name: "Uztelecom-IPTV", img: UztelecomIPTV },
+    { path: "/operators/tv/turon-telecom", name: "Turon Telecom", img: Turon },
+    { path: "/operators/tv/mediabay", name: "Mediabay", img: Mediabay },
+    { path: "/operators/tv/itv5", name: "ITV5", img: ITV5 },
+    { path: "/operators/tv/uzdigital", name: "Uzdigital", img: Uzdigital },
+    { path: "/operators/tv/hamkor-tv", name: "Hamkor TV", img: HamkorTV },
+    { path: "/operators/tv/kinopoisk", name: "KinoPoisk", img: KinoPoisk },
+    { path: "/operators/tv/uza", name: "UZA", img: UZA }
+]
 export const providers = [
     { path: "/providers/comnet", name: "Comnet", img: Comnet },
     { path: "/providers/citynet", name: "Citynet", img: Citynet },

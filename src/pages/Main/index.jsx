@@ -1,18 +1,19 @@
 import React from 'react'
-import Operators from 'components/Operators';
+import { LinkTo } from 'styles/globalStyles';
 import { useTranslation } from "react-i18next";
+import MobileOperators from 'components/Operator';
 import {
     Container, Company, MainSection, Cards, Services, TV, Globe,
     CardItem, CardNumber, CardName, ExpiryDate, UzCard, Smartphone,
     Trello, Wallet, Heart, Home, Cast, Fire, Graduation, Medical, Taxi,
-    HumoCard, PayText, UzcardLogos, HumoLogoLogos, Service, ServiceName, Hr, LinkTo
+    HumoCard, PayText, UzcardLogos, HumoLogoLogos, Service, ServiceName, Hr
 } from './style';
 const Main = () => {
     const { t } = useTranslation();
     return (
         <Container>
             <Company>
-                <Operators />
+                <MobileOperators />
             </Company>
             <Hr />
             <MainSection>
@@ -39,10 +40,11 @@ const Main = () => {
                         <Smartphone />
                         <ServiceName>{t('mobile_operators')}</ServiceName>
                     </Service>
-                    <Service>
+                    <LinkTo to='/operators'><Service>
                         <TV />
                         <ServiceName>{t('online_tv')}</ServiceName>
                     </Service>
+                    </LinkTo>
                     <LinkTo to='/providers'>
                         <Service>
                             <Globe />
