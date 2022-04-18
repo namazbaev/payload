@@ -8,9 +8,13 @@ export const iconCommon = css`
     width: 24px;
     height: 24px;
     margin-right: 8px;
+    @media ${device.tablet1} {
+        width: 20px;
+        height: 20px;
+    }
     @media ${device.tablet} {
-        width: 18px;
-        height: 18px;
+        width: 17px;
+        height: 17px;
     }
     @media ${device.mobile} {
         width: 15px;
@@ -28,6 +32,8 @@ export const RusFlagIcon = styled(RusFlag)`
 `
 export const LinkBtn = styled.button`
     border: none;
+    min-width: 201px;
+    min-height: 64px;
     outline: none;
     cursor: pointer;
     display: flex;
@@ -36,6 +42,22 @@ export const LinkBtn = styled.button`
     background-color: #D8D8D8;
     padding: 10px 20px;
     border-radius: var(--card-brd-radius);
+    &:hover {
+        transition: 0.3s;
+        background-color: #BFBEBE;
+    }
+    @media ${device.tablet1} {
+        min-width: 180px;
+        min-height: 55px;
+        padding: 8px 16px;
+        border-radius: var(--card-min-brd-radius);
+    }
+    @media ${device.tablet} {
+        min-width: 150px;
+        min-height: 40px;
+        padding: 8px 14px;
+        border-radius: var(--card-min-brd-radius);
+    }
 `
 export const Text = styled.p`
     color: #fff;
@@ -43,4 +65,12 @@ export const Text = styled.p`
     font-weight: 500;
     line-height: 40px;
     letter-spacing: 0.04em;
+    @media ${device.tablet1} {
+        font-size: 22px;
+        line-height: 30px;
+    }
+    @media ${device.tablet} {
+        font-size: 18px;
+        line-height: 20px;
+    }
 `

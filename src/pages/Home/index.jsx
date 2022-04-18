@@ -3,6 +3,7 @@ import { GlobalStyle } from "styles/globalStyles";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Main from "pages/Main";
 import Provider from "components/Provider";
+import Providers from "pages/Providers";
 
 const Home = () => {
     return (

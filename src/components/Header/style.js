@@ -7,9 +7,13 @@ export const Logo = styled(LogoIcon)`
   width: 150px;
   height: 50px;
   cursor: pointer;
-  @media ${device.tablet} {
+  @media ${device.tablet1} {
     width: 120px;
     height: 40px;
+  }
+  @media ${device.tablet} {
+    width: 100px;
+    height: 30px;
   }
 `
 export const SearchIcons = styled(SearchIcon)`
@@ -24,9 +28,15 @@ export const SearchIcons = styled(SearchIcon)`
       fill: #000;
     }
   }
-  @media ${device.tablet} {
+  @media ${device.tablet1} {
     width: 19px;
     height: 19px;
+    top: 21%;
+    right: 6%;
+  }
+  @media ${device.tablet} {
+    width: 16px;
+    height: 16px;
     top: 21%;
     right: 6%;
   }
@@ -38,8 +48,11 @@ export const Container = styled.div`
   background-color: #fff;
   justify-content: space-between;
   box-shadow: 0px 4px 16px rgba(90, 90, 90, 0.08);
+  @media ${device.tablet1} {
+    padding: 16px 24px;
+  }
   @media ${device.tablet} {
-    padding: 18px 24px;
+    padding: 14px 20px;
   }
 `;
 export const LeftSection = styled.div`
@@ -69,9 +82,13 @@ export const Drop = styled.span`
   height: 65px;
   margin: 0 24px;
   background-color: var(--line-color);
-  @media ${device.tablet} {
+  @media ${device.tablet1} {
     height: 50px;
     margin: 0 16px;
+  }
+  @media ${device.tablet} {
+    height: 50px;
+    margin: 0 12px;
   }
 `
 export const TerminalWrap = styled.div`
@@ -99,11 +116,14 @@ export const Number = styled.p`
   font-weight: 600;
   letter-spacing: 0.04em;
   color: var(--black1);
+  @media ${device.tablet1} {
+    font-size: 16px;
+  }
   @media ${device.tablet} {
-    font-size: 18px;
+    font-size: 14px;
   }
   @media ${device.mobile} {
-    font-size: 16px;
+    font-size: 12px;
   }
 `;
 export const Terminal = styled.span`
@@ -112,9 +132,14 @@ export const Terminal = styled.span`
   line-height: 32px;
   color: var(--black);
   letter-spacing: 0.04em;
-
-  @media ${device.tablet} {
+  @media ${device.tablet1} {
+    font-size: 15px;
     line-height: 20px;
+    letter-spacing: 0.02em;
+  }
+  @media ${device.tablet} {
+    line-height: 10px;
+    letter-spacing: 0.01em;
   }
 `
 export const IconButton = styled.div`
@@ -167,8 +192,11 @@ export const Search = styled.div`
   display: flex;
   position: relative;
   margin-right: 32px;
-  @media ${device.tablet} {
+  @media ${device.tablet1} {
     margin-right: 16px;
+  }
+  @media ${device.tablet} {
+    margin-right: 12px;
   }
 `
 export const Input = styled.input`
@@ -190,11 +218,20 @@ export const Input = styled.input`
     box-shadow: 0 0 5px rgb(196, 196, 196);
     border: 1px solid rgb(196, 196, 196);
   }
-  @media ${device.tablet} {
+  @media ${device.tablet1} {
     width: 160px;
-    height: 36px;
+    height: 40px;
     font-size: 16px;
     font-weight: 400;
+    border: 0.9px solid #D0CFCF;
+    padding: 12px 30px 12px 16px;
+  }
+  @media ${device.tablet} {
+    width: 150px;
+    height: 30px;
+    font-size: 14px;
+    font-weight: 400;
+    border: 0.7px solid #D0CFCF;
     padding: 12px 30px 12px 16px;
   }
 `

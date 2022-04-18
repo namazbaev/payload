@@ -5,6 +5,11 @@ import { device } from 'utils/responsive';
 export const ArrowDownIcon = styled(ArrowDown)`
   transition: all 0.3s ease;
   transform: ${({ active }) => active ? 'rotate(180deg)' : ''} ;
+
+  @media ${device.tablet1} {
+    width: 16px;
+    height: 16px;
+  }
 `;
 
 export const Dropdown = styled.div`
@@ -21,8 +26,13 @@ export const Dropdown = styled.div`
   border: 1px solid #D0CFCF;
   box-shadow: 0px 4px 16px rgba(34, 37, 48, 0.08);
 
+  @media ${device.tablet1} {
+    height: 40px;
+    width: 90px;
+    padding: 0px 8px;
+  }
   @media ${device.tablet} {
-    height: 36px;
+    height: 30px;
     width: 90px;
   }
 `;
@@ -33,6 +43,10 @@ Dropdown.Title = styled.div`
   font-size: 18px;
   font-weight: 400;
   margin-right: 9px;
+  @media ${device.tablet1} {
+    font-size: 14px;
+    margin-right: 5px;
+  }
   @media ${device.tablet} {
     font-size: 14px;
     margin-right: 5px;
@@ -66,6 +80,9 @@ Dropdown.Menu = styled.ul`
     border-left: 1px solid #e5e5e5;
     transform: rotate(45deg);
   }
+  @media ${device.tablet1} {
+    min-width: 110px;
+  }
   @media ${device.tablet} {
     min-width: 110px;
   }
@@ -82,7 +99,6 @@ Dropdown.MenuItem = styled.li`
   padding: 10px 12px;
   white-space: nowrap;
   transition: .2s ease-in;
-  
   &:hover {
     background-color: #F8F8F8;
   }

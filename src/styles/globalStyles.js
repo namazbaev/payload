@@ -1,5 +1,5 @@
-import { createGlobalStyle } from 'styled-components';
-
+import { Link } from 'react-router-dom'
+import styled, { createGlobalStyle } from 'styled-components';
 export const GlobalStyle = createGlobalStyle`
     html, body, #root{
         height: 100vh;
@@ -33,4 +33,7 @@ export const GlobalStyle = createGlobalStyle`
         --card-transition: .5s;
         --card-click-transition: .3s;
     }
+`
+export const LinkTo = styled(Link)`
+    text-decoration: none;
 `
