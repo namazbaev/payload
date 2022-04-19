@@ -4,10 +4,11 @@ import LinkButton from "components/Buttons/LinkButton"
 import { Container, Content, Wrap, Footer } from "./style"
 export default ({ data }) => {
     const { t } = useTranslation();
+    const content = data.map(({ path, img, name }) => <LinkTo key={path} to={`${name}`}><Content img={img} /></LinkTo>)
     return (
         <Container>
             <Wrap>
-                {data.map(({ path, img }) => <LinkTo key={path} to={path}><Content img={img} /></LinkTo>)}
+                {content}
             </Wrap>
             <Footer>
                 <LinkButton path="/" text={t('back')} />

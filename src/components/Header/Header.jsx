@@ -1,10 +1,11 @@
-import Dropdown from 'components/Dropdown'
-import { useCallback, useState } from 'react'
+import Dropdown from 'components/Dropdown';
+import { LinkTo } from 'styles/globalStyles';
+import { useCallback, useState } from 'react';
 import { useTranslation } from "react-i18next";
 import {
     Container, LeftSection, RightSection, Number, Drop, Logo, TerminalWrap,
     Wrap, Terminal, Search, SearchIcons, Input
-} from './style'
+} from './style';
 import { RusFlagIcon, UzFlagIcon, EnFlagIcon } from 'components/Buttons/style';
 export const Header = () => {
     const { t, i18n } = useTranslation();
@@ -34,7 +35,9 @@ export const Header = () => {
                     <Number>+998 888 62 62</Number>
                 </Wrap>
             </LeftSection>
-            <Logo />
+            <LinkTo to='/'>
+                <Logo />
+            </LinkTo>
             <RightSection>
                 <Search>
                     <Input placeholder='Поиск' />

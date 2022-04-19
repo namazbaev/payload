@@ -40,7 +40,7 @@ const serviceCommon = css`
         margin-right: 10px;
     }
 `
-export const TV = styled(TVIcon)`${serviceCommon}`
+export const TVS = styled(TVIcon)`${serviceCommon}`
 export const Taxi = styled(TaxiIcon)`${serviceCommon}`
 export const Medical = styled(MedicalIcon)`${serviceCommon}`
 export const Graduation = styled(GraduationIcon)`
