@@ -46,6 +46,8 @@ import VodafoneLogo from 'assets/images/operators/vodafone.svg';
 import MegafonLogo from 'assets/images/operators/megafon.svg';
 import AirtelLogo from 'assets/images/operators/airtel.svg';
 import KcellLogo from 'assets/images/operators/kcell.svg';
+import Humo from 'assets/images/humo1.svg';
+import UzCard from 'assets/images/uzcard.svg';
 import { ALLMOVIES, ITV5, ALLPLAY, BEELINEPR, CINERAMA, CITYNET, COMNET, DGT, EVO, FREELINK, FREELINKPR, GALS, HAMKORTV, ISTV, ISTVPR, KINOPOISK, KINOPOKAZ, KINOPRO, KINOXIT, KOINOTTV, LINKTELECOM, MEDIABAY, MEGOGO, NANOTELECOM, NETCO, NETCOPR, RIZANOVA, SARKORTELECOM, SILVERTELECOM, SMARTCOM, SOLA, SPECTRIT, TPS, TURONTELECOM, UZCLOUD, UZDIGITAL, UZTEECOM_IPTV, UZTELECOM } from './route'
 export const tv = [
     { path: UZA, size: '160px 100px', name: "UZA", img: UZA },
@@ -102,4 +104,8 @@ export const mobileoperators = [
     { code: [30], path: UZA, size: 'auto', name: "megafon", img: MegafonLogo },
     { code: [25], path: UZA, size: 'auto', name: "airtel", img: AirtelLogo },
     { code: [96], path: UZA, size: 'auto', name: "kcell", img: KcellLogo },
+]
+export const cards = [
+    { name: "humo", img: Humo },
+    { name: "uzcard", img: UzCard },
 ]

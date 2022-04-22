@@ -2,7 +2,7 @@ import React from 'react'
 import { LinkTo } from 'styles/globalStyles';
 import { useTranslation } from "react-i18next";
 import MobileOperators from 'components/Operator';
-import { MOBILEOPERATOR, PROVIDERS, TV } from 'utils/route'
+import { CARD_DETAIL, MOBILEOPERATOR, PROVIDERS, TV } from 'utils/route';
 import {
     Container, Company, MainSection, Cards, Services, TVS, Globe,
     CardItem, CardNumber, CardName, ExpiryDate, UzCard, Smartphone,
@@ -19,22 +19,26 @@ export default () => {
             <Hr />
             <MainSection>
                 <Cards>
-                    <CardItem>
-                        <UzCard />
-                        <UzcardLogos />
-                        <CardNumber>8600 **** **** ****</CardNumber>
-                        <CardName>shaxzod namazbaev</CardName>
-                        <ExpiryDate>12/23</ExpiryDate>
-                        <PayText>{t('replenishment_uzcard')}</PayText>
-                    </CardItem>
-                    <CardItem>
-                        <HumoCard />
-                        <HumoLogoLogos />
-                        <CardNumber>9860 **** **** ****</CardNumber>
-                        <CardName>shaxzod namazbaev</CardName>
-                        <ExpiryDate>01/25</ExpiryDate>
-                        <PayText>{t('replenishment_humo')}</PayText>
-                    </CardItem>
+                    <LinkTo to={`${CARD_DETAIL}/uzcard`}>
+                        <CardItem>
+                            <UzCard />
+                            <UzcardLogos />
+                            <CardNumber>8600 **** **** ****</CardNumber>
+                            <CardName>shaxzod namazbaev</CardName>
+                            <ExpiryDate>12/23</ExpiryDate>
+                            <PayText>{t('replenishment_uzcard')}</PayText>
+                        </CardItem>
+                    </LinkTo>
+                    <LinkTo to={`${CARD_DETAIL}/humo`}>
+                        <CardItem>
+                            <HumoCard />
+                            <HumoLogoLogos />
+                            <CardNumber>9860 **** **** ****</CardNumber>
+                            <CardName>shaxzod namazbaev</CardName>
+                            <ExpiryDate>01/25</ExpiryDate>
+                            <PayText>{t('replenishment_humo')}</PayText>
+                        </CardItem>
+                    </LinkTo>
                 </Cards>
                 <Services>
                     <LinkTo to={MOBILEOPERATOR}>

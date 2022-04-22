@@ -1,6 +1,11 @@
 export const MAIN = '/';
 export const TV = '/tv';
 export const PAY = '/pay';
+export const HUMO = '/humo';
+export const CARDPAY = '/card-pay';
+export const CARD_PAY = '/card-pay/:name';
+export const CARD_DETAIL = '/card-details';
+export const CARD_DETAILS = '/card-details/:name';
 export const MOBILEOPERATOR = '/mobile-operators';
 export const PROVIDERS = '/providers';
 export const TVDETAILS = `${TV}/:name`;

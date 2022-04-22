@@ -1,12 +1,14 @@
 import Main from "pages/home";
 import { TVS } from "pages/TV";
 import PayPhone from "pages/pay";
+import CardPay from 'pages/card/pay';
 import TVDetails from "pages/TV/details";
 import { Providers } from "pages/providers";
+import CardDetails from 'pages/card/details';
 import PRDetails from 'pages/providers/details';
 import MobDetails from 'pages/operators/details';
 import { MobileOperator } from "pages/operators";
-import { TV, PAY, TVDETAILS, PROVIDERS, PROVIDERDETAILS, MOBILEOPERATOR, MOBILEOPERATORS } from "./route";
+import { TV, PAY, CARD_DETAILS, CARD_PAY, TVDETAILS, PROVIDERS, PROVIDERDETAILS, MOBILEOPERATOR, MOBILEOPERATORS } from "./route";
 
 export const routes = [
     {
@@ -48,5 +50,15 @@ export const routes = [
         path: PAY,
         Component: PayPhone,
         title: 'Pay'
+    },
+    {
+        path: CARD_DETAILS,
+        Component: CardDetails,
+        title: 'CardDetails'
+    },
+    {
+        path: CARD_PAY,
+        Component: CardPay,
+        title: 'CardPay'
     },
 ]

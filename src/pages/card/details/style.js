@@ -17,15 +17,15 @@ export const Delete = styled(DeleteIcon)`
 `
 export const Div = styled.div`
     width: 100%;
-    height: 780px;
+    height: 75vh;
+    margin-top: 70px;
     padding: 0 50px;
-    margin-top: 100px;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: space-between;
     @media ${device.tablet}{
         padding: 0 30px;
-        height: 480px;
+        height: 75vh;
         margin-top: 40px;
     }
 `
@@ -89,15 +89,15 @@ export const Number = styled.span`
     }
 `
 export const DetailsCard = styled.div`
-    width: 211px;
-    height: 128px;
+    width: 290px;
+    height: 164px;
     cursor: pointer;
     border-radius: 8px;
     transition: box-shadow var(--card-transition);
     filter: drop-shadow(0px 4px 20px rgba(34, 37, 48, 0.1));
     @media ${device.tablet} {
-        width: 150px;
-        height: 80px;
+        width: 200px;
+        height: 150px;
         border-radius: 20px;
     }
     

@@ -8,7 +8,8 @@ export default ({ data }) => {
         <LinkTo key={path} to={`${name}`}>
             <Content>
                 <CardImage img={img} />
-            </Content></LinkTo>)
+            </Content>
+        </LinkTo>)
     return (
         <Container>
             <Wrap>

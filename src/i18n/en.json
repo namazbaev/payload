@@ -31,6 +31,10 @@
     "payment_amount": "Payment amount:",
     "standing": "Terminal does not return standing!",
     "warning": "Attention:",
-    "block_pay": "Payment is not possible for legal entities",
-    "pay": "Pay"
+    "block_pay": "Payment is not possible for legal entities!",
+    "pay": "Pay",
+    "card_pay_warning": "To top up your account, first enter the card number!",
+    "transfer_amount": "Transfer amount:",
+    "card_number": "Card number:",
+    "card_holder_name": "Card holder name:"
 }

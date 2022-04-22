@@ -1,5 +1,5 @@
-import { PAY } from 'utils/route';
-import { useState, useRef } from 'react';
+import { useState } from 'react';
+import { CARD_PAY } from 'utils/route';
 import { useParams } from 'react-router-dom';
 import { useTranslation } from "react-i18next";
 import LinkButton from "components/Buttons/LinkButton";
@@ -8,50 +8,46 @@ import {
     Number, Delete, MaskedInput, Drop, Hr, InfoText, WarningText, Text, Div, Footer,
     CardImage
 } from './style';
-import { mobileoperators } from 'utils/json';
+import { cards } from 'utils/json';
 export default () => {
-    const ref = useRef(null);
-    const countryCode = "+998";
     const { name } = useParams();
     const { t } = useTranslation();
-    let result = mobileoperators.find(x => x.name === name)
-    const [code, setCode] = useState(result?.code);
-    const [number, setNumber] = useState(countryCode);
+    let result = cards.find(x => x.name === name)
+    const [number, setNumber] = useState('');
+    // const [code, setCode] = useState(result?.code);
     const onChangeInput = (e) => {
-        setCode(e.target.value)
+        // setCode(e.target.value)
         setNumber(e.target.value)
     }
     const maskConfig = {
-        onChange: onChangeInput, mask: `+111 11 111 11 11`,
-        value: number, maskChar: null, placeholder: countryCode,
+        value: number, maskChar: null,
+        onChange: onChangeInput, mask: `1111 1111 1111 1111`,
         formatChars: { '1': '[0-9]', 'a': '[A-Za-z]', '*': '[A-Za-z0-9]' }
     }
     const onChangeNumber = (value) => {
-        if (number.length >= 13) return
+        if (number.length >= 16) return
         setNumber(number + String(value))
     }
     const removeChar = () => {
         if (number == '') return
-        if (number.length !== 4) {
-            const value = number.slice(0, -1)
-            setNumber(value)
-        }
+        const value = number.slice(0, -1)
+        setNumber(value)
     }
-    const removeNumbers = () => setNumber(countryCode);
-    const fromPhone = number.split(' ').join('');
+    const removeNumbers = () => setNumber('');
+    const fromCard = number.split(' ').join('');
     return (
         <Div>
             <DetailsContainer>
                 <DetailsInfo>
                     <DetailsCard>
-                        <CardImage img={result.img} />
+                        <CardImage img={result?.img} />
                     </DetailsCard>
-                    <MaskedInput id='input' ref={ref} autoFocus {...maskConfig} />
+                    <MaskedInput autoFocus  {...maskConfig} />
                     <Hr />
                     <InfoText>
                         <Text>
                             <WarningText> {t('warning')}
-                            </WarningText> {t('block_pay')}
+                            </WarningText> {t('card_pay_warning')}
                         </Text>
                     </InfoText>
                 </DetailsInfo>
@@ -98,9 +94,9 @@ export default () => {
             <Footer>
                 <LinkButton path={-1} text={t('back')} />
                 <LinkButton path="/" text={t('main_page')} />
-                <LinkButton disabled={number.length < 17}
-                    state={fromPhone} text={t('next')}
-                    color='#00C35A' hoveredColor="#04B054" path={PAY} />
+                <LinkButton disabled={number.length <= 16}
+                    state={fromCard} text={t('next')}
+                    color='#00C35A' hoveredColor="#04B054" path={CARD_PAY} />
             </Footer>
         </Div>
     )
