@@ -1,8 +1,7 @@
 import { useParams } from 'react-router-dom';
-export default ({ match }) => {
+export default () => {
     const { name } = useParams();
-    console.log(444);
     return (
-        <div>asdadas {name}</div>
+        <div> {name}</div>
     )
 }

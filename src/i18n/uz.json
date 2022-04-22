@@ -24,5 +24,13 @@
     "medicine": "Tibbiyot",
     "taxi": "Taksi",
     "back": "Orqaga",
-    "main_page": "Bosh sahifa"
+    "main_page": "Bosh sahifa",
+    "next": "Keyingisi",
+    "currency": "so'm",
+    "phone": "Telefon raqam:",
+    "payment_amount": "To'lov miqdori:",
+    "standing": "Terminal qaytim qaytarmaydi!",
+    "warning": "Diqqat:",
+    "block_pay": "Yuridik shaxslar uchun to'lov qilishning imkoni yo'q",
+    "pay": "To'lash"
 }

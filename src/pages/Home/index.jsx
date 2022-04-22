@@ -2,7 +2,7 @@ import React from 'react'
 import { LinkTo } from 'styles/globalStyles';
 import { useTranslation } from "react-i18next";
 import MobileOperators from 'components/Operator';
-import { TV } from 'utils/route'
+import { MOBILEOPERATOR, PROVIDERS, TV } from 'utils/route'
 import {
     Container, Company, MainSection, Cards, Services, TVS, Globe,
     CardItem, CardNumber, CardName, ExpiryDate, UzCard, Smartphone,
@@ -37,16 +37,19 @@ export default () => {
                     </CardItem>
                 </Cards>
                 <Services>
-                    <Service>
-                        <Smartphone />
-                        <ServiceName>{t('mobile_operators')}</ServiceName>
-                    </Service>
-                    <LinkTo to={TV}><Service>
-                        <TVS />
-                        <ServiceName>{t('online_tv')}</ServiceName>
-                    </Service>
+                    <LinkTo to={MOBILEOPERATOR}>
+                        <Service>
+                            <Smartphone />
+                            <ServiceName>{t('mobile_operators')}</ServiceName>
+                        </Service>
                     </LinkTo>
-                    <LinkTo to='/providers'>
+                    <LinkTo to={TV}>
+                        <Service>
+                            <TVS />
+                            <ServiceName>{t('online_tv')}</ServiceName>
+                        </Service>
+                    </LinkTo>
+                    <LinkTo to={PROVIDERS}>
                         <Service>
                             <Globe />
                             <ServiceName>{t('internet_providers')}</ServiceName>

@@ -37,19 +37,26 @@ export const LinkBtn = styled.button`
     outline: none;
     cursor: pointer;
     display: flex;
+    padding: 10px 20px;
     align-items: center;
     justify-content: center;
-    background-color: #D8D8D8;
-    padding: 10px 20px;
     border-radius: var(--card-brd-radius);
+    background-color: ${({ color }) => color || '#D8D8D8'};
     &:hover {
+        opacity: 0.99;
         transition: 0.3s;
-        background-color: #BFBEBE;
+        background-color: ${({ hoveredColor }) => hoveredColor || '#BFBEBE'};
     }
     &:active {
         transition: 0.2s;
         background-color: #A1A1A1;
     }
+    &:disabled,
+    &[disabled]{
+        cursor: not-allowed;
+        /* pointer-events: none; */
+        opacity: .8;
+        }
     @media ${device.tablet1} {
         min-width: 180px;
         min-height: 55px;
@@ -57,8 +64,8 @@ export const LinkBtn = styled.button`
         border-radius: var(--card-min-brd-radius);
     }
     @media ${device.tablet} {
-        min-width: 150px;
-        min-height: 40px;
+        min-width: 155px;
+        min-height: 45px;
         padding: 8px 14px;
         border-radius: var(--card-min-brd-radius);
     }

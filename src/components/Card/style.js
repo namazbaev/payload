@@ -31,7 +31,7 @@ export const Wrap = styled.div`
     margin-top: 27px;
     grid-template-columns: auto auto auto auto auto;
     @media ${device.tablet1} {
-        grid-template-columns: auto auto auto;
+        grid-template-columns: auto auto auto auto;
     }
     @media ${device.tablet} {
         margin: 16px 0;
@@ -41,12 +41,12 @@ export const Wrap = styled.div`
 `
 export const Content = styled.div`
     margin: 12px;
-    height: 126px;
+    width: 211px;
+    height: 128px;
     cursor: pointer;
     border-radius: 8px;
     transition: box-shadow var(--card-transition);
     filter: drop-shadow(0px 4px 20px rgba(34, 37, 48, 0.1));
-    background: #fff url(${({ img }) => img || ''}) center / ${({ size }) => size ? size : '160px 100px'} no-repeat;
     &:hover {
         box-shadow: var(--card-hover-shadow);
     }
@@ -54,8 +54,41 @@ export const Content = styled.div`
         transition: .2s;
         transform: translateY(1px);
     }
+    @media ${device.tablet1} {
+        
+    }
     @media ${device.tablet} {
-        height: 90px;
-        background: #fff url(${({ img }) => img || ''}) center / ${({ size }) => size ? size : '120px 70px'} no-repeat;
+        height: 80px;
+        width: 150px;
+    }
+`
+export const CardImage = styled.span`
+    width: 100%;
+    height: 100%;
+    font-size: 0;
+    line-height: 0;
+    border-radius: 6px;
+    display: inline-block;
+    vertical-align: middle;
+    background-color: #fff;
+    background-size: auto auto;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    background-image: url(${({ img }) => img || ''});
+    @media ${device.tablet1} {
+        width: 100%;
+        height: 100%;
+        background-position: 50% 50%;
+        background-repeat: no-repeat;
+        background-image: url(${({ img }) => img || ''});
+        background-size: ${({ size }) => size ? size : 'auto'};
+    }
+    @media ${device.tablet} {
+        width: 100%;
+        height: 100%;
+        background-size: 120% auto;
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-image: url(${({ img }) => img || ''});
     }
 `

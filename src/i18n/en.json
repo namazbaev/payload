@@ -24,5 +24,13 @@
     "medicine": "Medicine",
     "taxi": "Taxi",
     "back": "Back",
-    "main_page": "Main page"
+    "main_page": "Main page",
+    "next": "Next",
+    "currency": "sum",
+    "phone": "Phone number:",
+    "payment_amount": "Payment amount:",
+    "standing": "Terminal does not return standing!",
+    "warning": "Attention:",
+    "block_pay": "Payment is not possible for legal entities",
+    "pay": "Pay"
 }
