@@ -37,15 +37,13 @@ export default () => {
     }
     return (
         <>
+            <Popup active={active} setActive={setActive} />
             <Div>
                 <Container>
                     <ImageWrap>
                         <Image />
                     </ImageWrap>
                     <Input ref={inputRef} {...maskConfig} />
-                    <Popup active={active}>
-                        <div>asdsa</div>
-                    </Popup>
                     <Hr />
                     <DataInfo>
                         <DataInfoItem>

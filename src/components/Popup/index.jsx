@@ -1,20 +1,25 @@
 import React, { useState } from 'react'
-import { Container, IconSection, Title, Description, Button } from './style.js'
-const Popup = ({ active, children }) => {
+import { Container, IconSection, More, Icon, Title, BackDrop, Description, Button } from './style.js'
+const Popup = ({ active, setActive, children }) => {
     return (
-        <Container active={active ? active : ''}>
-            <IconSection>
-                IconSection
-            </IconSection>
-            <Title>Tabriklaymiz</Title>
-            <Description>
-                Toʻlov muvaffaqiyatli yakunlandi.Bizning xizmatlarimizdan foydalanganiz
-                uchun tashakkur !</Description>
-            {children}
-            <Button>
-                Bosh sahifa
-            </Button>
-        </Container>
+        <BackDrop active={active}>
+            <Container active={active ? active : ''}>
+                <IconSection>
+                    <Icon />
+                </IconSection>
+                <Title>Tabriklaymiz</Title>
+                <More>
+                    <Description>
+                        Toʻlov muvaffaqiyatli yakunlandi. Bizning xizmatlarimizdan foydalanganingiz
+                        uchun tashakkur!
+                    </Description>
+                </More>
+                {children}
+                <Button onClick={() => setActive(false)}>
+                    Bosh sahifa
+                </Button>
+            </Container>
+        </BackDrop>
     )
 }
 
