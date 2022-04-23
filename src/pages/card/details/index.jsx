@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { CARD_PAY } from 'utils/route';
+import { CARDPAY } from 'utils/route';
 import { useParams } from 'react-router-dom';
 import { useTranslation } from "react-i18next";
 import LinkButton from "components/Buttons/LinkButton";
@@ -96,7 +96,7 @@ export default () => {
                 <LinkButton path="/" text={t('main_page')} />
                 <LinkButton disabled={number.length <= 16}
                     state={fromCard} text={t('next')}
-                    color='#00C35A' hoveredColor="#04B054" path={CARD_PAY} />
+                    color='#00C35A' hoveredColor="#04B054" path={`${CARDPAY}`} />
             </Footer>
         </Div>
     )

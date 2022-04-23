@@ -8,7 +8,7 @@ import CardDetails from 'pages/card/details';
 import PRDetails from 'pages/providers/details';
 import MobDetails from 'pages/operators/details';
 import { MobileOperator } from "pages/operators";
-import { TV, PAY, CARD_DETAILS, CARD_PAY, TVDETAILS, PROVIDERS, PROVIDERDETAILS, MOBILEOPERATOR, MOBILEOPERATORS } from "./route";
+import { TV, PAY, CARD_DETAILS, CARDPAY, TVDETAILS, PROVIDERS, PROVIDERDETAILS, MOBILEOPERATOR, MOBILEOPERATORS } from "./route";
 
 export const routes = [
     {
@@ -57,7 +57,7 @@ export const routes = [
         title: 'CardDetails'
     },
     {
-        path: CARD_PAY,
+        path: CARDPAY,
         Component: CardPay,
         title: 'CardPay'
     },

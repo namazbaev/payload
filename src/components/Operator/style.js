@@ -14,9 +14,9 @@ export const Operator = styled.button`
     transition: box-shadow var(--card-transition);
     filter: drop-shadow(0px 4px 20px rgba(34, 37, 48, 0.1));
     background: #fff url(${({ img }) => img || ''}) center / auto no-repeat;
-    &:not(:last-child) {
+    /* &:not(:last-child) {
         margin-right: 26px;
-    }
+    } */
     &:hover {
         box-shadow: var(--card-hover-shadow);
     }

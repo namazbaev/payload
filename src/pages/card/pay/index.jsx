@@ -1,9 +1,7 @@
-import { LinkTo } from "styles/globalStyles";
-import { useLocation, useNavigate } from 'react-router-dom';
 import { currencyMask } from 'utils/functions';
 import { useTranslation } from "react-i18next";
 import { useState, useRef, useEffect } from 'react';
-import LinkButton from "components/Buttons/LinkButton";
+import { useLocation, useNavigate } from 'react-router-dom';
 import {
     Container, ImageWrap, Image, Input, Hr, FIO, FooterBtn,
     DataInfo, DataInfoItem, Label, Phone, Amount, Footer, Div, Text
@@ -14,7 +12,7 @@ export default () => {
     const navigate = useNavigate();
     const location = useLocation();
     const { t } = useTranslation();
-    const [amount, setAmount] = useState('2');
+    const [amount, setAmount] = useState('');
     const lang = localStorage.getItem('lang');
     const [active, setActive] = useState(false);
     const onChangeInput = (e) => setAmount(e.target.value);
@@ -25,9 +23,10 @@ export default () => {
         setAmount(value)
     }
     const maskConfig = {
-        placeholder: `1 000 ${t('currency')}`, onKeyDown: removeChar, value: amount,
-        maxLength: 11, onChange: (e) => onChangeInput(currencyMask(e, t('currency'))),
+        onChange: (e) => onChangeInput(currencyMask(e, t('currency'))),
+        placeholder: `1 000 ${t('currency')}`, onKeyDown: removeChar, value: amount
     }
+    const status = Math.random() < 0.5;
     useEffect(() => inputRef.current.focus(), [])
     const total = amount !== '' ? amount : 0
     const phone = location.state !== null ? location.state : ''
@@ -35,10 +34,11 @@ export default () => {
         navigate(-1);
         setActive(!active);
     }
+    const length = amount == ''
     return (
         <>
-            <Popup active={active} setActive={setActive} />
-            <Div>
+            <Popup active={active} setActive={setActive} status={status} />
+            <Div isShow={active}>
                 <Container>
                     <ImageWrap>
                         <Image />
@@ -67,7 +67,7 @@ export default () => {
                     <FooterBtn onClick={() => navigate('/')}>
                         <Text>{t('main_page')}</Text>
                     </FooterBtn>
-                    <FooterBtn color='#00C35A' hoveredColor="#04B054" disabled={amount == ''}
+                    <FooterBtn color={length ? '#D8D8D8' : '#00C35A'} hoveredColor={length ? '#D8D8D8' : "#04B054"} disabled={amount == ''}
                         onClick={() => setActive(!active)}>
                         <Text>{t('pay')}</Text>
                     </FooterBtn>

@@ -36,5 +36,9 @@
     "card_pay_warning": "Hisobingizni to'ldirish uchun avval karta raqamini kiriting!",
     "transfer_amount": "O'tkazma summasi:",
     "card_number": "Karta raqami:",
-    "card_holder_name": "Karta egasi nomi:"
+    "card_holder_name": "Karta egasi nomi:",
+    "popup_success_title": "Tabriklaymiz",
+    "popup_success_desc": "Toʻlov muvaffaqiyatli yakunlandi. Bizning xizmatlarimizdan foydalanganingiz uchun tashakkur !",
+    "popup_error_title": "Xatolik",
+    "popup_error_desc": "Xizmat uchun to'lov amalga oshirib bo‘lmadi. Iltimos keyinroq qayta urinib ko'ring"
 }

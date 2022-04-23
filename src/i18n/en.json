@@ -36,5 +36,9 @@
     "card_pay_warning": "To top up your account, first enter the card number!",
     "transfer_amount": "Transfer amount:",
     "card_number": "Card number:",
-    "card_holder_name": "Card holder name:"
+    "card_holder_name": "Card holder name:",
+    "popup_success_title": "Congratulations",
+    "popup_success_desc": "Payment completed successfully. \n We use our services thanks for!",
+    "popup_error_title": "Error",
+    "popup_error_desc": "Payment for the service was not made. Please try again later"
 }

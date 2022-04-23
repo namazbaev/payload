@@ -1,4 +1,6 @@
-import React from 'react'
+import React from 'react';
+import Carousel from "react-multi-carousel";
+import "react-multi-carousel/lib/styles.css";
 import { LinkTo } from 'styles/globalStyles';
 import { useTranslation } from "react-i18next";
 import MobileOperators from 'components/Operator';
@@ -11,11 +13,12 @@ import {
 } from './style';
 export default () => {
     const { t } = useTranslation();
+
     return (
         <Container>
-            <Company>
-                <MobileOperators />
-            </Company>
+            {/* <Company> */}
+            <MobileOperators />
+            {/* </Company> */}
             <Hr />
             <MainSection>
                 <Cards>
