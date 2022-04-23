@@ -39,6 +39,8 @@ export default () => {
     }
     const removeNumbers = () => setNumber(countryCode);
     const fromPhone = number.split(' ').join('');
+    const length = number.length !== 13
+    console.log('number.length phone', number.length);
     return (
         <Div>
             <DetailsContainer>
@@ -98,9 +100,12 @@ export default () => {
             <Footer>
                 <LinkButton path={-1} text={t('back')} />
                 <LinkButton path="/" text={t('main_page')} />
-                <LinkButton disabled={number.length < 17}
+                <LinkButton length={length}
                     state={fromPhone} text={t('next')}
-                    color='#00C35A' hoveredColor="#04B054" path={PAY} />
+                    color={length ? '#D8D8D8' : '#00C35A'} hoveredColor={length ? '#D8D8D8' : "#04B054"} path={PAY} />
+                {/* <LinkButton length={length}
+                    state={fromPhone} text={t('next')}
+                    color='#00C35A' hoveredColor="#04B054" path={PAY} /> */}
             </Footer>
         </Div>
     )

@@ -144,6 +144,12 @@ export const FooterBtn = styled.button`
     border: none;
     min-width: 201px;
     min-height: 64px;
+    color: #fff;
+    font-size: 26px;
+    font-weight: 500;
+    line-height: 40px;
+    letter-spacing: 0.04em;
+    /* pointer-events: none; */
     outline: none;
     cursor: pointer;
     display: flex;
@@ -164,28 +170,32 @@ export const FooterBtn = styled.button`
     &:disabled,
     &[disabled]{
         cursor: not-allowed;
-        /* pointer-events: none; */
         opacity: .8;
         }
     @media ${device.tablet1} {
         min-width: 180px;
         min-height: 55px;
         padding: 8px 16px;
+        font-size: 22px;
+        line-height: 30px;
         border-radius: var(--card-min-brd-radius);
     }
     @media ${device.tablet} {
         min-width: 155px;
         min-height: 45px;
         padding: 8px 14px;
+        font-size: 18px;
+        line-height: 20px;
         border-radius: var(--card-min-brd-radius);
     }
 `
-export const Text = styled.p`
+export const BtnText = styled.p`
     color: #fff;
     font-size: 26px;
     font-weight: 500;
     line-height: 40px;
     letter-spacing: 0.04em;
+    pointer-events: none;
     @media ${device.tablet1} {
         font-size: 22px;
         line-height: 30px;

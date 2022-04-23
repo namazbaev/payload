@@ -15,7 +15,7 @@ const infoCommon = css`
 `
 export const Div = styled.div`
     height: 80vh;
-    display: flex;
+    display: ${({ isShow }) => isShow ? "none" : "flex"} ;
     flex-direction: column;
     justify-content: space-between;
 `

@@ -35,6 +35,8 @@ export default () => {
     }
     const removeNumbers = () => setNumber('');
     const fromCard = number.split(' ').join('');
+    const length = number.length !== 16
+    console.log('number.length', number.length);
     return (
         <Div>
             <DetailsContainer>
@@ -94,9 +96,9 @@ export default () => {
             <Footer>
                 <LinkButton path={-1} text={t('back')} />
                 <LinkButton path="/" text={t('main_page')} />
-                <LinkButton disabled={number.length <= 16}
+                <LinkButton length={length}
                     state={fromCard} text={t('next')}
-                    color='#00C35A' hoveredColor="#04B054" path={`${CARDPAY}`} />
+                    color={length ? '#D8D8D8' : '#00C35A'} hoveredColor={length ? '#D8D8D8' : "#04B054"} path={CARDPAY} />
             </Footer>
         </Div>
     )

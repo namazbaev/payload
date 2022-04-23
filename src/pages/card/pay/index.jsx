@@ -4,7 +4,7 @@ import { useState, useRef, useEffect } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import {
     Container, ImageWrap, Image, Input, Hr, FIO, FooterBtn,
-    DataInfo, DataInfoItem, Label, Phone, Amount, Footer, Div, Text
+    DataInfo, DataInfoItem, Label, Phone, Amount, Footer, Div, BtnText
 } from './style';
 import Popup from 'components/Popup';
 export default () => {
@@ -62,14 +62,15 @@ export default () => {
                 </Container>
                 <Footer>
                     <FooterBtn onClick={goBack}>
-                        <Text>{t('back')}</Text>
+                        {t('back')}
                     </FooterBtn>
                     <FooterBtn onClick={() => navigate('/')}>
-                        <Text>{t('main_page')}</Text>
+                        {t('main_page')}
                     </FooterBtn>
-                    <FooterBtn color={length ? '#D8D8D8' : '#00C35A'} hoveredColor={length ? '#D8D8D8' : "#04B054"} disabled={amount == ''}
-                        onClick={() => setActive(!active)}>
-                        <Text>{t('pay')}</Text>
+                    <FooterBtn color={length ? '#D8D8D8' : '#00C35A'}
+                        hoveredColor={length ? '#D8D8D8' : "#04B054"} disabled={amount == ''}
+                        onClick={() => setActive(true)}>
+                        {t('pay')}
                     </FooterBtn>
                 </Footer>
             </Div>

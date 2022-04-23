@@ -9,7 +9,7 @@ export const GlobalStyle = createGlobalStyle`
         background-color: #fff;
     }
     * {
-        @import url('./font.css');
+        /* @import url('./font.css'); */
         margin: 0;
         padding: 0;
         box-sizing: border-box;
@@ -50,5 +50,7 @@ export const GlobalStyle = createGlobalStyle`
     }
 `
 export const LinkTo = styled(Link)`
+    color: #fff;
     text-decoration: none;
+    pointer-events: ${({ length }) => length ? 'none' : 'pointer'};
 `
