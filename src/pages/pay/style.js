@@ -1,7 +1,7 @@
 import { device } from "utils/responsive";
 import Currency from 'react-currency-format';
-import PayImg from 'assets/images/payinfo.svg';
 import styled, { css } from "styled-components";
+import PayImg from 'assets/images/cards/payinfo.svg';
 
 const infoCommon = css`
     font-size: 24px;

@@ -37,10 +37,9 @@ export default () => {
             setNumber(value)
         }
     }
-    const removeNumbers = () => setNumber(countryCode);
+    const length = number.length !== 13;
     const fromPhone = number.split(' ').join('');
-    const length = number.length !== 13
-    console.log('number.length phone', number.length);
+    const removeNumbers = () => setNumber(countryCode);
     return (
         <Div>
             <DetailsContainer>
@@ -48,7 +47,7 @@ export default () => {
                     <DetailsCard>
                         <CardImage img={result.img} />
                     </DetailsCard>
-                    <MaskedInput id='input' ref={ref} autoFocus {...maskConfig} />
+                    <MaskedInput id='input' autoFocus {...maskConfig} />
                     <Hr />
                     <InfoText>
                         <Text>
@@ -100,12 +99,8 @@ export default () => {
             <Footer>
                 <LinkButton path={-1} text={t('back')} />
                 <LinkButton path="/" text={t('main_page')} />
-                <LinkButton length={length}
-                    state={fromPhone} text={t('next')}
+                <LinkButton length={length} state={fromPhone} text={t('next')}
                     color={length ? '#D8D8D8' : '#00C35A'} hoveredColor={length ? '#D8D8D8' : "#04B054"} path={PAY} />
-                {/* <LinkButton length={length}
-                    state={fromPhone} text={t('next')}
-                    color='#00C35A' hoveredColor="#04B054" path={PAY} /> */}
             </Footer>
         </Div>
     )

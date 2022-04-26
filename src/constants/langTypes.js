@@ -1,5 +1,1 @@
-export const langTypes = {
-    uz: "uz",
-    ru: "ru",
-    en: "en",
-};
+export const langTypes = { uz: "uz", ru: "ru", en: "en" }

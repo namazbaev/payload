@@ -46,30 +46,30 @@ import VodafoneLogo from 'assets/images/operators/vodafone.svg';
 import MegafonLogo from 'assets/images/operators/megafon.svg';
 import AirtelLogo from 'assets/images/operators/airtel.svg';
 import KcellLogo from 'assets/images/operators/kcell.svg';
-import Humo from 'assets/images/humo1.svg';
-import UzCard from 'assets/images/uzcard.svg';
+import Humo from 'assets/images/cards/humo1.svg';
+import UzCard from 'assets/images/cards/uzcard.svg';
 import { ALLMOVIES, ITV5, ALLPLAY, BEELINEPR, CINERAMA, CITYNET, COMNET, DGT, EVO, FREELINK, FREELINKPR, GALS, HAMKORTV, ISTV, ISTVPR, KINOPOISK, KINOPOKAZ, KINOPRO, KINOXIT, KOINOTTV, LINKTELECOM, MEDIABAY, MEGOGO, NANOTELECOM, NETCO, NETCOPR, RIZANOVA, SARKORTELECOM, SILVERTELECOM, SMARTCOM, SOLA, SPECTRIT, TPS, TURONTELECOM, UZCLOUD, UZDIGITAL, UZTEECOM_IPTV, UZTELECOM } from './route'
 export const tv = [
-    { path: UZA, size: '160px 100px', name: "UZA", img: UZA },
-    { path: ISTV, size: '160px 100px', name: "Istv", img: Istv },
-    { path: ITV5, size: '160px 100px', name: "ITV5", img: ITV5IMG },
-    { path: NETCO, size: '160px 100px', name: "netco", img: Netco },
-    { path: MEGOGO, size: '160px 100px', name: "megogo", img: Megogo },
-    { path: ALLPLAY, size: '160px 100px', name: "allPlay", img: AllPlay },
-    { path: KINOPRO, size: '160px 100px', name: "Kinopro", img: Kinopro },
-    { path: KINOXIT, size: '160px 100px', name: "KinoXit", img: KinoXit },
-    { path: SMARTCOM, size: '160px 100px', name: "Smartcom", img: Smartcom },
-    { path: MEDIABAY, size: '160px 100px', name: "Mediabay", img: Mediabay },
-    { path: RIZANOVA, size: '160px 100px', name: "mizanova", img: Rizanova },
-    { path: CINERAMA, size: '160px 100px', name: "Cinerama", img: Cinerama },
-    { path: HAMKORTV, size: '160px 100px', name: "Hamkor TV", img: HamkorTV },
-    { path: FREELINK, size: '160px 100px', name: "Free Link", img: FreeLink },
-    { path: ALLMOVIES, size: '160px 100px', name: "allmovies", img: AllMovies },
-    { path: KINOPOKAZ, size: '160px 100px', name: "kinopokaz", img: Kinopokaz },
-    { path: UZDIGITAL, size: '160px 100px', name: "Uzdigital", img: Uzdigital },
-    { path: KINOPOISK, size: '160px 100px', name: "KinoPoisk", img: KinoPoisk },
-    { path: TURONTELECOM, size: '160px 100px', name: "Turon Telecom", img: Turon },
-    { path: UZTEECOM_IPTV, size: '160px 100px', name: "Uztelecom-IPTV", img: UztelecomIPTV },
+    { path: UZA, name: "UZA", img: UZA },
+    { path: ISTV, name: "Istv", img: Istv },
+    { path: ITV5, name: "ITV5", img: ITV5IMG },
+    { path: NETCO, name: "netco", img: Netco },
+    { path: MEGOGO, name: "megogo", img: Megogo },
+    { path: ALLPLAY, name: "allPlay", img: AllPlay },
+    { path: KINOPRO, name: "Kinopro", img: Kinopro },
+    { path: KINOXIT, name: "KinoXit", img: KinoXit },
+    { path: SMARTCOM, name: "Smartcom", img: Smartcom },
+    { path: MEDIABAY, name: "Mediabay", img: Mediabay },
+    { path: RIZANOVA, name: "mizanova", img: Rizanova },
+    { path: CINERAMA, name: "Cinerama", img: Cinerama },
+    { path: HAMKORTV, name: "Hamkor TV", img: HamkorTV },
+    { path: FREELINK, name: "Free Link", img: FreeLink },
+    { path: ALLMOVIES, name: "allmovies", img: AllMovies },
+    { path: KINOPOKAZ, name: "kinopokaz", img: Kinopokaz },
+    { path: UZDIGITAL, name: "Uzdigital", img: Uzdigital },
+    { path: KINOPOISK, name: "KinoPoisk", img: KinoPoisk },
+    { path: TURONTELECOM, name: "Turon Telecom", img: Turon },
+    { path: UZTEECOM_IPTV, name: "Uztelecom-IPTV", img: UztelecomIPTV },
 ]
 export const providers = [
     { path: TPS, size: '160px 100px', name: "tps", img: Tps },

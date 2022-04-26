@@ -61,8 +61,8 @@ export const Keyboard = styled.div`
     background-color: #F4F4F4;
     border-radius: var(--card-brd-radius);
     &:active {
-        background-color: #F1F1F1;
         transform: translateY(1px);
+        background-color: var(--card-click-color);
     }
     @media ${device.tablet1} {
         height: 70px;

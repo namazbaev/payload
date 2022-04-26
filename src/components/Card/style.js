@@ -1,8 +1,8 @@
 import styled from "styled-components";
 import { device } from "utils/responsive";
-
+import { MOBILEOPERATOR } from "utils/route";
 export const Container = styled.div`
-    height: 85vh;
+    height: 86vh;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -11,18 +11,18 @@ export const Container = styled.div`
     }
 `
 export const Footer = styled.div`
-    display: flex;
-    height: 100px;
     width: 50%;
+    display: flex;
     align-items: center;
     margin: 40px 0 30px 65px;
     justify-content: space-between;
-
     @media ${device.tablet1} {
         margin: 30px 0 30px 65px;
     }
     @media ${device.tablet} {
-        margin: 0 0 30px 45px;
+        width: 60%;
+        margin: 20px 0;
+        padding-left: 20px;
     }
 `
 export const Wrap = styled.div`
@@ -34,14 +34,14 @@ export const Wrap = styled.div`
         grid-template-columns: auto auto auto auto;
     }
     @media ${device.tablet} {
-        margin: 16px 0;
+        margin-top: 20px;
         padding: 0 30px;
-        grid-template-columns: auto auto auto auto;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 1em;
     }
 `
 export const Content = styled.div`
     margin: 12px;
-    width: 211px;
     height: 128px;
     cursor: pointer;
     border-radius: 8px;
@@ -58,8 +58,8 @@ export const Content = styled.div`
         
     }
     @media ${device.tablet} {
-        height: 80px;
-        width: 150px;
+        margin: 0;
+        height: 75px;
     }
 `
 export const CardImage = styled.span`
@@ -86,9 +86,9 @@ export const CardImage = styled.span`
     @media ${device.tablet} {
         width: 100%;
         height: 100%;
-        background-size: 120% auto;
-        background-position: center center;
         background-repeat: no-repeat;
+        background-position: center center;
         background-image: url(${({ img }) => img || ''});
+        background-size: ${({ prop }) => prop === MOBILEOPERATOR ? '115%' : '12vw 10vh'};
     }
 `

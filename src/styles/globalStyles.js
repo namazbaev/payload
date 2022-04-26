@@ -46,6 +46,7 @@ export const GlobalStyle = createGlobalStyle`
         --card-box-shadow: 0px 11px 17px 10px rgba(34, 60, 80, 0.2);
         --card-hover-shadow: 0 16px 16px rgb(0 0 0 / 7%);
         --card-transition: .5s;
+        --card-click-color: #dfdfdf;
         --card-click-transition: .3s;
     }
 `

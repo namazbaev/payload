@@ -61,8 +61,8 @@ export const Keyboard = styled.div`
     background-color: #F4F4F4;
     border-radius: var(--card-brd-radius);
     &:active {
-        background-color: #F1F1F1;
         transform: translateY(1px);
+        background-color: var(--card-click-color);
     }
     @media ${device.tablet1} {
         height: 70px;
@@ -129,42 +129,6 @@ export const CardImage = styled.span`
         background-repeat: no-repeat;
         background-image: url(${({ img }) => img || ''});
         background-size: ${({ size }) => size ? size : '100%'};
-    }
-`
-export const MaskedInput = styled(MaskInput)`
-    width: 100%;
-    height: 96px;
-    color: #3D3D4B;
-    font-size: 40px;
-    margin-top: 32px;
-    font-weight: 700;
-    line-height: 64px;
-    padding: 16px 120px 16px 24px;
-    border: 2px solid var(--line-color);
-    border-radius: var(--card-brd-radius);
-    &::placeholder {
-        color: #3D3D4B;
-    }
-    &:focus, &:active {
-        outline: none;
-        border: 2px solid #33BAFF;
-        transition: var(--card-click-transition);
-    }
-    @media ${device.tablet1}{
-        width: 500px;
-        height: 80px;
-        font-size: 36px;
-        margin-top: 30px;
-        line-height: 56px;
-        padding: 16px 100px 16px 24px;
-    }
-    @media ${device.tablet}{
-        width: 100%;
-        height: 60px;
-        font-size: 26px;
-        margin-top: 20px;
-        line-height: 56px;
-        padding: 16px 0 16px 24px;
     }
 `
 export const Drop = styled.span`

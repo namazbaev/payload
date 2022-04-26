@@ -1,40 +1,34 @@
-import { currencyMask } from 'utils/functions';
+import { useState } from 'react';
+import { sumMask } from 'utils/functions';
 import { useTranslation } from "react-i18next";
-import { useState, useRef, useEffect } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import {
-    Container, ImageWrap, Image, Input, Hr, FIO, FooterBtn,
-    DataInfo, DataInfoItem, Label, Phone, Amount, Footer, Div, BtnText
+    Container, ImageWrap, Image, Hr, FIO, FooterBtn, Formatting,
+    DataInfo, DataInfoItem, Label, Phone, Amount, Footer, Div,
 } from './style';
 import Popup from 'components/Popup';
 export default () => {
-    const inputRef = useRef();
     const navigate = useNavigate();
     const location = useLocation();
     const { t } = useTranslation();
-    const [amount, setAmount] = useState('');
-    const lang = localStorage.getItem('lang');
+    const [amount, setAmount] = useState('212852');
+    // const lang = localStorage.getItem('lang');
     const [active, setActive] = useState(false);
-    const onChangeInput = (e) => setAmount(e.target.value);
-    const removeChar = () => {
-        if (amount == '') return
-        const sliceNumber = lang === 'uz' ? -6 : -5
-        const value = amount.slice(0, sliceNumber)
-        setAmount(value)
-    }
-    const maskConfig = {
-        onChange: (e) => onChangeInput(currencyMask(e, t('currency'))),
-        placeholder: `1 000 ${t('currency')}`, onKeyDown: removeChar, value: amount
-    }
+    // const removeChar = () => {
+    //     if (amount == '') return
+    //     const sliceNumber = lang === 'uz' ? -6 : -5
+    //     const value = amount.slice(0, sliceNumber)
+    //     setAmount(value)
+    // }
     const status = Math.random() < 0.5;
-    useEffect(() => inputRef.current.focus(), [])
     const total = amount !== '' ? amount : 0
     const phone = location.state !== null ? location.state : ''
     const goBack = () => {
         navigate(-1);
         setActive(!active);
     }
-    const length = amount == ''
+    const length = amount == '';
+    const summa = sumMask(amount, t('currency'));
     return (
         <>
             <Popup active={active} setActive={setActive} status={status} />
@@ -43,7 +37,7 @@ export default () => {
                     <ImageWrap>
                         <Image />
                     </ImageWrap>
-                    <Input ref={inputRef} {...maskConfig} />
+                    <Formatting>{summa}</Formatting>
                     <Hr />
                     <DataInfo>
                         <DataInfoItem>

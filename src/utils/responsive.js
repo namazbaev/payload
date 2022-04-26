@@ -4,6 +4,7 @@ export const MIN_TABLET_WIDTH = 710;
 export const MAX_TABLET_WIDTH = 800;
 export const MIN_TABLET1_WIDTH = 800;
 export const MAX_TABLET1_WIDTH = 1100;
+export const MAX_TABLET2_WIDTH = 1230;
 export const MAX_DESKTOP_WIDTH = 1280;
 
 export const device = {

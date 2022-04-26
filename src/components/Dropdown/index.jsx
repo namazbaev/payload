@@ -15,7 +15,6 @@ export default (props) => {
             setValue(undefined);
         }
     }, [defaultValue, menu]);
-
     const handleSelect = (value) => {
         changeValue(value);
         setActive(false);

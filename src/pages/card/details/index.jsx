@@ -5,10 +5,13 @@ import { useTranslation } from "react-i18next";
 import LinkButton from "components/Buttons/LinkButton";
 import {
     DetailsContainer, DetailsCard, DetailsInfo, DetailsKeyboard, Keyboard,
-    Number, Delete, MaskedInput, Drop, Hr, InfoText, WarningText, Text, Div, Footer,
+    Number, Delete, Drop, Hr, InfoText, WarningText, Text, Div, Footer,
     CardImage
 } from './style';
 import { cards } from 'utils/json';
+import { cardMask } from 'utils/functions';
+import { useMemo } from 'react';
+import { Formatting } from '../pay/style';
 export default () => {
     const { name } = useParams();
     const { t } = useTranslation();
@@ -26,17 +29,18 @@ export default () => {
     }
     const onChangeNumber = (value) => {
         if (number.length >= 16) return
-        setNumber(number + String(value))
+        setNumber((prev) => prev + value)
     }
     const removeChar = () => {
         if (number == '') return
         const value = number.slice(0, -1)
         setNumber(value)
     }
+    const length = number.length !== 16;
     const removeNumbers = () => setNumber('');
     const fromCard = number.split(' ').join('');
-    const length = number.length !== 16
-    console.log('number.length', number.length);
+    const cardNumber = useMemo(() => cardMask(number), [number])
+
     return (
         <Div>
             <DetailsContainer>
@@ -44,7 +48,8 @@ export default () => {
                     <DetailsCard>
                         <CardImage img={result?.img} />
                     </DetailsCard>
-                    <MaskedInput autoFocus  {...maskConfig} />
+                    {/* <MaskedInput autoFocus  {...maskConfig} /> */}
+                    <Formatting>{cardNumber}</Formatting>
                     <Hr />
                     <InfoText>
                         <Text>

@@ -2,13 +2,13 @@ import { Link } from 'react-router-dom';
 import { device } from "utils/responsive";
 import styled, { css } from "styled-components";
 import { ReactComponent as TVIcon } from 'assets/icons/tv.svg';
-import { ReactComponent as Humo } from 'assets/images/humo.svg';
+import { ReactComponent as Humo } from 'assets/images/cards/humo.svg';
 import { ReactComponent as HumoLogo } from 'assets/icons/humo.svg';
 import { ReactComponent as FireIcon } from 'assets/icons/fire.svg';
 import { ReactComponent as TaxiIcon } from 'assets/icons/taxi.svg';
 import { ReactComponent as CastIcon } from 'assets/icons/cast.svg';
 import { ReactComponent as HomeIcon } from 'assets/icons/home.svg';
-import { ReactComponent as Uzcard } from 'assets/images/uzcard1.svg';
+import { ReactComponent as Uzcard } from 'assets/images/cards/uzcard1.svg';
 import { ReactComponent as GlobeIcon } from 'assets/icons/globe.svg';
 import { ReactComponent as HeartIcon } from 'assets/icons/heart.svg';
 import { ReactComponent as UzcardLogo } from 'assets/icons/uzcard.svg';
@@ -159,7 +159,7 @@ export const MainSection = styled.div`
     @media ${device.tablet} {
         padding: 0 24px;
         margin-top: 16px;
-        height: 320px;
+        height: 100%;
     }
 `
 export const Cards = styled.div`
@@ -209,20 +209,27 @@ export const CardItem = styled.div`
 `
 export const Services = styled.div`
     width: 100%;
-    height: 105%;
+    height: 100%;
+    margin: 0 auto;
     padding-left: 34px;
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    align-content: space-between;
     justify-content: space-between;
+    grid-template-columns: auto auto auto;
     @media ${device.tablet} {
         padding-left: 16px;
+        width: 100%;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1em;
     }
 `
 export const Service = styled.div`
     width: 256px;
     height: 112px;
-    padding: 0 40px;
+    padding-left: 42px;
+    padding-right: 48px;
     display: flex;
+    justify-content: flex-start;
     align-items: center;
     background: #FFFFFF;
     border-radius: 8px;
@@ -243,6 +250,22 @@ export const Service = styled.div`
         color: #000;
         transition: var(--card-click-transition);
         box-shadow: 0px 4px 20px rgba(34, 37, 48, 0.10);
+    }
+    @media ${device.tablet1} {
+        width: 220px;
+        padding: 20px;
+        &:focus, &:active {
+        p {
+            font-size: 17.8px;
+        }
+        svg {
+            width: 27px;
+            height: 27px;
+        }
+        color: #000;
+        transition: var(--card-click-transition);
+        box-shadow: 0px 4px 20px rgba(34, 37, 48, 0.10);
+    }
     }
     @media ${device.tablet} {
         width: 160px;

@@ -1,3 +1,4 @@
+import { langList } from 'i18n/config';
 import Dropdown from 'components/Dropdown';
 import { LinkTo } from 'styles/globalStyles';
 import { useCallback, useState } from 'react';
@@ -6,22 +7,17 @@ import {
     Container, LeftSection, RightSection, Number, Drop, Logo, TerminalWrap,
     Wrap, Terminal, Search, SearchIcons, Input
 } from './style';
-import { RusFlagIcon, UzFlagIcon, EnFlagIcon } from 'components/Buttons/style';
 export const Header = () => {
     const { t, i18n } = useTranslation();
-    const currentLang = localStorage.getItem('lang')
+    const currentLang = localStorage.getItem('lang') || 'uz'
     const [lang, setLang] = useState(currentLang)
     const changeLang = useCallback((e) => {
         localStorage.setItem('lang', e)
         i18n.changeLanguage(e);
         setLang(e)
     }, [lang])
-    const langList = [
-        { value: 'uz', label: "O'zbek", flag: <UzFlagIcon /> },
-        { value: 'ru', label: 'Русский', flag: <RusFlagIcon /> },
-        { value: 'en', label: 'English', flag: <EnFlagIcon /> }
-    ]
     const selected = langList.find(x => x.value === currentLang)
+    const langs = currentLang !== null ? selected.flag : langList[0].flag
     return (
         <Container>
             <LeftSection>
@@ -44,7 +40,7 @@ export const Header = () => {
                     <SearchIcons />
                 </Search>
                 <Dropdown
-                    prefixText={selected?.flag} menu={langList} position="right"
+                    prefixText={langs} menu={langList} position="right"
                     defaultValue={lang} changeValue={changeLang} />
             </RightSection>
         </Container>
