@@ -49,6 +49,7 @@ import KcellLogo from 'assets/images/operators/kcell.svg';
 import Humo from 'assets/images/cards/humo1.svg';
 import UzCard from 'assets/images/cards/uzcard.svg';
 import { ALLMOVIES, ITV5, ALLPLAY, BEELINEPR, CINERAMA, CITYNET, COMNET, DGT, EVO, FREELINK, FREELINKPR, GALS, HAMKORTV, ISTV, ISTVPR, KINOPOISK, KINOPOKAZ, KINOPRO, KINOXIT, KOINOTTV, LINKTELECOM, MEDIABAY, MEGOGO, NANOTELECOM, NETCO, NETCOPR, RIZANOVA, SARKORTELECOM, SILVERTELECOM, SMARTCOM, SOLA, SPECTRIT, TPS, TURONTELECOM, UZCLOUD, UZDIGITAL, UZTEECOM_IPTV, UZTELECOM } from './route'
+import { Delete } from 'pages/card/details/style'
 export const tv = [
     { path: UZA, name: "UZA", img: UZA },
     { path: ISTV, name: "Istv", img: Istv },
@@ -109,3 +110,6 @@ export const cards = [
     { name: "humo", img: Humo },
     { name: "uzcard", img: UzCard },
 ]
+export const keyboard = [];
+for (let i = 1; i < 10; i++)
+    keyboard.push({ key: i })

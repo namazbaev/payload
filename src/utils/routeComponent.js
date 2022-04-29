@@ -9,6 +9,7 @@ import PRDetails from 'pages/providers/details';
 import MobDetails from 'pages/operators/details';
 import { MobileOperator } from "pages/operators";
 import { TV, PAY, CARD_DETAILS, CARDPAY, TVDETAILS, PROVIDERS, PROVIDERDETAILS, MOBILEOPERATOR, MOBILEOPERATORS } from "./route";
+import Test from "pages/test";
 
 export const routes = [
     {
@@ -60,5 +61,10 @@ export const routes = [
         path: CARDPAY,
         Component: CardPay,
         title: 'CardPay'
+    },
+    {
+        path: '/test',
+        Component: Test,
+        title: 'Test'
     },
 ]

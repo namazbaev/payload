@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import MaskInput from 'react-input-mask';
 import { device } from "utils/responsive";
 import { ReactComponent as DeleteIcon } from 'assets/icons/delete.svg';
 
@@ -17,21 +16,24 @@ export const Delete = styled(DeleteIcon)`
 `
 export const Div = styled.div`
     width: 100%;
-    height: 780px;
+    height: 84vh;
     padding: 0 50px;
-    margin-top: 100px;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: space-between;
     @media ${device.tablet}{
         padding: 0 30px;
-        height: 480px;
-        margin-top: 40px;
+        height: 80vh;
+        margin-top: 20px;
     }
 `
 export const DetailsContainer = styled.div`
     display: flex;
     align-items: center;
+    margin-top: 150px;
+    @media ${device.tablet} {
+        margin-top: 50px;
+    }
 `
 export const DetailsInfo = styled.div`
     width: 100%;
@@ -41,14 +43,14 @@ export const DetailsInfo = styled.div`
     justify-content: center;
 `
 export const DetailsKeyboard = styled.div`
+    height: 100%;
     display: inline-grid;
     grid-gap: 27px;
     justify-self: center;
-    align-content: center;
-    grid-template-columns: 140px 140px 140px;
-
+    align-content: space-between;
+    grid-template-columns: auto auto auto;
     @media ${device.tablet} {
-        grid-template-columns: 80px 80px 80px;
+        grid-gap: 15px;
     }
 `
 export const Keyboard = styled.div`
@@ -69,7 +71,7 @@ export const Keyboard = styled.div`
         width: 120px;
     }
     @media ${device.tablet} {
-        height: 50px;
+        height: 60px;
         width: 80px;
     }
 `
@@ -100,7 +102,6 @@ export const DetailsCard = styled.div`
         height: 80px;
         border-radius: 20px;
     }
-    
 `
 export const CardImage = styled.span`
     width: 100%;
@@ -129,42 +130,6 @@ export const CardImage = styled.span`
         background-repeat: no-repeat;
         background-image: url(${({ img }) => img || ''});
         background-size: ${({ size }) => size ? size : '100%'};
-    }
-`
-export const MaskedInput = styled(MaskInput)`
-    width: 100%;
-    height: 96px;
-    color: #3D3D4B;
-    font-size: 40px;
-    margin-top: 32px;
-    font-weight: 700;
-    line-height: 64px;
-    padding: 16px 120px 16px 24px;
-    border: 2px solid var(--line-color);
-    border-radius: var(--card-brd-radius);
-    &::placeholder {
-        color: #3D3D4B;
-    }
-    &:focus, &:active {
-        outline: none;
-        border: 2px solid #33BAFF;
-        transition: var(--card-click-transition);
-    }
-    @media ${device.tablet1}{
-        width: 500px;
-        height: 80px;
-        font-size: 36px;
-        margin-top: 30px;
-        line-height: 56px;
-        padding: 16px 100px 16px 24px;
-    }
-    @media ${device.tablet}{
-        width: 100%;
-        height: 60px;
-        font-size: 26px;
-        margin-top: 20px;
-        line-height: 56px;
-        padding: 16px 0 16px 24px;
     }
 `
 export const Drop = styled.span`

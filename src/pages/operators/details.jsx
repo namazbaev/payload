@@ -1,31 +1,21 @@
+import { useState} from 'react';
 import { PAY } from 'utils/route';
-import { useState, useRef } from 'react';
 import { useParams } from 'react-router-dom';
 import { useTranslation } from "react-i18next";
 import LinkButton from "components/Buttons/LinkButton";
 import {
     DetailsContainer, DetailsCard, DetailsInfo, DetailsKeyboard, Keyboard,
-    Number, Delete, MaskedInput, Drop, Hr, InfoText, WarningText, Text, Div, Footer,
-    CardImage
-} from './style';
+    Number, Delete, Drop, Hr, InfoText, WarningText, Text, Div, Footer,
+    CardImage } from './style';
 import { mobileoperators } from 'utils/json';
+import { Formatting } from 'pages/card/pay/style';
+import { phoneMask, currencyMask } from 'utils/functions';
 export default () => {
-    const ref = useRef(null);
-    const countryCode = "+998";
+    const countryCode = "+998973249477";
     const { name } = useParams();
     const { t } = useTranslation();
     let result = mobileoperators.find(x => x.name === name)
-    const [code, setCode] = useState(result?.code);
     const [number, setNumber] = useState(countryCode);
-    const onChangeInput = (e) => {
-        setCode(e.target.value)
-        setNumber(e.target.value)
-    }
-    const maskConfig = {
-        onChange: onChangeInput, mask: `+111 11 111 11 11`,
-        value: number, maskChar: null, placeholder: countryCode,
-        formatChars: { '1': '[0-9]', 'a': '[A-Za-z]', '*': '[A-Za-z0-9]' }
-    }
     const onChangeNumber = (value) => {
         if (number.length >= 13) return
         setNumber(number + String(value))
@@ -40,6 +30,7 @@ export default () => {
     const length = number.length !== 13;
     const fromPhone = number.split(' ').join('');
     const removeNumbers = () => setNumber(countryCode);
+    const sdd = "+99893249477"
     return (
         <Div>
             <DetailsContainer>
@@ -47,7 +38,7 @@ export default () => {
                     <DetailsCard>
                         <CardImage img={result.img} />
                     </DetailsCard>
-                    <MaskedInput id='input' autoFocus {...maskConfig} />
+                    <Formatting>{phoneMask(number)}</Formatting>
                     <Hr />
                     <InfoText>
                         <Text>

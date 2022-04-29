@@ -1,7 +1,7 @@
 import { device } from "utils/responsive";
 import Currency from "react-currency-format";
-import PayImg from "assets/images/cards/payinfo.svg";
 import styled, { css } from "styled-components";
+import PayImg from "assets/images/cards/payinfo.svg";
 
 const infoCommon = css`
   font-size: 24px;
@@ -161,13 +161,6 @@ export const Footer = styled.div`
   padding: 0 80px;
   align-items: center;
   justify-content: space-between;
-
-  @media ${device.tablet1} {
-    /* margin: 30px 0 30px 65px; */
-  }
-  @media ${device.tablet} {
-    /* margin: 0 0 30px 45px; */
-  }
 `;
 export const FooterBtn = styled.button`
   border: none;

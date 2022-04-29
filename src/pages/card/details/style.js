@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import MaskInput from 'react-input-mask';
 import { device } from "utils/responsive";
 import { ReactComponent as DeleteIcon } from 'assets/icons/delete.svg';
 
@@ -17,21 +16,22 @@ export const Delete = styled(DeleteIcon)`
 `
 export const Div = styled.div`
     width: 100%;
-    height: 75vh;
-    margin-top: 70px;
+    height: 83vh;
     padding: 0 50px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     @media ${device.tablet}{
         padding: 0 30px;
-        height: 75vh;
-        margin-top: 40px;
     }
 `
 export const DetailsContainer = styled.div`
     display: flex;
     align-items: center;
+    margin-top: 150px;
+    @media ${device.tablet} {
+        margin-top: 50px;
+    }
 `
 export const DetailsInfo = styled.div`
     width: 100%;
@@ -41,13 +41,14 @@ export const DetailsInfo = styled.div`
     justify-content: center;
 `
 export const DetailsKeyboard = styled.div`
+    height: 100%;
     display: inline-grid;
     grid-gap: 27px;
     justify-self: center;
-    align-content: center;
+    align-content: space-between;
     grid-template-columns: 140px 140px 140px;
-
     @media ${device.tablet} {
+        grid-gap: 15px;
         grid-template-columns: 80px 80px 80px;
     }
 `
@@ -69,7 +70,7 @@ export const Keyboard = styled.div`
         width: 120px;
     }
     @media ${device.tablet} {
-        height: 50px;
+        height: 60px;
         width: 80px;
     }
 `
@@ -84,8 +85,8 @@ export const Number = styled.span`
         line-height: 44px;
     }
     @media ${device.tablet} {
-        font-size: 28px;
-        line-height: 34px;
+        font-size: 26px;
+        line-height: 20px;
     }
 `
 export const DetailsCard = styled.div`
