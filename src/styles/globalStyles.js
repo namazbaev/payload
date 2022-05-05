@@ -1,6 +1,7 @@
-import { Link } from 'react-router-dom'
-import styled, { createGlobalStyle } from 'styled-components';
+import { Link } from 'react-router-dom';
 import { device } from 'utils/responsive';
+import Currency from 'react-currency-format';
+import styled, { css, createGlobalStyle } from 'styled-components';
 export const GlobalStyle = createGlobalStyle`
     html, body, #root{
         height: 100vh;
@@ -34,7 +35,6 @@ export const GlobalStyle = createGlobalStyle`
         --black:#565656;
         --black1:#3D3E53;
         --line-color: #E3E3E3;
-        --primary-color: #00C2F4;
         --btn-hover-color: #7e7e80;
         --card-width: 210px;
         --card-height: 110px;
@@ -50,8 +50,37 @@ export const GlobalStyle = createGlobalStyle`
         --card-click-transition: .3s;
     }
 `
+const infoCommon = css`
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 32px;
+    @media ${device.tablet} {
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 20px;
+    }
+`
 export const LinkTo = styled(Link)`
     color: #fff;
     text-decoration: none;
     pointer-events: ${({ length }) => length ? 'none' : 'pointer'};
+`
+export const Phone = styled(Currency)`
+    ${infoCommon};
+    color: #132447;
+`
+export const Amount = styled(Currency)`
+    ${infoCommon};
+    color: #33BAFF;
+`
+export const Summa = styled(Currency)`
+    color: #3d3d4b;
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 64px;
+
+    @media ${device.tablet} {
+    font-size: 22px;
+    line-height: 16px;    
+  }
 `

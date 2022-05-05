@@ -1,18 +1,7 @@
+import styled from "styled-components";
 import { device } from "utils/responsive";
-import Currency from 'react-currency-format';
-import styled, { css } from "styled-components";
 import PayImg from 'assets/images/cards/payinfo.svg';
 
-const infoCommon = css`
-    font-size: 24px;
-    font-weight: 600;
-    line-height: 32px;
-    @media ${device.tablet} {
-        font-size: 20px;
-        font-weight: 500;
-        line-height: 24px;
-    }
-`
 export const Div = styled.div`
     height: 80vh;
     display: ${({ isShow }) => isShow ? "none" : "flex"} ;
@@ -22,19 +11,19 @@ export const Div = styled.div`
 export const Container = styled.div`
     width: 550px;
     margin: 0 auto;
-    margin-top: 40px;
+    margin-top: 30px;
     @media ${device.tablet} {
-        width: 400px;
-        margin-top: 25px;
+        width: 380px;
+        margin-top: 8px;
     }
 `
 export const ImageWrap = styled.div`
-    width: 256px;
-    height: 256px;
+    width: 205px;
+    height: 205px;
     margin: 0 auto;
     @media ${device.tablet} {
-        width: 160px;
-        height: 160px;
+        width: 135px;
+        height: 135px;
     }
 `
 export const Image = styled.span`
@@ -47,38 +36,6 @@ export const Image = styled.span`
     background-position: center center;
     background-image: url(${PayImg});
 `
-export const Input = styled.input`
-    width: 100%;
-    height: 96px;
-    color: #3D3D4B;
-    font-size: 40px;
-    margin-top: 32px;
-    font-weight: 700;
-    line-height: 64px;
-    padding: 16px 20px 16px 24px;
-    border: 2px solid var(--line-color);
-    border-radius: var(--card-brd-radius);
-    &:focus, &:active {
-        outline: none;
-        border: 2px solid #33BAFF;
-        transition: var(--card-click-transition);
-    }
-    @media ${device.tablet1}{
-        height: 80px;
-        font-size: 36px;
-        margin-top: 30px;
-        line-height: 56px;
-        padding: 16px 100px 16px 24px;
-    }
-    @media ${device.tablet}{
-        width: 100%;
-        height: 60px;
-        font-size: 26px;
-        margin-top: 20px;
-        line-height: 56px;
-        padding: 16px 0 16px 24px;
-    }
-`
 export const InfoText = styled.div`
     width: 100%;
     margin: 4px 0 14px 0;
@@ -87,7 +44,7 @@ export const InfoText = styled.div`
     line-height: 36px;
     letter-spacing: 0.04em;
     @media ${device.tablet} {
-        margin: 4px 0 10px 0;
+        margin: 4px 0 6px 0;
         font-size: 14px;
         font-weight: 500;
         line-height: 22px;
@@ -109,7 +66,7 @@ export const Hr = styled.hr`
     margin-bottom: 16px;
     border-bottom: 2px solid var(--line-color);
     @media ${device.tablet} {
-        margin-bottom: 10px;
+        margin-bottom: 6px;
     }
 `
 export const DataInfo = styled.div``
@@ -122,7 +79,7 @@ export const DataInfoItem = styled.div`
     }
     @media ${device.tablet} {
         &:not(:last-child) {
-            margin-bottom: 4px;
+            margin-bottom: 0;
         }
     }
 `
@@ -132,30 +89,16 @@ export const Label = styled.label`
     font-weight: 500;
     line-height: 32px;
     @media ${device.tablet} {
-        font-size: 18px;
+        font-size: 16px;
         font-weight: 500;
         line-height: 24px;
     }
 `
-export const Phone = styled(Currency)`
-    ${infoCommon};
-    color: #132447;
-`
-export const Amount = styled(Currency)`
-    ${infoCommon};
-    color: #33BAFF;
-`
 export const Footer = styled.div`
     width: 100%;
     display: flex;
+    margin: 10px 0;
     padding: 0 80px;
     align-items: center;
     justify-content: space-between;
-
-    @media ${device.tablet1} {
-        /* margin: 30px 0 30px 65px; */
-    }
-    @media ${device.tablet} {
-        /* margin: 0 0 30px 45px; */
-    }
 `

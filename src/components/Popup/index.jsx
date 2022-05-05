@@ -1,6 +1,6 @@
 import { useNavigate } from 'react-router-dom';
 import { useTranslation } from "react-i18next";
-import { Container, IconSection, More, Icon, Title, BackDrop, Description, Button } from './style.js'
+import { Container, IconSection, More, Icon, Title, BackDrop, Description, Button } from './style.js';
 const Popup = ({ status, active, setActive }) => {
     const navigate = useNavigate();
     const { t } = useTranslation();

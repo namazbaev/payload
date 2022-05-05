@@ -1,5 +1,4 @@
 import { device } from "utils/responsive";
-import Currency from "react-currency-format";
 import styled, { css } from "styled-components";
 import PayImg from "assets/images/cards/payinfo.svg";
 
@@ -8,7 +7,7 @@ const infoCommon = css`
   font-weight: 600;
   line-height: 32px;
   @media ${device.tablet} {
-    font-size: 20px;
+    font-size: 16px;
     font-weight: 500;
     line-height: 24px;
   }
@@ -22,19 +21,19 @@ export const Div = styled.div`
 export const Container = styled.div`
   width: 550px;
   margin: 0 auto;
-  margin-top: 40px;
+  margin-top: 30px;
   @media ${device.tablet} {
-    width: 400px;
-    margin-top: 25px;
+    width: 350px;
+    margin-top: 8px;
   }
 `;
 export const ImageWrap = styled.div`
-  width: 256px;
-  height: 256px;
+  width: 205px;
+  height: 205px;
   margin: 0 auto;
   @media ${device.tablet} {
-    width: 160px;
-    height: 160px;
+    width: 135px;
+    height: 135px;
   }
 `;
 export const Image = styled.span`
@@ -47,53 +46,20 @@ export const Image = styled.span`
   background-position: center center;
   background-image: url(${PayImg});
 `;
-export const Input = styled.input`
-  width: 100%;
-  height: 96px;
-  color: #3d3d4b;
-  font-size: 40px;
-  margin-top: 32px;
-  font-weight: 700;
-  line-height: 64px;
-  padding: 16px 20px 16px 24px;
-  border: 2px solid var(--line-color);
-  border-radius: var(--card-brd-radius);
-  &:focus,
-  &:active {
-    outline: none;
-    border: 2px solid #33baff;
-    transition: var(--card-click-transition);
-  }
-  @media ${device.tablet1} {
-    height: 80px;
-    font-size: 36px;
-    margin-top: 30px;
-    line-height: 56px;
-    padding: 16px 100px 16px 24px;
-  }
-  @media ${device.tablet} {
-    width: 100%;
-    height: 60px;
-    font-size: 26px;
-    margin-top: 20px;
-    line-height: 56px;
-    padding: 16px 0 16px 24px;
-  }
-`;
 export const Formatting = styled.span`
   width: 100%;
   height: 96px;
   display: block;
   color: #3d3d4b;
   font-size: 40px;
-  margin-top: 32px;
+  margin-top: 20px;
   font-weight: 700;
   line-height: 64px;
   padding: 16px 20px 16px 24px;
   border: 2px solid #33baff;
   border-radius: var(--card-brd-radius);
   @media ${device.tablet1} {
-    height: 80px;
+    height: 70px;
     font-size: 36px;
     margin-top: 30px;
     line-height: 56px;
@@ -101,11 +67,12 @@ export const Formatting = styled.span`
   }
   @media ${device.tablet} {
     width: 100%;
-    height: 60px;
-    font-size: 26px;
-    margin-top: 20px;
-    line-height: 26px;
-    padding: 16px 0 16px 24px;
+    height: 50px;
+    font-size: 22px;
+    margin-top: 10px;
+    line-height: 16px;
+    border-radius: 4px;
+    padding: 16px 0 16px 20px;
   }
 `;
 export const Hr = styled.hr`
@@ -115,6 +82,7 @@ export const Hr = styled.hr`
   margin-bottom: 20px;
   border-bottom: 2px solid var(--line-color);
   @media ${device.tablet} {
+    margin-top: 14px;
     margin-bottom: 10px;
   }
 `;
@@ -128,7 +96,7 @@ export const DataInfoItem = styled.div`
   }
   @media ${device.tablet} {
     &:not(:last-child) {
-      margin-bottom: 4px;
+      margin-bottom: 0;
     }
   }
 `;
@@ -138,29 +106,24 @@ export const Label = styled.label`
   font-weight: 500;
   line-height: 32px;
   @media ${device.tablet} {
-    font-size: 18px;
+    font-size: 16px;
     font-weight: 500;
     line-height: 24px;
   }
-`;
-export const Phone = styled(Currency)`
-  ${infoCommon};
-  color: #132447;
 `;
 export const FIO = styled.span`
   ${infoCommon};
   color: #132447;
 `;
-export const Amount = styled(Currency)`
-  ${infoCommon};
-  color: #00c35a;
-`;
 export const Footer = styled.div`
   width: 100%;
+  margin: 8px 0;
   display: flex;
   padding: 0 80px;
   align-items: center;
   justify-content: space-between;
+  @media ${device.tablet} {
+  }
 `;
 export const FooterBtn = styled.button`
   border: none;
@@ -201,8 +164,8 @@ export const FooterBtn = styled.button`
     border-radius: var(--card-min-brd-radius);
   }
   @media ${device.tablet} {
-    min-width: 155px;
-    min-height: 45px;
+    min-width: 130px;
+    min-height: 36px;
     padding: 8px 14px;
     font-size: 18px;
     line-height: 20px;

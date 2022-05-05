@@ -1,25 +1,24 @@
 import { useState } from 'react';
-import { sumMask } from 'utils/functions';
+import Keyboard from 'components/Keyboard';
 import { useTranslation } from "react-i18next";
+import { Phone, Amount, Summa } from 'styles/globalStyles';
 import { useLocation, useNavigate } from 'react-router-dom';
 import {
+    DataInfo, DataInfoItem, Label, Footer, Div,
     Container, ImageWrap, Image, Hr, FIO, FooterBtn, Formatting,
-    DataInfo, DataInfoItem, Label, Phone, Amount, Footer, Div,
 } from './style';
 import Popup from 'components/Popup';
 export default () => {
     const navigate = useNavigate();
     const location = useLocation();
     const { t } = useTranslation();
-    const [amount, setAmount] = useState('212852');
-    // const lang = localStorage.getItem('lang');
+    const [amount, setAmount] = useState('');
     const [active, setActive] = useState(false);
-    // const removeChar = () => {
-    //     if (amount == '') return
-    //     const sliceNumber = lang === 'uz' ? -6 : -5
-    //     const value = amount.slice(0, sliceNumber)
-    //     setAmount(value)
-    // }
+    const removeChar = () => {
+        if (amount == '') return
+        const value = amount.slice(0, -1)
+        setAmount(value)
+    }
     const status = Math.random() < 0.5;
     const total = amount !== '' ? amount : 0
     const phone = location.state !== null ? location.state : ''
@@ -28,7 +27,7 @@ export default () => {
         setActive(!active);
     }
     const length = amount == '';
-    const summa = sumMask(amount, t('currency'));
+    const summa = amount.length > 0 ? amount : 0
     return (
         <>
             <Popup active={active} setActive={setActive} status={status} />
@@ -37,7 +36,7 @@ export default () => {
                     <ImageWrap>
                         <Image />
                     </ImageWrap>
-                    <Formatting>{summa}</Formatting>
+                    <Formatting><Summa value={summa} displayType='text' thousandSeparator={true} />{' '}{t('currency')}</Formatting>
                     <Hr />
                     <DataInfo>
                         <DataInfoItem>
@@ -67,6 +66,7 @@ export default () => {
                         {t('pay')}
                     </FooterBtn>
                 </Footer>
+                <Keyboard setKey={setAmount} removeChar={removeChar} />
             </Div>
         </>
     )

@@ -64,8 +64,8 @@ export const LinkBtn = styled.button`
         border-radius: var(--card-min-brd-radius);
     }
     @media ${device.tablet} {
-        min-width: 155px;
-        min-height: 45px;
+        min-width: 140px;
+        min-height: 40px;
         padding: 8px 14px;
         border-radius: var(--card-min-brd-radius);
     }
