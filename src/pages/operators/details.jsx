@@ -1,4 +1,4 @@
-import { useState} from 'react';
+import { useState } from 'react';
 import { PAY } from 'utils/route';
 import { useParams } from 'react-router-dom';
 import { useTranslation } from "react-i18next";
@@ -6,12 +6,13 @@ import LinkButton from "components/Buttons/LinkButton";
 import {
     DetailsContainer, DetailsCard, DetailsInfo, DetailsKeyboard, Keyboard,
     Number, Delete, Drop, Hr, InfoText, WarningText, Text, Div, Footer,
-    CardImage } from './style';
+    CardImage
+} from './style';
 import { mobileoperators } from 'utils/json';
 import { Formatting } from 'pages/card/pay/style';
-import { phoneMask, currencyMask } from 'utils/functions';
+import { Format } from 'styles/globalStyles';
 export default () => {
-    const countryCode = "+998973249477";
+    const countryCode = "+998";
     const { name } = useParams();
     const { t } = useTranslation();
     let result = mobileoperators.find(x => x.name === name)
@@ -30,7 +31,6 @@ export default () => {
     const length = number.length !== 13;
     const fromPhone = number.split(' ').join('');
     const removeNumbers = () => setNumber(countryCode);
-    const sdd = "+99893249477"
     return (
         <Div>
             <DetailsContainer>
@@ -38,7 +38,7 @@ export default () => {
                     <DetailsCard>
                         <CardImage img={result.img} />
                     </DetailsCard>
-                    <Formatting>{phoneMask(number)}</Formatting>
+                    <Formatting><Format value={number} displayType="text" format="+### ## ### ## ##" /></Formatting>
                     <Hr />
                     <InfoText>
                         <Text>

@@ -4,7 +4,7 @@ import Keyboard from 'components/Keyboard';
 import { useLocation } from 'react-router-dom';
 import { useTranslation } from "react-i18next";
 import LinkButton from "components/Buttons/LinkButton";
-import { Phone, Amount, Summa } from 'styles/globalStyles';
+import { Phone, Amount, Format } from 'styles/globalStyles';
 import { FooterBtn, Formatting } from 'pages/card/pay/style';
 import {
     DataInfo, DataInfoItem, Label, Footer, Div,
@@ -33,7 +33,7 @@ export default () => {
                     <ImageWrap>
                         <Image />
                     </ImageWrap>
-                    <Formatting><Summa value={summa} displayType='text' thousandSeparator={true} />{' '}{t('currency')}</Formatting>
+                    <Formatting><Format value={summa} displayType='text' thousandSeparator={true} />{' '}{t('currency')}</Formatting>
                     <InfoText>
                         <Text>
                             <DangerText>{t('warning')}</DangerText> {t('standing')}

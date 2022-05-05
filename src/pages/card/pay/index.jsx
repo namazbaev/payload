@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import Keyboard from 'components/Keyboard';
 import { useTranslation } from "react-i18next";
-import { Phone, Amount, Summa } from 'styles/globalStyles';
+import { Phone, Amount, Format } from 'styles/globalStyles';
 import { useLocation, useNavigate } from 'react-router-dom';
 import {
     DataInfo, DataInfoItem, Label, Footer, Div,
@@ -36,7 +36,7 @@ export default () => {
                     <ImageWrap>
                         <Image />
                     </ImageWrap>
-                    <Formatting><Summa value={summa} displayType='text' thousandSeparator={true} />{' '}{t('currency')}</Formatting>
+                    <Formatting><Format value={summa} displayType='text' thousandSeparator={true} />{' '}{t('currency')}</Formatting>
                     <Hr />
                     <DataInfo>
                         <DataInfoItem>

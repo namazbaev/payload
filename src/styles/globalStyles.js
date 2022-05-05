@@ -73,14 +73,13 @@ export const Amount = styled(Currency)`
     ${infoCommon};
     color: #33BAFF;
 `
-export const Summa = styled(Currency)`
+export const Format = styled(Currency)`
     color: #3d3d4b;
     font-size: 40px;
     font-weight: 700;
     line-height: 64px;
-
     @media ${device.tablet} {
-    font-size: 22px;
-    line-height: 16px;    
+        font-size: 22px;
+        line-height: 16px;    
   }
 `
