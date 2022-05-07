@@ -1,11 +1,11 @@
 import { useState } from 'react';
 import Keyboard from 'components/Keyboard';
 import { useTranslation } from "react-i18next";
-import { Phone, Amount, Format } from 'styles/globalStyles';
 import { useLocation, useNavigate } from 'react-router-dom';
+import { Phone, Amount, Format, Formatting } from 'styles/globalStyles';
 import {
     DataInfo, DataInfoItem, Label, Footer, Div,
-    Container, ImageWrap, Image, Hr, FIO, FooterBtn, Formatting,
+    Container, ImageWrap, Image, Hr, FIO, FooterBtn,
 } from './style';
 import Popup from 'components/Popup';
 export default () => {

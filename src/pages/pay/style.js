@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { device } from "utils/responsive";
+import { device } from "utils/media/responsive";
 import PayImg from 'assets/images/cards/payinfo.svg';
 
 export const Div = styled.div`

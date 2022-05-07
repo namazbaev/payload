@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { device } from "utils/responsive";
+import { device } from "utils/media/responsive";
 import { ReactComponent as DeleteIcon } from 'assets/icons/delete.svg';
 
 export const Delete = styled(DeleteIcon)`

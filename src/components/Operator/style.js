@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { device } from "utils/responsive";
+import { device } from "utils/media/responsive";
 
 export const Operator = styled.button`
     width: var(--card-width);

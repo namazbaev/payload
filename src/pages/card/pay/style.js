@@ -1,4 +1,4 @@
-import { device } from "utils/responsive";
+import { device } from "utils/media/responsive";
 import styled, { css } from "styled-components";
 import PayImg from "assets/images/cards/payinfo.svg";
 
@@ -45,35 +45,6 @@ export const Image = styled.span`
   background-repeat: no-repeat;
   background-position: center center;
   background-image: url(${PayImg});
-`;
-export const Formatting = styled.span`
-  width: 100%;
-  height: 96px;
-  display: block;
-  color: #3d3d4b;
-  font-size: 40px;
-  margin-top: 20px;
-  font-weight: 700;
-  line-height: 64px;
-  padding: 16px 20px 16px 24px;
-  border: 2px solid #33baff;
-  border-radius: var(--card-brd-radius);
-  @media ${device.tablet1} {
-    height: 70px;
-    font-size: 36px;
-    margin-top: 30px;
-    line-height: 56px;
-    padding: 16px 100px 16px 24px;
-  }
-  @media ${device.tablet} {
-    width: 100%;
-    height: 50px;
-    font-size: 22px;
-    margin-top: 10px;
-    line-height: 16px;
-    border-radius: 4px;
-    padding: 16px 0 16px 20px;
-  }
 `;
 export const Hr = styled.hr`
   border: 0;

@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { device } from "utils/responsive";
+import { device } from "utils/media/responsive";
 import styled, { css } from "styled-components";
 import { ReactComponent as TVIcon } from 'assets/icons/tv.svg';
 import { ReactComponent as Humo } from 'assets/images/cards/humo.svg';
@@ -134,14 +134,6 @@ export const PayText = styled.p`
 `
 export const Container = styled.div`
     width: 100%;
-`
-export const Company = styled.div`
-    display: flex;
-    margin: 36px 0 36px 48px;
-    justify-content: space-between;
-    @media ${device.tablet} {
-        margin: 18px 0 18px 24px;
-    }
 `
 export const Hr = styled.hr`
     border: 0;

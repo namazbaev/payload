@@ -1,10 +1,10 @@
-import { CARDPAY } from 'utils/route';
-import { Formatting } from '../pay/style';
+import { CARDPAY } from 'routes/route';
 import { useState, useMemo } from 'react';
 import { cardMask } from 'utils/functions';
 import { useParams } from 'react-router-dom';
-import { cards, keyboard } from 'utils/json';
 import { useTranslation } from "react-i18next";
+import { Formatting } from 'styles/globalStyles';
+import { cards, numberKeyboard } from 'utils/json';
 import LinkButton from "components/Buttons/LinkButton";
 import {
     DetailsContainer, DetailsCard, DetailsInfo, DetailsKeyboard, Keyboard,
@@ -16,7 +16,7 @@ export default () => {
     const { t } = useTranslation();
     let result = cards.find(x => x.name === name)
     const [number, setNumber] = useState('');
-    const onChangeNumber = (value) => {
+    const onChangeNumber = value => {
         if (number.length >= 16) return
         setNumber((prev) => prev + value)
     }
@@ -26,7 +26,7 @@ export default () => {
         setNumber(value)
     }
     const length = number.length !== 16;
-    const removeNumbers = () => setNumber('');
+    const clearNumbers = () => setNumber('');
     const fromCard = number.split(' ').join('');
     const cardNumber = useMemo(() => cardMask(number), [number])
     return (
@@ -47,12 +47,12 @@ export default () => {
                 </DetailsInfo>
                 <Drop />
                 <DetailsKeyboard>
-                    {keyboard.map(({ key }) => (
+                    {numberKeyboard.map(({ key }) => (
                         <Keyboard key={key} onClick={() => onChangeNumber(key)}>
                             <Number>{key}</Number>
                         </Keyboard>
                     ))}
-                    <Keyboard onClick={() => removeNumbers()}>
+                    <Keyboard onClick={() => clearNumbers()}>
                         <Number>C</Number>
                     </Keyboard>
                     <Keyboard onClick={() => onChangeNumber(0)}>

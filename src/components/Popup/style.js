@@ -1,6 +1,6 @@
 import styled from "styled-components";
-import { device } from "utils/responsive";
 import ErrorIcon from 'assets/icons/error.svg';
+import { device } from "utils/media/responsive";
 import SuccessIcon from 'assets/icons/success.svg';
 
 export const BackDrop = styled.div`

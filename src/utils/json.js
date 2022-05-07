@@ -48,68 +48,81 @@ import AirtelLogo from 'assets/images/operators/airtel.svg';
 import KcellLogo from 'assets/images/operators/kcell.svg';
 import Humo from 'assets/images/cards/humo1.svg';
 import UzCard from 'assets/images/cards/uzcard.svg';
-import { ALLMOVIES, ITV5, ALLPLAY, BEELINEPR, CINERAMA, CITYNET, COMNET, DGT, EVO, FREELINK, FREELINKPR, GALS, HAMKORTV, ISTV, ISTVPR, KINOPOISK, KINOPOKAZ, KINOPRO, KINOXIT, KOINOTTV, LINKTELECOM, MEDIABAY, MEGOGO, NANOTELECOM, NETCO, NETCOPR, RIZANOVA, SARKORTELECOM, SILVERTELECOM, SMARTCOM, SOLA, SPECTRIT, TPS, TURONTELECOM, UZCLOUD, UZDIGITAL, UZTEECOM_IPTV, UZTELECOM } from './route'
-import { Delete } from 'pages/card/details/style'
+
+import Qiwi from 'assets/images/wallets/qiwi.svg'
+import Payeer from 'assets/images/wallets/payeer.svg'
+import Depozit from 'assets/images/wallets/depozit.svg'
+import YooMoney from 'assets/images/wallets/yoomoney.svg'
+import WebMoney from 'assets/images/wallets/webmoney.svg'
+import PerfectMoney from 'assets/images/wallets/perfectmoney1.svg'
 export const tv = [
-    { path: UZA, name: "UZA", img: UZA },
-    { path: ISTV, name: "Istv", img: Istv },
-    { path: ITV5, name: "ITV5", img: ITV5IMG },
-    { path: NETCO, name: "netco", img: Netco },
-    { path: MEGOGO, name: "megogo", img: Megogo },
-    { path: ALLPLAY, name: "allPlay", img: AllPlay },
-    { path: KINOPRO, name: "Kinopro", img: Kinopro },
-    { path: KINOXIT, name: "KinoXit", img: KinoXit },
-    { path: SMARTCOM, name: "Smartcom", img: Smartcom },
-    { path: MEDIABAY, name: "Mediabay", img: Mediabay },
-    { path: RIZANOVA, name: "mizanova", img: Rizanova },
-    { path: CINERAMA, name: "Cinerama", img: Cinerama },
-    { path: HAMKORTV, name: "Hamkor TV", img: HamkorTV },
-    { path: FREELINK, name: "Free Link", img: FreeLink },
-    { path: ALLMOVIES, name: "allmovies", img: AllMovies },
-    { path: KINOPOKAZ, name: "kinopokaz", img: Kinopokaz },
-    { path: UZDIGITAL, name: "Uzdigital", img: Uzdigital },
-    { path: KINOPOISK, name: "KinoPoisk", img: KinoPoisk },
-    { path: TURONTELECOM, name: "Turon Telecom", img: Turon },
-    { path: UZTEECOM_IPTV, name: "Uztelecom-IPTV", img: UztelecomIPTV },
+    { name: "uza", img: UZA },
+    { name: "istv", img: Istv },
+    { name: "netco", img: Netco },
+    { name: "itv5", img: ITV5IMG },
+    { name: "megogo", img: Megogo },
+    { name: "allPlay", img: AllPlay },
+    { name: "kinopro", img: Kinopro },
+    { name: "kinoXit", img: KinoXit },
+    { name: "smartcom", img: Smartcom },
+    { name: "mediabay", img: Mediabay },
+    { name: "mizanova", img: Rizanova },
+    { name: "cinerama", img: Cinerama },
+    { name: "hamkor-tv", img: HamkorTV },
+    { name: "free-link", img: FreeLink },
+    { name: "allmovies", img: AllMovies },
+    { name: "kinopokaz", img: Kinopokaz },
+    { name: "uzdigital", img: Uzdigital },
+    { name: "kinoPoisk", img: KinoPoisk },
+    { name: "turon-telecom", img: Turon },
+    { name: "uztelecom-iptv", img: UztelecomIPTV }
 ]
 export const providers = [
-    { path: TPS, size: '160px 100px', name: "tps", img: Tps },
-    { path: EVO, size: '160px 100px', name: "evo", img: Evo },
-    { path: DGT, size: '160px 100px', name: "dgt", img: Dgt },
-    { path: GALS, size: '160px 100px', name: "gals", img: Gals },
-    { path: SOLA, size: '160px 100px', name: "sola", img: Sola },
-    { path: ISTVPR, size: '160px 100px', name: "istv", img: Istv },
-    { path: NETCOPR, size: '160px 100px', name: "netco", img: Netco },
-    { path: COMNET, size: '160px 100px', name: "comnet", img: Comnet },
-    { path: CITYNET, size: '160px 100px', name: "citynet", img: Citynet },
-    { path: UZCLOUD, size: '160px 100px', name: "uzcloud", img: UzCloud },
-    { path: SPECTRIT, size: '160px 100px', name: "spectr-it", img: Spectr },
-    { path: BEELINEPR, size: '160px 100px', name: "beeline", img: Beeline },
-    { path: KOINOTTV, size: '160px 100px', name: "koinot-tv", img: Koinot },
-    { path: SILVERTELECOM, size: '160px 100px', name: "name", img: Silver },
-    { path: FREELINKPR, size: '160px 100px', name: "free-link", img: FreeLink },
-    { path: LINKTELECOM, size: '160px 100px', name: "link-telecom", img: Link },
-    { path: UZTELECOM, size: '160px 100px', name: "uztelecom", img: Uztelecom },
-    { path: NANOTELECOM, size: '160px 100px', name: "nano-telecom", img: Nano },
-    { path: TURONTELECOM, size: '160px 100px', name: "turon-telecom", img: Turon },
-    { path: SARKORTELECOM, size: '160px 100px', name: "sarkor-telecom", img: Sarkor }
+    { name: "tps", img: Tps },
+    { name: "evo", img: Evo },
+    { name: "dgt", img: Dgt },
+    { name: "gals", img: Gals },
+    { name: "sola", img: Sola },
+    { name: "istv", img: Istv },
+    { name: "netco", img: Netco },
+    { name: "silver", img: Silver },
+    { name: "comnet", img: Comnet },
+    { name: "citynet", img: Citynet },
+    { name: "uzcloud", img: UzCloud },
+    { name: "beeline", img: Beeline },
+    { name: "spectr-it", img: Spectr },
+    { name: "koinot-tv", img: Koinot },
+    { name: "link-telecom", img: Link },
+    { name: "nano-telecom", img: Nano },
+    { name: "free-link", img: FreeLink },
+    { name: "uztelecom", img: Uztelecom },
+    { name: "turon-telecom", img: Turon },
+    { name: "sarkor-telecom", img: Sarkor }
+]
+export const wallets = [
+    { name: 'qiwi', img: Qiwi },
+    { name: 'payeer', img: Payeer },
+    { name: 'depozit', img: Depozit },
+    { name: 'yoomoney', img: YooMoney },
+    { name: 'webmoney', img: WebMoney },
+    { name: 'perfectmoney', img: PerfectMoney }
 ]
 export const mobileoperators = [
-    { code: [33], path: UZA, size: 'auto', name: "humans", img: HumansLogo },
-    { code: [97, 88], path: UZA, size: 'auto', name: "mobiuz", img: MobiuzLogo },
-    { code: [93, 94], path: UZA, size: 'auto', name: "ucell", img: UcellLogo },
-    { code: [99, 95], path: UZA, size: 'auto', name: "uztelecom", img: UzmobileLogo },
-    { code: [90, 91], path: UZA, size: 'auto', name: "beeline", img: BeelineLogo },
-    { code: [98], path: UZA, size: 'auto', name: "perfectum", img: PerfectumLogo },
-    { code: [31], path: UZA, size: 'auto', name: "vodafone", img: VodafoneLogo },
-    { code: [30], path: UZA, size: 'auto', name: "megafon", img: MegafonLogo },
-    { code: [25], path: UZA, size: 'auto', name: "airtel", img: AirtelLogo },
-    { code: [96], path: UZA, size: 'auto', name: "kcell", img: KcellLogo },
+    { code: [33], name: "humans", img: HumansLogo },
+    { code: [97, 88], name: "mobiuz", img: MobiuzLogo },
+    { code: [93, 94], name: "ucell", img: UcellLogo },
+    { code: [99, 95], name: "uztelecom", img: UzmobileLogo },
+    { code: [90, 91], name: "beeline", img: BeelineLogo },
+    { code: [98], name: "perfectum", img: PerfectumLogo },
+    { code: [31], name: "vodafone", img: VodafoneLogo },
+    { code: [30], name: "megafon", img: MegafonLogo },
+    { code: [25], name: "airtel", img: AirtelLogo },
+    { code: [96], name: "kcell", img: KcellLogo },
 ]
 export const cards = [
     { name: "humo", img: Humo },
-    { name: "uzcard", img: UzCard },
+    { name: "uzcard", img: UzCard }
 ]
-export const keyboard = [];
+export const numberKeyboard = [];
 for (let i = 1; i < 10; i++)
-    keyboard.push({ key: i })
+    numberKeyboard.push({ key: i })

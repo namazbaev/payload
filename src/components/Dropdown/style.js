@@ -1,6 +1,6 @@
 import styled from 'styled-components';
+import { device } from 'utils/media/responsive';
 import { ReactComponent as ArrowDown } from 'assets/icons/down-arrow.svg';
-import { device } from 'utils/responsive';
 
 export const ArrowDownIcon = styled(ArrowDown)`
   transition: all 0.3s ease;

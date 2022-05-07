@@ -1,16 +1,15 @@
 import { useState } from 'react';
-import { PAY } from 'utils/route';
+import { PAY } from 'routes/route';
+import { mobileoperators } from 'utils/json';
 import { useParams } from 'react-router-dom';
 import { useTranslation } from "react-i18next";
 import LinkButton from "components/Buttons/LinkButton";
+import { Format, Formatting } from 'styles/globalStyles';
 import {
     DetailsContainer, DetailsCard, DetailsInfo, DetailsKeyboard, Keyboard,
     Number, Delete, Drop, Hr, InfoText, WarningText, Text, Div, Footer,
     CardImage
 } from './style';
-import { mobileoperators } from 'utils/json';
-import { Formatting } from 'pages/card/pay/style';
-import { Format } from 'styles/globalStyles';
 export default () => {
     const countryCode = "+998";
     const { name } = useParams();

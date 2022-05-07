@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { device } from "utils/responsive";
+import { device } from "utils/media/responsive";
 import { ReactComponent as Shift } from 'assets/icons/shift.svg';
 import { ReactComponent as DeleteIcon } from 'assets/icons/delete.svg';
 
@@ -17,7 +17,7 @@ export const Delete = styled(DeleteIcon)`
 export const Container = styled.div`
   width: 100%;
   margin: 0 auto;
-  padding: 0 5px;
+  padding: ${({ padding }) => (padding || '0 10px')};
 `;
 export const Row = styled.section`
   display: flex;
@@ -53,6 +53,7 @@ export const Key = styled.div`
   }
   @media ${device.tablet} {
     height: 40px;
+    border: 1.5px solid rgba(0, 0, 0, 0.1);
     font-size: 20px;
   }
 `;

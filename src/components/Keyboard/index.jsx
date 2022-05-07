@@ -1,13 +1,13 @@
 import { useState, memo, useCallback } from 'react';
 import { Container, Row, Key, ShiftIcon, Delete } from "./style";
 
-const Keyboard = ({ setKey, removeChar }) => {
+const Keyboard = ({ setKey, removeChar, ...props }) => {
     const [click, setClick] = useState(false);
     const textCase = click ? click : ''
     const onChangeText = () => setClick(!click)
-    const changeKey = useCallback((value) => setKey(prev => prev + value), []);
+    const changeKey = useCallback((value) => setKey(prev => prev + value), [setKey]);
     return (
-        <Container>
+        <Container {...props}>
             <Row>
                 <Key onClick={() => changeKey('1')}>1</Key>
                 <Key onClick={() => changeKey('2')}>2</Key>

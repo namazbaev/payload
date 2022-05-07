@@ -3,9 +3,9 @@ import Popup from 'components/Popup';
 import Keyboard from 'components/Keyboard';
 import { useLocation } from 'react-router-dom';
 import { useTranslation } from "react-i18next";
+import { FooterBtn } from 'pages/card/pay/style';
 import LinkButton from "components/Buttons/LinkButton";
-import { Phone, Amount, Format } from 'styles/globalStyles';
-import { FooterBtn, Formatting } from 'pages/card/pay/style';
+import { Phone, Amount, Format, Formatting } from 'styles/globalStyles';
 import {
     DataInfo, DataInfoItem, Label, Footer, Div,
     Container, ImageWrap, Image, InfoText, DangerText, Text, Hr,

@@ -30,4 +30,3 @@ export const getLanguage = async (langState) => {
     }
     return result;
 };
-

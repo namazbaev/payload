@@ -14,7 +14,7 @@ const languageDetector = {
             .catch(() => callback(langCode.ru));
     },
     init: () => { },
-    cacheUserLanguage: () => { },
+    cacheUserLanguage: () => { }
 };
 
 i18n

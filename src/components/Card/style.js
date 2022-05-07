@@ -1,6 +1,6 @@
 import styled from "styled-components";
-import { device } from "utils/responsive";
-import { MOBILEOPERATOR } from "utils/route";
+import { MOBILEOPERATOR } from "routes/route";
+import { device } from "utils/media/responsive";
 export const Container = styled.div`
     height: 86vh;
     display: flex;

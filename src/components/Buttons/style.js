@@ -1,4 +1,4 @@
-import { device } from "utils/responsive";
+import { device } from "utils/media/responsive";
 import styled, { css } from "styled-components";
 import { ReactComponent as RusFlag } from 'assets/icons/russia-flag.svg';
 import { ReactComponent as UzFlag } from 'assets/icons/uzbekistan-flag.svg';
@@ -53,9 +53,8 @@ export const LinkBtn = styled.button`
     }
     &:disabled,
     &[disabled]{
+        opacity: .7;
         cursor: not-allowed;
-        /* pointer-events: none; */
-        opacity: .8;
         }
     @media ${device.tablet1} {
         min-width: 180px;

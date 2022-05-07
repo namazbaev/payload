@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { device } from "utils/responsive";
+import { device } from "utils/media/responsive";
 import { ReactComponent as LogoIcon } from 'assets/icons/logo.svg';
 import { ReactComponent as SearchIcon } from 'assets/icons/search.svg';
 

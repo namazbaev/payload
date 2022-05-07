@@ -7,7 +7,7 @@ export default ({ data }) => {
     const { t } = useTranslation();
     const location = useLocation();
     const content = data.map(({ path, img, name }) =>
-        <LinkTo key={path} to={`${name}`}>
+        <LinkTo key={name} to={`${name}`}>
             <Content>
                 <CardImage prop={location.pathname} img={img} />
             </Content>

@@ -1,12 +1,11 @@
 import React from 'react';
-import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import { LinkTo } from 'styles/globalStyles';
 import { useTranslation } from "react-i18next";
 import MobileOperators from 'components/Operator';
-import { CARD_DETAIL, MOBILEOPERATOR, PROVIDERS, TV } from 'utils/route';
+import { WALLET, CARD_DETAIL, MOBILEOPERATOR, PROVIDERS, TV } from 'routes/route';
 import {
-    Container, Company, MainSection, Cards, Services, TVS, Globe,
+    Container, MainSection, Cards, Services, TVS, Globe,
     CardItem, CardNumber, CardName, ExpiryDate, UzCard, Smartphone,
     Trello, Wallet, Heart, Home, Cast, Fire, Graduation, Medical, Taxi,
     HumoCard, PayText, UzcardLogos, HumoLogoLogos, Service, ServiceName, Hr
@@ -16,9 +15,7 @@ export default () => {
 
     return (
         <Container>
-            {/* <Company> */}
             <MobileOperators />
-            {/* </Company> */}
             <Hr />
             <MainSection>
                 <Cards>
@@ -66,10 +63,12 @@ export default () => {
                         <Trello />
                         <ServiceName>{t('advertisement')}</ServiceName>
                     </Service>
-                    <Service>
-                        <Wallet />
-                        <ServiceName>{t('electronic_wallet')}</ServiceName>
-                    </Service>
+                    <LinkTo to={WALLET}>
+                        <Service>
+                            <Wallet />
+                            <ServiceName>{t('electronic_wallet')}</ServiceName>
+                        </Service>
+                    </LinkTo>
                     <Service>
                         <Heart />
                         <ServiceName>{t('charity')}</ServiceName>

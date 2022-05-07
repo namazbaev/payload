@@ -2,14 +2,16 @@ import Main from "pages/home";
 import { TVS } from "pages/TV";
 import PayPhone from "pages/pay";
 import CardPay from 'pages/card/pay';
+import { Wallets } from "pages/wallet";
 import TVDetails from "pages/TV/details";
 import { Providers } from "pages/providers";
+import Webmoney from "pages/wallet/webmoney";
 import CardDetails from 'pages/card/details';
 import PRDetails from 'pages/providers/details';
 import MobDetails from 'pages/operators/details';
 import { MobileOperator } from "pages/operators";
-import { TV, PAY, CARD_DETAILS, CARDPAY, TVDETAILS, PROVIDERS, PROVIDERDETAILS, MOBILEOPERATOR, MOBILEOPERATORS } from "./route";
-import Test from "pages/test";
+import { TV, PAY, CARD_DETAILS, CARDPAY, WALLET, WALLET_DETAILS, TVDETAILS, PROVIDERS, PROVIDERDETAILS, MOBILEOPERATOR, MOBILEOPERATORS } from "./route";
+import SwitchWallet from "pages/wallet/switch";
 
 export const routes = [
     {
@@ -63,8 +65,13 @@ export const routes = [
         title: 'CardPay'
     },
     {
-        path: '/test',
-        Component: Test,
-        title: 'Test'
+        path: WALLET,
+        Component: Wallets,
+        title: 'Wallets'
+    },
+    {
+        path: WALLET_DETAILS,
+        Component: SwitchWallet,
+        title: 'SwitchWallet'
     },
 ]
