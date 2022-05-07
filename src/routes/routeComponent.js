@@ -5,13 +5,12 @@ import CardPay from 'pages/card/pay';
 import { Wallets } from "pages/wallet";
 import TVDetails from "pages/TV/details";
 import { Providers } from "pages/providers";
-import Webmoney from "pages/wallet/webmoney";
 import CardDetails from 'pages/card/details';
+import SwitchWallet from "pages/wallet/switch";
 import PRDetails from 'pages/providers/details';
 import MobDetails from 'pages/operators/details';
 import { MobileOperator } from "pages/operators";
 import { TV, PAY, CARD_DETAILS, CARDPAY, WALLET, WALLET_DETAILS, TVDETAILS, PROVIDERS, PROVIDERDETAILS, MOBILEOPERATOR, MOBILEOPERATORS } from "./route";
-import SwitchWallet from "pages/wallet/switch";
 
 export const routes = [
     {
