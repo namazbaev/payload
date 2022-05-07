@@ -6,9 +6,6 @@ export const Container = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    @media ${device.tablet} {
-        
-    }
 `
 export const Footer = styled.div`
     width: 50%;
@@ -29,10 +26,7 @@ export const Wrap = styled.div`
     display: grid;
     padding: 0 50px;
     margin-top: 27px;
-    grid-template-columns: auto auto auto auto auto;
-    @media ${device.tablet1} {
-        grid-template-columns: auto auto auto auto;
-    }
+    grid-template-columns: repeat(5, 1fr);
     @media ${device.tablet} {
         margin-top: 20px;
         padding: 0 30px;

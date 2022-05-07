@@ -108,16 +108,16 @@ export const wallets = [
     { name: 'perfectmoney', img: PerfectMoney }
 ]
 export const mobileoperators = [
-    { code: [33], name: "humans", img: HumansLogo },
-    { code: [97, 88], name: "mobiuz", img: MobiuzLogo },
-    { code: [93, 94], name: "ucell", img: UcellLogo },
-    { code: [99, 95], name: "uztelecom", img: UzmobileLogo },
-    { code: [90, 91], name: "beeline", img: BeelineLogo },
-    { code: [98], name: "perfectum", img: PerfectumLogo },
-    { code: [31], name: "vodafone", img: VodafoneLogo },
-    { code: [30], name: "megafon", img: MegafonLogo },
-    { code: [25], name: "airtel", img: AirtelLogo },
-    { code: [96], name: "kcell", img: KcellLogo },
+    { name: "humans", img: HumansLogo },
+    { name: "mobiuz", img: MobiuzLogo },
+    { name: "ucell", img: UcellLogo },
+    { name: "uztelecom", img: UzmobileLogo },
+    { name: "beeline", img: BeelineLogo },
+    { name: "perfectum", img: PerfectumLogo },
+    { name: "vodafone", img: VodafoneLogo },
+    { name: "megafon", img: MegafonLogo },
+    { name: "airtel", img: AirtelLogo },
+    { name: "kcell", img: KcellLogo },
 ]
 export const cards = [
     { name: "humo", img: Humo },
