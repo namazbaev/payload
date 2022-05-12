@@ -14,13 +14,14 @@ const searchSlice = createSlice({
         writeText: (state, { payload }) => {
             state.text = payload
         },
-        removeText: (state, { payload }) => {
+        removeText: (state, { }) => {
             if (state.text == '') return
             let value = state.text.slice(0, -1)
             if (value.length === 1) {
                 state.text = ''
+            } else {
+                state.text = value
             }
-            state.text = value
         }
     }
 })

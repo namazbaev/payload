@@ -1,4 +1,3 @@
-import { useState, useEffect } from 'react';
 import Keyboard from 'components/Keyboard';
 import "react-multi-carousel/lib/styles.css";
 import { LinkTo } from 'styles/globalStyles';
@@ -6,6 +5,7 @@ import { useTranslation } from "react-i18next";
 import MobileOperators from 'components/Operator';
 import { searchAction } from 'redux/slices/search';
 import { useSelector, useDispatch } from 'react-redux';
+import { useState, useEffect, useCallback } from 'react';
 import { WALLET, CARD_DETAIL, MOBILEOPERATOR, PROVIDERS, TV } from 'routes/route';
 import {
     Container, MainSection, Cards, Services, TVS, Globe,
@@ -18,11 +18,16 @@ export default () => {
     const dispatch = useDispatch();
     const [key, setKey] = useState('');
     const { writeText, removeText } = searchAction;
+    const text = useSelector(state => state.search.text);
     const isShow = useSelector(state => state.search.isShowKeyboard);
     useEffect(() => {
+        setKey(key)
         dispatch(writeText(key))
     }, [key])
-    const removeChar = () => dispatch(removeText())
+    const removeChar = useCallback(() => {
+        setKey(text)
+        dispatch(removeText())
+    }, [key])
     return (
         <Container>
             <MobileOperators />
