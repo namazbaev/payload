@@ -134,6 +134,19 @@ export const PayText = styled.p`
 `
 export const Container = styled.div`
     width: 100%;
+    position: relative;
+`
+export const KeyboardWrap = styled.div`
+    width: 100%;
+    padding: 10px;
+    z-index: 1000;
+    bottom: -15%;
+    transition: 0.7s;
+    position: absolute;
+    background-color: #fff;
+    opacity: ${({ show }) => show ? 1 : 0};
+    visibility: ${({ show }) => show ? 'visibility' : 'hidden'};
+    transform: ${({ show }) => show ? 'translateY(0)' : 'translateY(1vh)'};
 `
 export const Hr = styled.hr`
     border: 0;
@@ -218,18 +231,18 @@ export const Services = styled.div`
 export const Service = styled.div`
     width: 256px;
     height: 112px;
+    cursor: pointer;
     padding-left: 42px;
     padding-right: 48px;
     display: flex;
-    justify-content: flex-start;
     align-items: center;
-    background: #FFFFFF;
+    justify-content: flex-start;
     border-radius: 8px;
-    cursor: pointer;
+    background: #FFFFFF;
     transition: var(--card-transition);
-    box-shadow: 0px 4px 20px rgba(34, 37, 48, 0.09);
+    box-shadow: 0px 4px 20px rgba(34, 37, 48, 0.25);
     &:hover  {
-        box-shadow: var(--card-hover-shadow);
+        /* box-shadow: var(--card-hover-shadow); */
     }
     &:focus, &:active {
         p {

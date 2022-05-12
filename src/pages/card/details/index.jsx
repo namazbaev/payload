@@ -68,7 +68,7 @@ export default () => {
                 <LinkButton path="/" text={t('main_page')} />
                 <LinkButton length={length}
                     state={fromCard} text={t('next')}
-                    color={length ? '#D8D8D8' : '#00C35A'} hoveredColor={length ? '#D8D8D8' : "#04B054"} path={CARDPAY} />
+                    color={length ? '#aeaeae' : '#00C35A'} hoveredColor={length ? '#aeaeae' : "#04B054"} path={CARDPAY} />
             </Footer>
         </Div>
     )

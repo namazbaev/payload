@@ -1,18 +1,28 @@
-import React from 'react';
+import { useState, useEffect } from 'react';
+import Keyboard from 'components/Keyboard';
 import "react-multi-carousel/lib/styles.css";
 import { LinkTo } from 'styles/globalStyles';
 import { useTranslation } from "react-i18next";
 import MobileOperators from 'components/Operator';
+import { searchAction } from 'redux/slices/search';
+import { useSelector, useDispatch } from 'react-redux';
 import { WALLET, CARD_DETAIL, MOBILEOPERATOR, PROVIDERS, TV } from 'routes/route';
 import {
     Container, MainSection, Cards, Services, TVS, Globe,
     CardItem, CardNumber, CardName, ExpiryDate, UzCard, Smartphone,
     Trello, Wallet, Heart, Home, Cast, Fire, Graduation, Medical, Taxi,
-    HumoCard, PayText, UzcardLogos, HumoLogoLogos, Service, ServiceName, Hr
+    HumoCard, PayText, UzcardLogos, HumoLogoLogos, Service, ServiceName, Hr, KeyboardWrap
 } from './style';
 export default () => {
     const { t } = useTranslation();
-
+    const dispatch = useDispatch();
+    const [key, setKey] = useState('');
+    const { writeText, removeText } = searchAction;
+    const isShow = useSelector(state => state.search.isShowKeyboard);
+    useEffect(() => {
+        dispatch(writeText(key))
+    }, [key])
+    const removeChar = () => dispatch(removeText())
     return (
         <Container>
             <MobileOperators />
@@ -99,6 +109,7 @@ export default () => {
                     </Service>
                 </Services>
             </MainSection>
+            <KeyboardWrap show={isShow}><Keyboard setKey={setKey} removeChar={removeChar} /></KeyboardWrap>
         </Container>
     )
 }

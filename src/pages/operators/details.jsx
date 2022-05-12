@@ -90,7 +90,7 @@ export default () => {
                 <LinkButton path={-1} text={t('back')} />
                 <LinkButton path="/" text={t('main_page')} />
                 <LinkButton length={length} state={fromPhone} text={t('next')}
-                    color={length ? '#D8D8D8' : '#00C35A'} hoveredColor={length ? '#D8D8D8' : "#04B054"} path={PAY} />
+                    color={length ? '#aeaeae' : '#00C35A'} hoveredColor={length ? '#aeaeae' : "#04B054"} path={PAY} />
             </Footer>
         </Div>
     )

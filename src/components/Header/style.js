@@ -199,7 +199,20 @@ export const Search = styled.div`
     margin-right: 12px;
   }
 `
-export const Input = styled.input`
+export const Placeholder = styled.p`
+    color: #C4C4C4;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 24px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    @media ${device.tablet} {
+      font-size: 14px;
+      font-weight: 400;
+  }
+`
+export const Input = styled.div`
   width: 256px;
   height: 48px;
   outline: none;
@@ -207,16 +220,13 @@ export const Input = styled.input`
   font-size: 18px;
   line-height: 24px;
   border-radius: 4px;
-  padding: 12px 40px 12px 16px;
   border: 1px solid #D0CFCF;
+  padding: 12px 40px 12px 16px;
   color: var(--card-text-color);
-  &::placeholder {
-    color: #C4C4C4;
-  }
-  &:focus {
-    transition: var(--card-click-transition);
-    box-shadow: 0 0 5px rgb(196, 196, 196);
+  &:focus, &:active {
     border: 1px solid rgb(196, 196, 196);
+    box-shadow: 0 0 5px rgb(196, 196, 196);
+    transition: var(--card-click-transition);
   }
   @media ${device.tablet1} {
     width: 160px;
@@ -224,7 +234,6 @@ export const Input = styled.input`
     font-size: 16px;
     font-weight: 400;
     border: 0.9px solid #D0CFCF;
-    padding: 12px 30px 12px 16px;
   }
   @media ${device.tablet} {
     width: 150px;
@@ -232,6 +241,6 @@ export const Input = styled.input`
     font-size: 14px;
     font-weight: 400;
     border: 0.7px solid #D0CFCF;
-    padding: 12px 30px 12px 16px;
+    padding: 4px 16px 12px 12px;
   }
 `

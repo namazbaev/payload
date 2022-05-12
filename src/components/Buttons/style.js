@@ -41,7 +41,7 @@ export const LinkBtn = styled.button`
     align-items: center;
     justify-content: center;
     border-radius: var(--card-brd-radius);
-    background-color: ${({ color }) => color || '#D8D8D8'};
+    background-color: ${({ color }) => color || '#abaaaa'};
     &:hover {
         opacity: 0.99;
         transition: 0.3s;

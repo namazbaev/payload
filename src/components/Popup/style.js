@@ -4,15 +4,14 @@ import { device } from "utils/media/responsive";
 import SuccessIcon from 'assets/icons/success.svg';
 
 export const BackDrop = styled.div`
-    position: absolute;
+    margin: 0;
     width: 100%;
     height: 100%;
-    margin: 0;
-    /* background-color: #C1C1C1; */
-    background-color: rgba(0,0,0,0.5);
-    top: ${({ active }) => active ? "0%" : 0};
+    position: absolute;
     left: 0;
+    top: ${({ active }) => active ? "0%" : 0};
     transition: all 0.5s;
+    background-color: rgba(0,0,0,0.7);
     transform: ${({ active }) => active ? 'translateY(0)' : 'translateY(-100vh)'};
 `
 export const Container = styled.div`

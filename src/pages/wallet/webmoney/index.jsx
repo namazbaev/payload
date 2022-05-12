@@ -49,8 +49,8 @@ export default () => {
             <Footer>
                 <LinkButton path={-1} text={t('back')} />
                 <LinkButton path="/" text={t('main_page')} />
-                <FooterBtn color={length ? '#D8D8D8' : '#00C35A'}
-                    hoveredColor={length ? '#D8D8D8' : "#04B054"} disabled={length}>
+                <FooterBtn color={length ? '#aeaeae' : '#00C35A'}
+                    hoveredColor={length ? '#aeaeae' : "#04B054"} disabled={length}>
                     {t('next')}
                 </FooterBtn>
             </Footer>

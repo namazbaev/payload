@@ -59,7 +59,7 @@ export const Keyboard = styled.div`
     cursor: pointer;
     align-items: center;
     justify-content: center;
-    background-color: #F4F4F4;
+    background-color: #bbbbbb;
     border-radius: var(--card-brd-radius);
     &:active {
         transform: translateY(1px);

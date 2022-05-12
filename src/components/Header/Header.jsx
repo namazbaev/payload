@@ -3,21 +3,28 @@ import Dropdown from 'components/Dropdown';
 import { LinkTo } from 'styles/globalStyles';
 import { useCallback, useState } from 'react';
 import { useTranslation } from "react-i18next";
+import { searchAction } from 'redux/slices/search';
+import { useSelector, useDispatch } from 'react-redux';
 import {
-    Container, LeftSection, RightSection, Number, Drop, Logo, TerminalWrap,
-    Wrap, Terminal, Search, SearchIcons, Input
+    Wrap, Terminal, Search, SearchIcons, Input, Placeholder,
+    Container, LeftSection, RightSection, Number, Drop, Logo, TerminalWrap
 } from './style';
 export const Header = () => {
+    const dispatch = useDispatch();
     const { t, i18n } = useTranslation();
-    const currentLang = localStorage.getItem('lang') || 'uz'
-    const [lang, setLang] = useState(currentLang)
+    const { toggle } = searchAction;
+    const currentLang = localStorage.getItem('lang') || 'uz';
+    const [lang, setLang] = useState(currentLang);
+    const text = useSelector(state => state.search.text);
+    const isShow = useSelector(state => state.search.isShowKeyboard);
     const changeLang = useCallback((e) => {
         localStorage.setItem('lang', e)
         i18n.changeLanguage(e);
-        setLang(e)
+        setLang(e);
     }, [lang])
     const selected = langList.find(x => x.value === currentLang)
     const langs = currentLang !== null ? selected.flag : langList[0].flag
+    const onShowClick = () => dispatch(toggle(!isShow))
     return (
         <Container>
             <LeftSection>
@@ -36,7 +43,11 @@ export const Header = () => {
             </LinkTo>
             <RightSection>
                 <Search>
-                    <Input placeholder='Поиск' />
+                    <Input onClick={() => onShowClick()}>
+                        <Placeholder>
+                            {text === '' ? 'Поиск' : text}
+                        </Placeholder>
+                    </Input>
                     <SearchIcons />
                 </Search>
                 <Dropdown
