@@ -1,7 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
 const initialState = {
     text: '',
-    isShowKeyboard: true
+    isShowKeyboard: false
 };
 
 const searchSlice = createSlice({
@@ -14,8 +14,8 @@ const searchSlice = createSlice({
         writeText: (state, { payload }) => {
             state.text = payload
         },
-        removeText: (state, { }) => {
-            if (state.text == '') return
+        removeText: (state, {}) => {
+            if (state.text === '') return
             let value = state.text.slice(0, -1)
             if (value.length === 1) {
                 state.text = ''

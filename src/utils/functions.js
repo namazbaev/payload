@@ -1,4 +1,3 @@
-
 export const cardMask = (value) => {
     let parts = []
     const v = value.replace(/\s+/g, '').replace(/[^0-9]/gi, '')
@@ -8,7 +7,6 @@ export const cardMask = (value) => {
         parts.push(match.substring(i, i + 4))
     if (parts.length) {
         return parts.join(' ')
-    } else {
-        return value
     }
+    return value
 }

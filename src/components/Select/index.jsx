@@ -1,14 +1,14 @@
 import { useEffect, useState } from 'react';
 import { ArrowDownIcon, Dropdown } from './style';
 
-export default ({ menu, position, prefixText, changeValue, defaultValue }) => {
+export default ({ menu, changeValue, defaultValue }) => {
 	const [active, setActive] = useState(false);
 	const [value, setValue] = useState(undefined);
 	useEffect(() => {
 		if (defaultValue) {
 			const selected =
 				menu && menu.length > 0
-					? menu.filter((item) => item.value === defaultValue)[0].label
+					? menu.filter((item) => item.value === defaultValue)[0]?.label
 					: defaultValue;
 			setValue(selected);
 		} else {
@@ -16,30 +16,27 @@ export default ({ menu, position, prefixText, changeValue, defaultValue }) => {
 		}
 	}, [defaultValue, menu]);
 	const handleSelect = (value) => {
-		changeValue(value);
 		setActive(false);
+		changeValue(value);
 	};
-
 	const menuList = (
-		<Dropdown.Menu position={position} active={active}>
-			{menu && menu.length > 0
-				? menu.map((item) => (
-						<Dropdown.MenuItem
-							key={item.value}
-							onClick={() => handleSelect(item.value)}
-						>
-							{item.flag} {item.label}
-						</Dropdown.MenuItem>
-				  ))
-				: ''}
+		<Dropdown.Menu active={active} length={menu.length > 10}>
+			{menu &&
+				menu.length > 0 &&
+				menu.map((item) => (
+					<Dropdown.MenuItem
+						key={item.value}
+						onClick={() => handleSelect(item.value)}
+					>
+						{item.label}
+					</Dropdown.MenuItem>
+				))}
 		</Dropdown.Menu>
 	);
 
 	return (
 		<Dropdown active={active} onClick={() => setActive(!active)}>
-			<Dropdown.Title>
-				{prefixText} {value?.substring(0, 3)}
-			</Dropdown.Title>
+			<Dropdown.Title>{value}</Dropdown.Title>
 			<ArrowDownIcon active={active ? 'true' : ''} />
 			{menuList}
 		</Dropdown>

@@ -2,7 +2,8 @@ import styled from 'styled-components';
 import { device } from 'utils/media/responsive';
 import { ReactComponent as ArrowDown } from 'assets/icons/down-arrow.svg';
 
-export const ArrowDownIcon = styled(ArrowDown)`
+export const ArrowDownIcon = styled(ArrowDown)
+`
   transition: all 0.3s ease;
   transform: ${({ active }) => active ? 'rotate(180deg)' : ''} ;
 
@@ -12,7 +13,7 @@ export const ArrowDownIcon = styled(ArrowDown)`
   }
 `;
 
-export const Dropdown = styled.div`
+export const Dropdown = styled.div `
   display: flex;
   cursor: pointer;
   align-items: center;
@@ -37,7 +38,7 @@ export const Dropdown = styled.div`
   }
 `;
 
-Dropdown.Title = styled.div`
+Dropdown.Title = styled.div `
   display: flex;
   align-items: center;
   font-size: 18px;
@@ -53,7 +54,7 @@ Dropdown.Title = styled.div`
   }
 `;
 
-Dropdown.Menu = styled.ul`
+Dropdown.Menu = styled.ul `
   min-width: 150px;
   position: absolute;
   top: 100%;
@@ -65,9 +66,13 @@ Dropdown.Menu = styled.ul`
   list-style: none;
   background-color: #fff;
   box-shadow: 0 6px 12px 0 rgba(73,75,116, 0.16);
-  display: ${({ active }) => (active ? 'block' : 'none')};
+  opacity: ${({ active }) => active ? 1 : 0};
+  transition: 0.3s;
+  transform: ${({ active }) => active ? 'translateY(0.5rem)' : 'translateY(0)'};
+  visibility: ${({ active }) => active ? 'visible' : 'hidden'};
+  /* display: ${({ active }) => (active ? 'block' : 'none')}; */
   z-index: 30;
-  margin-top: 20px;
+  margin-top: 10px;
   &::before {
     content: '';
     width: 12px;
@@ -88,7 +93,7 @@ Dropdown.Menu = styled.ul`
   }
 `;
 
-Dropdown.MenuItem = styled.li`
+Dropdown.MenuItem = styled.li `
   cursor: pointer;
   display: flex;
   align-items: center;

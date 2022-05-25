@@ -1,11 +1,8 @@
-/* eslint-disable react/react-in-jsx-scope */
 import { CARDPAY } from 'routes/route';
-import { useState, useMemo } from 'react';
-import { cardMask } from 'utils/functions';
-import { useParams } from 'react-router-dom';
+import Select from 'components/Select';
 import { useTranslation } from 'react-i18next';
-import { Formatting } from 'styles/globalStyles';
-import { cards, numberKeyboard } from 'utils/json';
+import { useState, useId, useCallback } from 'react';
+import { districts, numberKeyboard } from 'utils/json';
 import LinkButton from 'components/Buttons/LinkButton';
 import {
 	Hr,
@@ -17,19 +14,15 @@ import {
 	Footer,
 	Keyboard,
 	InfoText,
-	CardImage,
-	DetailsCard,
 	DetailsInfo,
 	WarningText,
 	DetailsKeyboard,
 	DetailsContainer,
 } from './style';
 
-// eslint-disable-next-line react/display-name
 export default function () {
-	const { name } = useParams();
 	const { t } = useTranslation();
-	const result = cards.find((x) => x.name === name);
+	const [value, setValue] = useState('');
 	const [number, setNumber] = useState('');
 	const onChangeNumber = (value) => {
 		if (number.length >= 16) return;
@@ -43,16 +36,17 @@ export default function () {
 	const length = number.length !== 16;
 	const clearNumbers = () => setNumber('');
 	const fromCard = number.split(' ').join('');
-	const cardNumber = useMemo(() => cardMask(number), [number]);
+	const id = useId();
+	const onSelect = useCallback((val) => setValue(val), [value]);
 	return (
 		<Div>
 			<DetailsContainer>
 				<DetailsInfo>
-					<DetailsCard>
-						<CardImage img={result?.img} />
-					</DetailsCard>
-					<Formatting>{cardNumber}</Formatting>
-					<Hr />
+					<Select
+						menu={districts}
+						defaultValue={value}
+						changeValue={onSelect}
+					/>
 					<InfoText>
 						<Text>
 							<WarningText> {t('warning')}</WarningText> {t('card_pay_warning')}

@@ -6,14 +6,27 @@ import { Wallets } from "pages/wallet";
 import TVDetails from "pages/TV/details";
 import { Providers } from "pages/providers";
 import CardDetails from 'pages/card/details';
+import PayToDetails from "pages/pay/details";
 import SwitchWallet from "pages/wallet/switch";
 import PRDetails from 'pages/providers/details';
 import MobDetails from 'pages/operators/details';
 import { MobileOperator } from "pages/operators";
-import { TV, PAY, CARD_DETAILS, CARDPAY, WALLET, WALLET_DETAILS, TVDETAILS, PROVIDERS, PROVIDERDETAILS, MOBILEOPERATOR, MOBILEOPERATORS } from "./route";
+import {
+    TV,
+    PAY,
+    WALLET,
+    CARDPAY,
+    PROVIDERS,
+    TVDETAILS,
+    CARD_DETAILS,
+    MOBILEOPERATOR,
+    WALLET_DETAILS,
+    PAY_TO_DETAILS,
+    PROVIDERDETAILS,
+    MOBILEOPERATORS
+} from "./route";
 
-export const routes = [
-    {
+export const routes = [{
         path: '/',
         Component: Main,
         title: 'Home'
@@ -72,5 +85,10 @@ export const routes = [
         path: WALLET_DETAILS,
         Component: SwitchWallet,
         title: 'SwitchWallet'
+    },
+    {
+        path: PAY_TO_DETAILS,
+        Component: PayToDetails,
+        title: 'PayToDetails'
     },
 ]

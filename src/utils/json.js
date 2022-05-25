@@ -123,6 +123,19 @@ export const cards = [
     { name: "humo", img: Humo },
     { name: "uzcard", img: UzCard }
 ]
+export const districts = [
+    { value: 1, label: "26280 - Olmazor EP" },
+    { value: 2, label: "22071 - Mirobod EP" },
+    { value: 3, label: "26262 - Uchtepa EP" },
+    { value: 4, label: "26283 - Sirg'ali EP" },
+    { value: 5, label: "22066 - Yunusobod EP" },
+    { value: 6, label: "22090 - Yashnobod EP" },
+    { value: 7, label: "26294 - Chilonzor EP" },
+    { value: 8, label: "26287 - Yakkasaroy EP" },
+    { value: 9, label: "26292 - Yangi hayot EP" },
+    { value: 10, label: "22077 - Shayxontohur EP" },
+    { value: 11, label: "26269 - Mirzo-Ulug'bek EP" }
+];
 export const numberKeyboard = [];
 for (let i = 1; i < 10; i++)
     numberKeyboard.push({ key: i })

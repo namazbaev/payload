@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 import Currency from 'react-currency-format';
 import { device } from 'utils/media/responsive';
 import styled, { css, createGlobalStyle } from 'styled-components';
-export const GlobalStyle = createGlobalStyle`
+export const GlobalStyle = createGlobalStyle `
     html, body, #root{
         height: 100vh;
         margin: 0 auto;
@@ -35,6 +35,8 @@ export const GlobalStyle = createGlobalStyle`
         --black:#565656;
         --black1:#3D3E53;
         --line-color: #E3E3E3;
+        --input-color: #3D3D4B;
+        --border-color: #33BAFF;
         --btn-hover-color: #7e7e80;
         --card-width: 210px;
         --card-height: 110px;
@@ -50,7 +52,7 @@ export const GlobalStyle = createGlobalStyle`
         --card-click-transition: .3s;
     }
 `
-const infoCommon = css`
+const infoCommon = css `
     font-size: 24px;
     font-weight: 600;
     line-height: 32px;
@@ -60,20 +62,24 @@ const infoCommon = css`
         line-height: 20px;
     }
 `
-export const LinkTo = styled(Link)`
+export const LinkTo = styled(Link)
+`
     color: #fff;
     text-decoration: none;
     pointer-events: ${({ length }) => length ? 'none' : 'pointer'};
 `
-export const Phone = styled(Currency)`
+export const Phone = styled(Currency)
+`
     ${infoCommon};
     color: #132447;
 `
-export const Amount = styled(Currency)`
-    ${infoCommon};
-    color: #33BAFF;
+export const Amount = styled(Currency)
 `
-export const Format = styled(Currency)`
+    ${infoCommon};
+    color: var(--border-color);
+`
+export const Format = styled(Currency)
+`
     color: #3d3d4b;
     font-size: 40px;
     font-weight: 700;
@@ -83,7 +89,7 @@ export const Format = styled(Currency)`
         line-height: 16px;
   }
 `
-export const Formatting = styled.span`
+export const Formatting = styled.span `
   width: ${({ width }) => width || '100%'};
   height: 96px;
   display: block;
