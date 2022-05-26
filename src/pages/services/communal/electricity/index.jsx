@@ -24,6 +24,7 @@ import {
 export const Electricity = () => {
 	const { t } = useTranslation();
 	const [code, setCode] = useState('2964547');
+	const [phone, setPhone] = useState('+998');
 	const [value, setValue] = useState('');
 	const [number, setNumber] = useState('');
 	const [uniqeNumber, setUniqueNumber] = useState('Shaxsiy raqam');
@@ -57,7 +58,11 @@ export const Electricity = () => {
 						{uniqeNumber}
 					</Formatting>
 					<Formatting size='30px' fontWeight='500'>
-						{Format}
+						<Format
+							value={phone}
+							displayType='text'
+							format='+### ## ### ## ##'
+						/>
 					</Formatting>
 					<InfoText>
 						<Text>

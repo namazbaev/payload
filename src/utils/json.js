@@ -139,10 +139,7 @@ export const districts = [
     { value: 7, label: '26294 - Chilonzor EP' },
     { value: 8, label: '26287 - Yakkasaroy EP' },
     { value: 9, label: '26292 - Yangi hayot EP' },
-    {
-        value: 10,
-        label: '22077 - Shayxontohur EP asdasd asdasasd asd asdasd asdasd',
-    },
+    { value: 10, label: '22077 - Shayxontohur EP' },
     { value: 11, label: "26269 - Mirzo-Ulug'bek EP" },
 ];
 export const numberKeyboard = [];
