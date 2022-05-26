@@ -51,70 +51,63 @@ export const GlobalStyle = createGlobalStyle `
         --card-click-color: #dfdfdf;
         --card-click-transition: .3s;
     }
-`
+`;
 const infoCommon = css `
-    font-size: 24px;
-    font-weight: 600;
-    line-height: 32px;
-    @media ${device.tablet} {
-        font-size: 16px;
-        font-weight: 500;
-        line-height: 20px;
-    }
-`
+	font-size: 24px;
+	font-weight: 600;
+	line-height: 32px;
+	@media ${device.tablet} {
+		font-size: 16px;
+		font-weight: 500;
+		line-height: 20px;
+	}
+`;
 export const LinkTo = styled(Link)
 `
-    color: #fff;
-    text-decoration: none;
-    pointer-events: ${({ length }) => length ? 'none' : 'pointer'};
-`
+	color: #fff;
+	text-decoration: none;
+	pointer-events: ${({ length }) => (length ? 'none' : 'pointer')};
+`;
 export const Phone = styled(Currency)
 `
-    ${infoCommon};
-    color: #132447;
-`
+	${infoCommon};
+	color: #132447;
+`;
 export const Amount = styled(Currency)
 `
-    ${infoCommon};
-    color: var(--border-color);
-`
+	${infoCommon};
+	color: var(--border-color);
+`;
 export const Format = styled(Currency)
 `
-    color: #3d3d4b;
-    font-size: 40px;
-    font-weight: 700;
-    line-height: 64px;
-    @media ${device.tablet} {
-        font-size: 22px;
-        line-height: 16px;
-  }
-`
+	color: #3d3d4b;
+	font-size: 40px;
+	font-weight: 700;
+	line-height: 45px;
+	@media ${device.tablet} {
+		font-size: 22px;
+		line-height: 16px;
+	}
+`;
 export const Formatting = styled.span `
-  width: ${({ width }) => width || '100%'};
-  height: 96px;
-  display: block;
-  color: #3d3d4b;
-  font-size: 40px;
-  margin-top: 20px;
-  font-weight: 700;
-  line-height: 64px;
-  padding: 16px 20px 16px 24px;
-  border: 2px solid #33baff;
-  border-radius: var(--card-brd-radius);
-  @media ${device.tablet1} {
-    height: 70px;
-    font-size: 36px;
-    margin-top: 30px;
-    line-height: 56px;
-    padding: 16px 100px 16px 24px;
-  }
-  @media ${device.tablet} {
-    width: ${({ width }) => width || '100%'};
-    height: 50px;
-    font-size: 22px;
-    margin-top: 10px;
-    line-height: 16px;
-    border-radius: 4px;
-    padding: 16px 0 16px 20px;
-  }
+	width: ${({ width }) => width || '100%'};
+	height: ${({ height }) => height || '80px'};
+	display: block;
+	color: #3d3d4b;
+	margin-top: 20px;
+	font-size: ${({ size }) => size || '40px'};
+	font-weight: ${({ fontWeight }) => fontWeight || 700};
+	line-height: 45px;
+	border: 2px solid #33baff;
+	padding: 16px 20px 16px 24px;
+	border-radius: var(--card-brd-radius);
+	@media ${device.tablet} {
+		width: ${({ width }) => width || '100%'};
+		height: 50px;
+		font-size: 22px;
+		margin-top: 10px;
+		line-height: 16px;
+		border-radius: 4px;
+		padding: 16px 0 16px 20px;
+	}
 `;

@@ -6,21 +6,21 @@ import { useTranslation } from 'react-i18next';
 import LinkButton from 'components/Buttons/LinkButton';
 import { Format, Formatting } from 'styles/globalStyles';
 import {
-	DetailsContainer,
+	Hr,
+	Div,
+	Text,
+	Drop,
+	Number,
+	Delete,
+	Footer,
+	Keyboard,
+	InfoText,
+	CardImage,
+	WarningText,
 	DetailsCard,
 	DetailsInfo,
 	DetailsKeyboard,
-	Keyboard,
-	Number,
-	Delete,
-	Drop,
-	Hr,
-	InfoText,
-	WarningText,
-	Text,
-	Div,
-	Footer,
-	CardImage,
+	DetailsContainer,
 } from './style';
 export default () => {
 	const countryCode = '+998';

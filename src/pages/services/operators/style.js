@@ -17,19 +17,21 @@ export const Delete = styled(DeleteIcon)
 `;
 export const Div = styled.div `
 	width: 100%;
-	height: 83vh;
+	height: 84vh;
 	padding: 0 50px;
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
 	@media ${device.tablet} {
 		padding: 0 30px;
+		height: 80vh;
+		margin-top: 20px;
 	}
 `;
 export const DetailsContainer = styled.div `
 	display: flex;
-	margin-top: 150px;
 	align-items: center;
+	margin-top: 150px;
 	@media ${device.tablet} {
 		margin-top: 50px;
 	}
@@ -43,14 +45,13 @@ export const DetailsInfo = styled.div `
 `;
 export const DetailsKeyboard = styled.div `
 	height: 100%;
-	grid-gap: 27px;
 	display: inline-grid;
+	grid-gap: 27px;
 	justify-self: center;
 	align-content: space-between;
-	grid-template-columns: 140px 140px 140px;
+	grid-template-columns: auto auto auto;
 	@media ${device.tablet} {
 		grid-gap: 15px;
-		grid-template-columns: 80px 80px 80px;
 	}
 `;
 export const Keyboard = styled.div `
@@ -60,15 +61,19 @@ export const Keyboard = styled.div `
 	cursor: pointer;
 	align-items: center;
 	justify-content: center;
-	background-color: #bbbbbb;
+	background-color: #f4f4f4;
 	border-radius: var(--card-brd-radius);
 	&:active {
 		transform: translateY(1px);
 		background-color: var(--card-click-color);
 	}
+	@media ${device.tablet1} {
+		height: 70px;
+		width: 120px;
+	}
 	@media ${device.tablet} {
-		width: 80px;
 		height: 60px;
+		width: 80px;
 	}
 `;
 export const Number = styled.span `
@@ -77,21 +82,25 @@ export const Number = styled.span `
 	font-weight: 700;
 	line-height: 45px;
 	letter-spacing: 0.04em;
+	@media ${device.tablet1} {
+		font-size: 30px;
+		line-height: 44px;
+	}
 	@media ${device.tablet} {
-		font-size: 26px;
-		line-height: 20px;
+		font-size: 28px;
+		line-height: 34px;
 	}
 `;
 export const DetailsCard = styled.div `
-	width: 290px;
-	height: 164px;
+	width: 211px;
+	height: 128px;
 	cursor: pointer;
 	border-radius: 8px;
 	transition: box-shadow var(--card-transition);
 	filter: drop-shadow(0px 4px 20px rgba(34, 37, 48, 0.1));
 	@media ${device.tablet} {
-		width: 200px;
-		height: 150px;
+		width: 150px;
+		height: 80px;
 		border-radius: 20px;
 	}
 `;
@@ -107,6 +116,14 @@ export const CardImage = styled.span `
 	background-repeat: no-repeat;
 	background-image: url(${({ img }) => img || ''});
 	background-size: ${({ size }) => (size ? size : '100%')};
+	@media ${device.tablet1} {
+		width: 100%;
+		height: 100%;
+		background-position: center;
+		background-repeat: no-repeat;
+		background-image: url(${({ img }) => img || ''});
+		background-size: ${({ size }) => (size ? size : 'auto')};
+	}
 	@media ${device.tablet} {
 		width: 100%;
 		height: 100%;
@@ -121,6 +138,10 @@ export const Drop = styled.span `
 	height: 100%;
 	margin: 0 48px;
 	background-color: var(--line-color);
+	@media ${device.tablet1} {
+		height: 50px;
+		margin: 0 16px;
+	}
 	@media ${device.tablet} {
 		height: 100%;
 		margin: 0 24px;

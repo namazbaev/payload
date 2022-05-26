@@ -4,6 +4,7 @@ import { useState, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import { districts, numberKeyboard } from 'utils/json';
 import LinkButton from 'components/Buttons/LinkButton';
+import { Format, Formatting } from 'styles/globalStyles';
 import {
 	Hr,
 	Div,
@@ -19,13 +20,13 @@ import {
 	DetailsKeyboard,
 	DetailsContainer,
 } from './style';
-import { Formatting } from 'styles/globalStyles';
 
-export default function () {
+export const Electricity = () => {
 	const { t } = useTranslation();
-	const [code, setCode] = useState('asdasd');
+	const [code, setCode] = useState('2964547');
 	const [value, setValue] = useState('');
 	const [number, setNumber] = useState('');
+	const [uniqeNumber, setUniqueNumber] = useState('Shaxsiy raqam');
 	const onChangeNumber = (value) => {
 		if (number.length >= 16) return;
 		setNumber((prev) => prev + value);
@@ -49,7 +50,15 @@ export default function () {
 						defaultValue={value}
 						changeValue={onSelect}
 					/>
-					<Formatting fontWeight='500'>{code}</Formatting>
+					<Formatting size='30px' fontWeight='500'>
+						{code}
+					</Formatting>
+					<Formatting size='30px' fontWeight='500'>
+						{uniqeNumber}
+					</Formatting>
+					<Formatting size='30px' fontWeight='500'>
+						{Format}
+					</Formatting>
 					<InfoText>
 						<Text>
 							<WarningText> {t('warning')}</WarningText> {t('card_pay_warning')}
@@ -88,4 +97,4 @@ export default function () {
 			</Footer>
 		</Div>
 	);
-}
+};

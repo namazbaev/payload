@@ -1,9 +1,5 @@
-import { Container } from "./style"
+import { Container } from './style';
 
 export default () => {
-    return (
-        <Container>
-            YooMoney
-        </Container>
-    )
-}
+	return <Container>YooMoney</Container>;
+};

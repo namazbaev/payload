@@ -3,7 +3,8 @@ import { device } from "utils/media/responsive";
 import { ReactComponent as LogoIcon } from 'assets/icons/logo.svg';
 import { ReactComponent as SearchIcon } from 'assets/icons/search.svg';
 
-export const Logo = styled(LogoIcon)`
+export const Logo = styled(LogoIcon)
+`
   width: 150px;
   height: 50px;
   cursor: pointer;
@@ -16,7 +17,8 @@ export const Logo = styled(LogoIcon)`
     height: 30px;
   }
 `
-export const SearchIcons = styled(SearchIcon)`
+export const SearchIcons = styled(SearchIcon)
+`
   width: 24px;
   height: 24px;
   cursor: pointer;
@@ -41,7 +43,7 @@ export const SearchIcons = styled(SearchIcon)`
     right: 6%;
   }
 `
-export const Container = styled.div`
+export const Container = styled.div `
   padding: 36px 48px;
   display: flex;
   align-items: center;
@@ -55,12 +57,12 @@ export const Container = styled.div`
     padding: 14px 20px;
   }
 `;
-export const LeftSection = styled.div`
+export const LeftSection = styled.div `
   display: flex;
   align-items: center;
   justify-content: space-between;
 `;
-export const Payload = styled.h1`
+export const Payload = styled.h1 `
   margin: 0;
   color: var(--black);
   font-size: 24px;
@@ -72,12 +74,12 @@ export const Payload = styled.h1`
     font-size: 16px;
   }
 `;
-export const RightSection = styled.div`
+export const RightSection = styled.div `
   display: flex;
   align-items: center;
   justify-content: space-between;
 `;
-export const Drop = styled.span`
+export const Drop = styled.span `
   width: 2px;
   height: 65px;
   margin: 0 24px;
@@ -91,15 +93,15 @@ export const Drop = styled.span`
     margin: 0 12px;
   }
 `
-export const TerminalWrap = styled.div`
+export const TerminalWrap = styled.div `
   display: flex;
   flex-direction: column;
   justify-content: center;
 `;
-export const Wrap = styled.div`
+export const Wrap = styled.div `
   color: #fff;
 `;
-export const SupportText = styled.p`
+export const SupportText = styled.p `
   margin: 0;
   font-size: 14px;
   letter-spacing: 0.04em;
@@ -110,7 +112,7 @@ export const SupportText = styled.p`
     font-size: 12px;
   }
 `;
-export const Number = styled.p`
+export const Number = styled.p `
   margin: 0;
   font-size: 22px;
   font-weight: 600;
@@ -126,7 +128,7 @@ export const Number = styled.p`
     font-size: 12px;
   }
 `;
-export const Terminal = styled.span`
+export const Terminal = styled.span `
   font-size: 16px;
   font-weight: 500;
   line-height: 32px;
@@ -142,7 +144,7 @@ export const Terminal = styled.span`
     letter-spacing: 0.01em;
   }
 `
-export const IconText = styled.span`
+export const IconText = styled.span `
   color: #fff;
   font-size: 12px;
   @media ${device.tablet} {
@@ -152,23 +154,20 @@ export const IconText = styled.span`
     font-size: 9px;
   }
 `;
-export const IconWrap = styled.div`
+export const IconWrap = styled.div `
   display: flex;
   align-items: center;
   justify-content: center;
 `;
-export const Search = styled.div`
+export const Search = styled.div `
   display: flex;
   position: relative;
   margin-right: 32px;
-  @media ${device.tablet1} {
-    margin-right: 16px;
-  }
   @media ${device.tablet} {
     margin-right: 12px;
   }
 `
-export const Placeholder = styled.p`
+export const Placeholder = styled.p `
     color: #C4C4C4;
     font-size: 18px;
     font-weight: 500;
@@ -181,12 +180,12 @@ export const Placeholder = styled.p`
       font-weight: 400;
   }
 `
-export const Input = styled.div`
+export const Input = styled.div `
   width: 256px;
   height: 48px;
   outline: none;
-  font-weight: 500;
   font-size: 18px;
+  font-weight: 500;
   line-height: 24px;
   border-radius: 4px;
   border: 1px solid #D0CFCF;
@@ -196,13 +195,6 @@ export const Input = styled.div`
     border: 1px solid rgb(196, 196, 196);
     box-shadow: 0 0 5px rgb(196, 196, 196);
     transition: var(--card-click-transition);
-  }
-  @media ${device.tablet1} {
-    width: 160px;
-    height: 40px;
-    font-size: 16px;
-    font-weight: 400;
-    border: 0.9px solid #D0CFCF;
   }
   @media ${device.tablet} {
     width: 150px;

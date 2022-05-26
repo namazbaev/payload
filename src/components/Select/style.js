@@ -1,16 +1,27 @@
 import styled from 'styled-components';
 import { device } from 'utils/media/responsive';
+import { ReactComponent as Remove } from 'assets/icons/remove.svg';
 import { ReactComponent as ArrowDown } from 'assets/icons/down-arrow.svg';
 
 export const ArrowDownIcon = styled(ArrowDown)
 `
-  transition: all 0.3s ease;
-  transform: ${({ active }) => active ? 'rotate(180deg)' : ''} ;
   width: 36px;
   height: 36px;
-  @media ${device.tablet1} {
-    width: 25px;
-    height: 25px;
+  transition: all 0.2s ease;
+  transform: ${({ active }) => active && 'rotate(180deg)'};
+  @media ${device.tablet} {
+    width: 24px;
+    height: 24px;
+  }
+`;
+export const RemoveIcon = styled(Remove)
+`
+  width: 28px;
+  height: 28px;
+  opacity: 0.5;
+  @media ${device.tablet} {
+    width: 18px;
+    height: 18px;
   }
 `;
 
@@ -26,28 +37,27 @@ export const Dropdown = styled.div `
   position: relative;
   align-items: center;
   background-color: #fff;
-  justify-content: space-between;
+  color: var(--input-color);
   border: 2px solid var(--border-color);
   border-radius: var(--card-brd-radius);
-  color: var(--input-color);
   @media ${device.tablet} {
     height: 50px;
   }
 `;
 
-Dropdown.Title = styled.div `
-  display: flex;
-  align-items: center;
+Dropdown.Title = styled.span `
+  max-width: 500px;
+  display: inline-block;
   font-size: 30px;
   font-weight: 700;
   line-height: 40px;
   margin-right: 9px;
-  @media ${device.tablet1} {
-    font-size: 14px;
-    margin-right: 5px;
-  }
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
   @media ${device.tablet} {
-    font-size: 14px;
+    max-width: 350px;
+    font-size: 16px;
     margin-right: 5px;
   }
 `;
@@ -69,28 +79,54 @@ Dropdown.Menu = styled.ul `
   box-shadow: 0 6px 12px 0 rgba(73,75,116, 0.16);
   visibility: ${({ active }) => active ? 'visible' : 'hidden'};
   transform: ${({ active }) => active ? 'translateY(1rem)' : 'translateY(0)'};
-  z-index: 30;
+  @media ${device.tablet} {
+    height: ${({ length }) => length ? '200px' : 'auto'};
+  }
 `;
 
 Dropdown.MenuItem = styled.li `
+  max-width: 600px;
   cursor: pointer;
-  display: flex;
-  align-items: center;
+  display: inline-block;
   font-size: 30px;
   font-weight: 500;
-  line-height: 40px;
   color: #181C32;
-  line-height: 18px;
+  line-height: 40px;
   height: 50px;
   padding: 0 16px;
+  overflow: hidden;
   white-space: nowrap;
+  text-overflow: ellipsis;
   transition: .2s ease-in;
-  &:hover {
+  &:focus {
     background-color: #F8F8F8;
   }
   @media ${device.tablet} {
     font-size: 16px;
-    line-height: 12px;
-    padding: 6px;
+    line-height: 20px;
+    padding: 0 10px;
+    height: 35px;
+    max-width: 400px;
   }
 `;
+export const IconWrap = styled.div `
+  position: absolute;
+  top: 26%;
+  right: 4%;
+  @media ${device.tablet} {
+    top: 5%;
+  }
+`
+export const Placeholder = styled.p `
+  margin: 0;
+  font-size: 30px;
+  font-weight: 500;
+  line-height: 40px;
+  color: #181C32;
+  opacity: 0.9;
+  @media ${device.tablet} {
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 40px;
+  }
+`

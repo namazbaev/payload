@@ -1,94 +1,108 @@
-import Main from "pages/home";
-import { TVS } from "pages/TV";
-import PayPhone from "pages/pay";
+import Main from 'pages/home';
+import PayPhone from 'pages/pay';
 import CardPay from 'pages/card/pay';
-import { Wallets } from "pages/wallet";
-import TVDetails from "pages/TV/details";
-import { Providers } from "pages/providers";
+import { Wallets } from 'pages/wallet';
+import { TVS } from 'pages/services/tv';
 import CardDetails from 'pages/card/details';
-import PayToDetails from "pages/pay/details";
-import SwitchWallet from "pages/wallet/switch";
-import PRDetails from 'pages/providers/details';
-import MobDetails from 'pages/operators/details';
-import { MobileOperator } from "pages/operators";
+import PayToDetails from 'pages/pay/details';
+import SwitchWallet from 'pages/wallet/switch';
+import TVDetails from 'pages/services/tv/details';
+import { Communals } from 'pages/services/communal';
+import { Providers } from 'pages/services/providers';
+import PRDetails from 'pages/services/providers/details';
+import MobDetails from 'pages/services/operators/details';
+import { MobileOperator } from 'pages/services/operators';
 import {
     TV,
     PAY,
     WALLET,
     CARDPAY,
     PROVIDERS,
+    COMMUNALS,
     TVDETAILS,
     CARD_DETAILS,
     MOBILEOPERATOR,
     WALLET_DETAILS,
     PAY_TO_DETAILS,
     PROVIDERDETAILS,
-    MOBILEOPERATORS
-} from "./route";
+    MOBILEOPERATORS,
+    COMMUNALS_DETAILS,
+} from './route';
+import SwitchCommunals from 'pages/services/communal/switch';
 
 export const routes = [{
         path: '/',
         Component: Main,
-        title: 'Home'
+        title: 'Home',
     },
     {
         path: TV,
         Component: TVS,
-        title: 'TV'
+        title: 'TV',
     },
     {
         path: PROVIDERS,
         Component: Providers,
-        title: 'Providers'
+        title: 'Providers',
     },
     {
         path: MOBILEOPERATOR,
         Component: MobileOperator,
-        title: 'MobileOperator'
+        title: 'MobileOperator',
     },
     {
         path: TVDETAILS,
         Component: TVDetails,
-        title: 'tvItem'
+        title: 'tvItem',
     },
     {
         path: MOBILEOPERATORS,
         Component: MobDetails,
-        title: 'MobDetails'
+        title: 'MobDetails',
     },
     {
         path: PROVIDERDETAILS,
         Component: PRDetails,
-        title: 'PRDetails'
+        title: 'PRDetails',
     },
     {
         path: PAY,
         Component: PayPhone,
-        title: 'Pay'
+        title: 'Pay',
     },
     {
         path: CARD_DETAILS,
         Component: CardDetails,
-        title: 'CardDetails'
+        title: 'CardDetails',
     },
     {
         path: CARDPAY,
         Component: CardPay,
-        title: 'CardPay'
+        title: 'CardPay',
     },
     {
         path: WALLET,
         Component: Wallets,
-        title: 'Wallets'
+        title: 'Wallets',
     },
     {
         path: WALLET_DETAILS,
         Component: SwitchWallet,
-        title: 'SwitchWallet'
+        title: 'SwitchWallet',
     },
     {
         path: PAY_TO_DETAILS,
         Component: PayToDetails,
-        title: 'PayToDetails'
+        title: 'PayToDetails',
     },
-]
+    {
+        path: COMMUNALS,
+        Component: Communals,
+        title: 'Communals',
+    },
+    {
+        path: COMMUNALS_DETAILS,
+        Component: SwitchCommunals,
+        title: 'SwitchCommunals',
+    },
+];

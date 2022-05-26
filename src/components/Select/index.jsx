@@ -1,5 +1,11 @@
 import { useEffect, useState } from 'react';
-import { ArrowDownIcon, Dropdown } from './style';
+import {
+	Dropdown,
+	IconWrap,
+	RemoveIcon,
+	Placeholder,
+	ArrowDownIcon,
+} from './style';
 
 export default ({ menu, changeValue, defaultValue }) => {
 	const [active, setActive] = useState(false);
@@ -36,9 +42,19 @@ export default ({ menu, changeValue, defaultValue }) => {
 
 	return (
 		<Dropdown active={active} onClick={() => setActive(!active)}>
-			<Dropdown.Title>{value}</Dropdown.Title>
-			<ArrowDownIcon active={active ? 'true' : ''} />
+			{value !== undefined ? (
+				<Dropdown.Title>{value}</Dropdown.Title>
+			) : (
+				<Placeholder>Iltimos, tanlang</Placeholder>
+			)}
 			{menuList}
+			<IconWrap>
+				{value === undefined ? (
+					<ArrowDownIcon active={active ? 'true' : ''} />
+				) : (
+					<RemoveIcon onClick={() => setValue(undefined)} />
+				)}
+			</IconWrap>
 		</Dropdown>
 	);
 };

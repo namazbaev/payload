@@ -7,42 +7,43 @@ import { searchAction } from 'redux/slices/search';
 import { useSelector, useDispatch } from 'react-redux';
 import { useState, useEffect, useCallback } from 'react';
 import {
+	TV,
 	WALLET,
+	PROVIDERS,
+	COMMUNALS,
 	CARD_DETAIL,
 	MOBILEOPERATOR,
-	PROVIDERS,
-	TV,
 } from 'routes/route';
 import {
 	Hr,
 	TVS,
+	Home,
+	Taxi,
+	Fire,
+	Cast,
+	Heart,
 	Cards,
 	Globe,
-	UzCard,
-	Services,
-	CardItem,
-	Container,
-	MainSection,
-	CardNumber,
-	CardName,
-	ExpiryDate,
-	Smartphone,
 	Trello,
 	Wallet,
-	Heart,
-	Home,
-	Cast,
-	Fire,
-	Graduation,
+	UzCard,
 	Medical,
-	Taxi,
-	HumoCard,
 	PayText,
-	UzcardLogos,
-	HumoLogoLogos,
 	Service,
+	HumoCard,
+	Services,
+	CardItem,
+	CardName,
+	Container,
+	CardNumber,
+	ExpiryDate,
+	Smartphone,
+	Graduation,
+	MainSection,
+	UzcardLogos,
 	ServiceName,
 	KeyboardWrap,
+	HumoLogoLogos,
 } from './style';
 export default () => {
 	const { t } = useTranslation();
@@ -128,10 +129,12 @@ export default () => {
 						<Cast />
 						<ServiceName>{t('online_services')}</ServiceName>
 					</Service>
-					<Service>
-						<Fire />
-						<ServiceName>{t('utilies_payment')}</ServiceName>
-					</Service>
+					<LinkTo to={COMMUNALS}>
+						<Service>
+							<Fire />
+							<ServiceName>{t('utilies_payment')}</ServiceName>
+						</Service>
+					</LinkTo>
 					<Service>
 						<Graduation />
 						<ServiceName>{t('education')}</ServiceName>
