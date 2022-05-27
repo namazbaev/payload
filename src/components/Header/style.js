@@ -5,6 +5,7 @@ import { ReactComponent as SearchIcon } from 'assets/icons/search.svg';
 
 export const Logo = styled(LogoIcon)
 `
+	display: ${({ show }) => (show ? 'none' : 'flex')};
 	width: 150px;
 	height: 50px;
 	cursor: pointer;
@@ -24,7 +25,7 @@ export const SearchIcons = styled(SearchIcon)
 	cursor: pointer;
 	position: absolute;
 	top: 25%;
-	right: 5%;
+	right: ${({ show }) => (show ? '2%' : '5%')};
 	&:hover {
 		path {
 			fill: #000;
@@ -40,7 +41,7 @@ export const SearchIcons = styled(SearchIcon)
 		width: 16px;
 		height: 16px;
 		top: 21%;
-		right: 6%;
+		right: ${({ show }) => (show ? '2%' : '6%')};
 	}
 `;
 export const Container = styled.div `
@@ -58,7 +59,7 @@ export const Container = styled.div `
 	}
 `;
 export const LeftSection = styled.div `
-	display: flex;
+	display: ${({ show }) => (show ? 'none' : 'flex')};
 	align-items: center;
 	justify-content: space-between;
 `;
@@ -188,7 +189,7 @@ export const Placeholder = styled.p `
 	}
 `;
 export const Input = styled.div `
-	width: 256px;
+	width: ${({ show }) => (show ? '1000px' : '256px')};
 	height: 48px;
 	outline: none;
 	font-size: 18px;
@@ -198,18 +199,21 @@ export const Input = styled.div `
 	border: 1px solid #d0cfcf;
 	padding: 12px 40px 12px 16px;
 	color: var(--card-text-color);
+	transition: 0.3s;
+	border: ${({ show }) => (show ? '1.5px solid #00c35a' : '1px solid #d0cfcf')};
 	&:focus,
 	&:active {
-		border: 1px solid rgb(196, 196, 196);
+		border: 1px solid #00c35a;
 		box-shadow: 0 0 5px rgb(196, 196, 196);
 		transition: var(--card-click-transition);
 	}
 	@media ${device.tablet} {
-		width: 150px;
+		width: ${({ show }) => (show ? '630px' : '150px')};
 		height: 30px;
 		font-size: 14px;
 		font-weight: 400;
-		border: 0.7px solid #d0cfcf;
+		border: ${({ show }) =>
+			show ? '1px solid #00c35a' : '0.7px solid #d0cfcf'};
 		padding: 4px 16px 12px 12px;
 	}
 `;

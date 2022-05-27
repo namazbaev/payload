@@ -44,5 +44,11 @@
     "popup_error_title": "Ошибка",
     "popup_error_desc": "Оплатить услугу не удалось. Пожалуйста, повторите попытку позже",
     "please_select": "Пожалуйста, выберите",
-    "phone_for_communication": "Телефон для связи"
+    "phone_for_communication": "Телефон для связи",
+    "receipt_number": "Номер чека :",
+    "provider": "Провайдер :",
+    "time": "Время :",
+    "paid": "Оплачено :",
+    "balance_replenished": "Баланс пополнен :",
+    "successfully": "Успешно"
 }

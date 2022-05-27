@@ -44,5 +44,11 @@
     "popup_error_title": "Xatolik",
     "popup_error_desc": "Xizmat uchun to'lovni amalga oshirib bo‘lmadi. Iltimos keyinroq qayta urinib ko'ring",
     "please_select": "Iltimos, tanlang",
-    "phone_for_communication": "Aloqa uchun telefon"
+    "phone_for_communication": "Aloqa uchun telefon",
+    "receipt_number": "Chek raqami :",
+    "provider": "Provayder :",
+    "time": "Vaqti :",
+    "paid": "To'landi :",
+    "balance_replenished": "Hisob to'ldirildi :",
+    "successfully": "Muvaffaqqiyatli"
 }

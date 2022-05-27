@@ -2,9 +2,9 @@ import { langList } from 'i18n/config';
 import Dropdown from 'components/Dropdown';
 import { mobileoperators } from 'utils/json';
 import { LinkTo } from 'styles/globalStyles';
-import { useCallback, useState } from 'react';
 import { useLocation } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
+import { useCallback, useEffect, useState } from 'react';
 import {
 	Logo,
 	Drop,
@@ -25,6 +25,7 @@ import Keyboard from 'components/Keyboard';
 import { KeyboardWrap } from 'pages/home/style';
 import LinkButton from 'components/Buttons/LinkButton';
 import { Wrap, Content, CardImage } from 'components/Card/style';
+import { MOBILEOPERATOR } from 'routes/route';
 
 export const Header = () => {
 	const location = useLocation();
@@ -32,7 +33,24 @@ export const Header = () => {
 	const currentLang = localStorage.getItem('lang') || 'uz';
 	const [text, setText] = useState('');
 	const [show, setShow] = useState(false);
+	const [filtered, setFiltered] = useState([]);
 	const [lang, setLang] = useState(currentLang);
+
+	useEffect(() => {
+		setText(text);
+	}, [text]);
+	useEffect(() => {
+		setFiltered(() =>
+			mobileoperators.filter((item) =>
+				item.name.toLowerCase().includes(text.toLowerCase()),
+			),
+		);
+	}, [text]);
+	const removeChar = () => {
+		if (text === '') return;
+		const value = text.slice(0, -1);
+		setText(value);
+	};
 	const changeLang = useCallback(
 		(e) => {
 			localStorage.setItem('lang', e);
@@ -41,10 +59,15 @@ export const Header = () => {
 		},
 		[lang],
 	);
+
 	const selected = langList.find((x) => x.value === currentLang);
 	const langs = currentLang !== null ? selected.flag : langList[0].flag;
-	const content = mobileoperators.map(({ img, name }) => (
-		<LinkTo key={name} to={`${name}`}>
+	const content = filtered.map(({ img, name }) => (
+		<LinkTo
+			key={name}
+			onClick={() => setShow(false)}
+			to={`${MOBILEOPERATOR}/${name}`}
+		>
 			<Content>
 				<CardImage prop={location.pathname} img={img} />
 			</Content>
@@ -53,7 +76,7 @@ export const Header = () => {
 	return (
 		<>
 			<Container>
-				<LeftSection>
+				<LeftSection show={show}>
 					<TerminalWrap>
 						<Terminal>{t('terminal')}</Terminal>
 						<Number>№12345678</Number>
@@ -65,14 +88,14 @@ export const Header = () => {
 					</WrapTerminal>
 				</LeftSection>
 				<LinkTo to='/'>
-					<Logo />
+					<Logo show={show} />
 				</LinkTo>
 				<RightSection>
 					<Search>
-						<Input onClick={() => setShow(!show)}>
+						<Input show={show} onClick={() => setShow(!show)}>
 							<Placeholder>{text === '' ? 'Поиск' : text}</Placeholder>
 						</Input>
-						<SearchIcons />
+						<SearchIcons show={show} />
 					</Search>
 					<Dropdown
 						menu={langList}
@@ -88,7 +111,7 @@ export const Header = () => {
 					<Wrap>{content}</Wrap>
 					<WrapButton>
 						<LinkButton margin='0 0 15px 0' path='/' text={t('main_page')} />
-						<Keyboard />
+						<Keyboard setKey={setText} removeChar={removeChar} />
 					</WrapButton>
 				</KeyboardWrap>
 			)}

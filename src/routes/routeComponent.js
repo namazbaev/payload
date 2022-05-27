@@ -1,5 +1,6 @@
 import Main from 'pages/home';
 import PayPhone from 'pages/pay';
+import QRCode from 'pages/result';
 import CardPay from 'pages/card/pay';
 import { Wallets } from 'pages/wallet';
 import { TVS } from 'pages/services/tv';
@@ -15,6 +16,7 @@ import { MobileOperator } from 'pages/services/operators';
 import {
     TV,
     PAY,
+    QRCODE,
     WALLET,
     CARDPAY,
     PROVIDERS,
@@ -104,5 +106,10 @@ export const routes = [{
         path: COMMUNALS_DETAILS,
         Component: SwitchCommunals,
         title: 'SwitchCommunals',
+    },
+    {
+        path: QRCODE,
+        Component: QRCode,
+        title: 'QRCode',
     },
 ];

@@ -26,7 +26,7 @@ export const Footer = styled.div `
 export const Wrap = styled.div `
 	width: 100%;
 	display: grid;
-	padding: 0 50px;
+	padding: 0 40px;
 	margin-top: 27px;
 	grid-template-columns: repeat(5, 1fr);
 	@media ${device.tablet} {
@@ -70,14 +70,6 @@ export const CardImage = styled.span `
 	background-position: 50% 50%;
 	background-repeat: no-repeat;
 	background-image: url(${({ img }) => img || ''});
-	@media ${device.tablet1} {
-		width: 100%;
-		height: 100%;
-		background-position: 50% 50%;
-		background-repeat: no-repeat;
-		background-image: url(${({ img }) => img || ''});
-		background-size: ${({ size }) => (size ? size : 'auto')};
-	}
 	@media ${device.tablet} {
 		width: 100%;
 		height: 100%;
@@ -85,6 +77,6 @@ export const CardImage = styled.span `
 		background-position: center center;
 		background-image: url(${({ img }) => img || ''});
 		background-size: ${({ prop }) =>
-			prop === MOBILEOPERATOR ? '115%' : '12vw 10vh'};
+			prop === MOBILEOPERATOR ? '115%' : '20vw 16vh'};
 	}
 `;

@@ -44,5 +44,11 @@
     "popup_error_title": "Error",
     "popup_error_desc": "Payment for the service was not made. Please try again later",
     "please_select": "Please, select",
-    "phone_for_communication": "Phone for communication"
+    "phone_for_communication": "Phone for communication",
+    "receipt_number": "Receipt number :",
+    "provider": "Provider :",
+    "time": "Time :",
+    "paid": "Paid for :",
+    "balance_replenished": "Balance topped up :",
+    "successfully": "Successfully"
 }

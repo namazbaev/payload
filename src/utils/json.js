@@ -112,9 +112,9 @@ export const wallets = [
 ];
 export const communals = [
     { name: 'gas', img: Gas },
+    { name: 'electricity', img: Electricity },
     { name: 'garbage', img: Payeer },
     { name: 'coldwater', img: Coldwater },
-    { name: 'electricity', img: Electricity },
 ];
 export const mobileoperators = [
     { name: 'humans', img: HumansLogo },

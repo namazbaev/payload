@@ -3,6 +3,7 @@ export const TV = '/tv';
 export const PAY = '/pay';
 export const HUMO = '/humo';
 export const WALLET = '/wallet';
+export const QRCODE = '/qr-code';
 export const CARDPAY = '/card-pay';
 export const PROVIDERS = '/providers';
 export const COMMUNALS = '/communals';
