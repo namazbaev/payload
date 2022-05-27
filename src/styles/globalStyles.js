@@ -81,8 +81,8 @@ export const Amount = styled(Currency)
 export const Format = styled(Currency)
 `
 	color: #3d3d4b;
-	font-size: 40px;
-	font-weight: 700;
+	font-size: ${({ size }) => size || '40px'};
+	font-weight: ${({ fontWeight }) => fontWeight || 700};
 	line-height: 45px;
 	@media ${device.tablet} {
 		font-size: 22px;
@@ -95,19 +95,24 @@ export const Formatting = styled.span `
 	display: block;
 	color: #3d3d4b;
 	margin-top: 20px;
+	line-height: 45px;
+	border: ${({ active }) =>
+		active ? '4px solid #33baff' : '2px solid #33baff'};
+	padding: 16px 20px 16px 24px;
+	box-shadow: ${({ active }) =>
+		active && '0px 3px 26px -9px rgba(34, 60, 80, 0.2)'};
 	font-size: ${({ size }) => size || '40px'};
 	font-weight: ${({ fontWeight }) => fontWeight || 700};
-	line-height: 45px;
-	border: 2px solid #33baff;
-	padding: 16px 20px 16px 24px;
 	border-radius: var(--card-brd-radius);
 	@media ${device.tablet} {
 		width: ${({ width }) => width || '100%'};
 		height: 50px;
 		font-size: 22px;
-		margin-top: 10px;
 		line-height: 16px;
 		border-radius: 4px;
 		padding: 16px 0 16px 20px;
+		margin-top: ${({ marginTop }) => marginTop || '10px'};
+		border: ${({ active }) =>
+			active ? '3px solid #33baff' : '2px solid #33baff'};
 	}
 `;

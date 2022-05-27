@@ -33,6 +33,8 @@
     "warning": "Attention:",
     "block_pay": "Payment is not possible for legal entities!",
     "pay": "Pay",
+    "personal_number": "Personal number",
+    "district_warning": "Must choose the district",
     "card_pay_warning": "To top up your account, first enter the card number!",
     "transfer_amount": "Transfer amount:",
     "card_number": "Card number:",
@@ -40,5 +42,7 @@
     "popup_success_title": "Congratulations",
     "popup_success_desc": "Payment completed successfully. \n We use our services thanks for!",
     "popup_error_title": "Error",
-    "popup_error_desc": "Payment for the service was not made. Please try again later"
+    "popup_error_desc": "Payment for the service was not made. Please try again later",
+    "please_select": "Please, select",
+    "phone_for_communication": "Phone for communication"
 }

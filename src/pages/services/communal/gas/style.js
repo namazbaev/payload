@@ -45,10 +45,10 @@ export const Logo = styled.div `
 `;
 export const DetailsInfo = styled.div `
 	width: 100%;
+	height: 100%;
 	display: flex;
 	align-items: center;
 	flex-direction: column;
-	justify-content: center;
 `;
 export const DetailsKeyboard = styled.div `
 	height: 100%;

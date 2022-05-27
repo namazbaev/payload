@@ -6,8 +6,8 @@ import { districts, numberKeyboard } from 'utils/json';
 import LinkButton from 'components/Buttons/LinkButton';
 import { Format, Formatting } from 'styles/globalStyles';
 import {
-	Hr,
 	Div,
+	Logo,
 	Text,
 	Drop,
 	Delete,
@@ -20,53 +20,117 @@ import {
 	DetailsKeyboard,
 	DetailsContainer,
 } from './style';
+import { Placeholder } from 'components/Select/style';
 
 export const Electricity = () => {
 	const { t } = useTranslation();
-	const [code, setCode] = useState('2964547');
-	const [phone, setPhone] = useState('+998');
+	const types = {
+		code: 'code',
+		phone: 'phone',
+		select: 'select',
+		uniqeNumber: 'uniqeNumber',
+	};
+	const phoneCode = '+998';
+	const [code, setCode] = useState('');
 	const [value, setValue] = useState('');
-	const [number, setNumber] = useState('');
-	const [uniqeNumber, setUniqueNumber] = useState('Shaxsiy raqam');
+	const [phone, setPhone] = useState(phoneCode);
+	const [uniqeNumber, setUniqueNumber] = useState('');
+	const [selectedType, setSelectedType] = useState('');
 	const onChangeNumber = (value) => {
-		if (number.length >= 16) return;
-		setNumber((prev) => prev + value);
+		if (selectedType === types.code) {
+			if (code.length >= 5) return;
+			setCode((prev) => prev + value);
+		}
+		if (selectedType === types.phone) {
+			if (phone.length >= 13) return;
+			setPhone((prev) => prev + value);
+		}
+		if (selectedType === types.uniqeNumber) {
+			if (uniqeNumber.length >= 10) return;
+			setUniqueNumber((prev) => prev + value);
+		}
 	};
 	const removeChar = () => {
-		if (number === '') return;
-		const value = number.slice(0, -1);
-		setNumber(value);
+		if (selectedType === types.code) {
+			if (code === '') return;
+			const value = code.slice(0, -1);
+			setCode(value);
+		}
+		if (selectedType === types.phone) {
+			if (phone.length !== 4) {
+				const value = phone.slice(0, -1);
+				setPhone(value);
+			}
+		}
+		if (selectedType === types.uniqeNumber) {
+			if (uniqeNumber === '') return;
+			const value = uniqeNumber.slice(0, -1);
+			setUniqueNumber(value);
+		}
 	};
-	const length = number.length !== 16;
-	const clearNumbers = () => setNumber('');
-	const fromCard = number.split(' ').join('');
+	const clearNumbers = () => {
+		if (selectedType === types.code) {
+			setCode('');
+		}
+		if (selectedType === types.phone) {
+			setPhone(phoneCode);
+		}
+		if (selectedType === types.uniqeNumber) {
+			setUniqueNumber('');
+		}
+	};
+	const fromData = { code, phone, value, uniqeNumber };
+	const changeActive = (type) => setSelectedType(type);
 	const onSelect = useCallback((val) => setValue(val), [value]);
 	return (
 		<Div>
-			<div>LOGO</div>
+			<Logo>LOGO</Logo>
 			<DetailsContainer>
 				<DetailsInfo>
 					<Select
 						menu={districts}
 						defaultValue={value}
 						changeValue={onSelect}
+						active={selectedType === 'selec'}
+						onClick={() => changeActive('select')}
 					/>
-					<Formatting size='30px' fontWeight='500'>
-						{code}
+					<Formatting
+						size='30px'
+						active={selectedType === 'code'}
+						onClick={() => changeActive('code')}
+					>
+						{code === '' ? <Placeholder>23234</Placeholder> : code}
 					</Formatting>
-					<Formatting size='30px' fontWeight='500'>
-						{uniqeNumber}
+					<Formatting
+						size='30px'
+						active={selectedType === 'uniqeNumber'}
+						onClick={() => changeActive('uniqeNumber')}
+					>
+						{uniqeNumber === '' ? (
+							<Placeholder>{t('personal_number')}</Placeholder>
+						) : (
+							uniqeNumber
+						)}
 					</Formatting>
-					<Formatting size='30px' fontWeight='500'>
-						<Format
-							value={phone}
-							displayType='text'
-							format='+### ## ### ## ##'
-						/>
+					<Formatting
+						size='30px'
+						active={selectedType === 'phone'}
+						onClick={() => changeActive('phone')}
+					>
+						{phone.length === 4 ? (
+							<Placeholder>{t('phone_for_communication')}</Placeholder>
+						) : (
+							<Format
+								size='30px'
+								value={phone}
+								displayType='text'
+								format='+### ## ### ## ##'
+							/>
+						)}
 					</Formatting>
 					<InfoText>
 						<Text>
-							<WarningText> {t('warning')}</WarningText> {t('card_pay_warning')}
+							<WarningText> {t('warning')}</WarningText> {t('district_warning')}
 						</Text>
 					</InfoText>
 				</DetailsInfo>
@@ -93,11 +157,9 @@ export const Electricity = () => {
 				<LinkButton path='/' text={t('main_page')} />
 				<LinkButton
 					path={CARDPAY}
-					length={length}
-					state={fromCard}
+					state={fromData}
 					text={t('next')}
-					color={length ? '#aeaeae' : '#00C35A'}
-					hoveredColor={length ? '#aeaeae' : '#04B054'}
+					color='#00C35A'
 				/>
 			</Footer>
 		</Div>

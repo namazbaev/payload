@@ -1,4 +1,5 @@
-import { useEffect, useState } from 'react';
+import { useTranslation } from 'react-i18next';
+import { useEffect, useState, useRef } from 'react';
 import {
 	Dropdown,
 	IconWrap,
@@ -7,9 +8,25 @@ import {
 	ArrowDownIcon,
 } from './style';
 
-export default ({ menu, changeValue, defaultValue }) => {
+export default ({ menu, changeValue, defaultValue, ...props }) => {
+	const menuRef = useRef(null);
+	const { t } = useTranslation();
+	const useOutsideAlerter = (ref) => {
+		useEffect(() => {
+			const handleClickOutside = (event) => {
+				if (ref.current && !ref.current.contains(event.target)) {
+					setActive(false);
+				}
+			};
+			document.addEventListener('mousedown', handleClickOutside);
+			return () =>
+				document.removeEventListener('mousedown', handleClickOutside);
+		}, [ref]);
+	};
+	useOutsideAlerter(menuRef);
 	const [active, setActive] = useState(false);
 	const [value, setValue] = useState(undefined);
+	const [selectedActive, setSelectedActive] = useState(false);
 	useEffect(() => {
 		if (defaultValue) {
 			const selected =
@@ -24,6 +41,7 @@ export default ({ menu, changeValue, defaultValue }) => {
 	const handleSelect = (value) => {
 		setActive(false);
 		changeValue(value);
+		setSelectedActive(value);
 	};
 	const menuList = (
 		<Dropdown.Menu active={active} length={menu.length > 10}>
@@ -32,6 +50,7 @@ export default ({ menu, changeValue, defaultValue }) => {
 				menu.map((item) => (
 					<Dropdown.MenuItem
 						key={item.value}
+						active={selectedActive === item.value}
 						onClick={() => handleSelect(item.value)}
 					>
 						{item.label}
@@ -41,11 +60,16 @@ export default ({ menu, changeValue, defaultValue }) => {
 	);
 
 	return (
-		<Dropdown active={active} onClick={() => setActive(!active)}>
+		<Dropdown
+			{...props}
+			ref={menuRef}
+			active={active}
+			onClick={() => setActive(!active)}
+		>
 			{value !== undefined ? (
 				<Dropdown.Title>{value}</Dropdown.Title>
 			) : (
-				<Placeholder>Iltimos, tanlang</Placeholder>
+				<Placeholder>{t('please_select')}</Placeholder>
 			)}
 			{menuList}
 			<IconWrap>

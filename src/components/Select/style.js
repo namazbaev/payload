@@ -38,10 +38,17 @@ export const Dropdown = styled.div `
 	align-items: center;
 	background-color: #fff;
 	color: var(--input-color);
-	border: 2px solid var(--border-color);
+	border: ${({ active }) =>
+		active ? '4px solid var(--border-color)' : '2px solid var(--border-color)'};
+	box-shadow: ${({ active }) =>
+		active && '0px 3px 26px -9px rgba(34, 60, 80, 0.2)'};
 	border-radius: var(--card-brd-radius);
 	@media ${device.tablet} {
 		height: 50px;
+		border: ${({ active }) =>
+			active
+				? '3px solid var(--border-color)'
+				: '2px solid var(--border-color)'};
 	}
 `;
 
@@ -65,13 +72,13 @@ Dropdown.Title = styled.span `
 Dropdown.Menu = styled.ul `
 	max-height: 430px;
 	overflow-y: auto;
-	padding: 8px 0;
+	padding: 6px 0;
 	min-width: 100%;
-	margin-top: 15px;
 	list-style: none;
 	position: absolute;
 	left: 0;
 	top: 100%;
+	z-index: 30;
 	transition: 0.3s;
 	border-radius: 4px;
 	background-color: #fff;
@@ -79,28 +86,44 @@ Dropdown.Menu = styled.ul `
 	box-shadow: 0 6px 12px 0 rgba(73, 75, 116, 0.16);
 	visibility: ${({ active }) => (active ? 'visible' : 'hidden')};
 	transform: ${({ active }) => (active ? 'translateY(1rem)' : 'translateY(0)')};
+	::-webkit-scrollbar {
+		width: 8px;
+		height: 4px;
+	}
+
+	::-webkit-scrollbar-track {
+		background: #f8f8f8;
+		border-radius: 8px;
+	}
+
+	::-webkit-scrollbar-thumb {
+		border-radius: 8px;
+		background: rgba(73, 75, 116, 0.1);
+	}
 	@media ${device.tablet} {
+		::-webkit-scrollbar {
+			width: 4px;
+			height: 4px;
+		}
 		max-height: 230px;
 	}
 `;
 
 Dropdown.MenuItem = styled.li `
-	max-width: 600px;
+	width: 600px;
+	height: 50px;
 	cursor: pointer;
 	display: inline-block;
 	font-size: 30px;
 	font-weight: 500;
 	color: #181c32;
-	line-height: 40px;
-	height: 50px;
+	line-height: 50px;
 	padding: 0 16px;
 	overflow: hidden;
 	white-space: nowrap;
 	text-overflow: ellipsis;
 	transition: 0.2s ease-in;
-	&:focus {
-		background-color: #f8f8f8;
-	}
+	background-color: ${({ active }) => (active ? '#f1f1f1' : '')};
 	@media ${device.tablet} {
 		font-size: 16px;
 		line-height: 20px;
@@ -123,10 +146,9 @@ export const Placeholder = styled.p `
 	font-weight: 500;
 	line-height: 40px;
 	color: #181c32;
-	opacity: 0.7;
+	opacity: 0.5;
 	@media ${device.tablet} {
 		font-size: 20px;
-		font-weight: 500;
-		line-height: 40px;
+		line-height: 18px;
 	}
 `;

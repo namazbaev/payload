@@ -50,10 +50,13 @@ import Humo from 'assets/images/cards/humo1.svg';
 import UzCard from 'assets/images/cards/uzcard.svg';
 
 import Qiwi from 'assets/images/wallets/qiwi.svg';
+import Gas from 'assets/images/communals/gas.jpg';
 import Payeer from 'assets/images/wallets/payeer.svg';
 import Depozit from 'assets/images/wallets/depozit.svg';
 import YooMoney from 'assets/images/wallets/yoomoney.svg';
 import WebMoney from 'assets/images/wallets/webmoney.svg';
+import Coldwater from 'assets/images/communals/coldwater.png';
+import Electricity from 'assets/images/communals/electricity.jpg';
 import PerfectMoney from 'assets/images/wallets/perfectmoney1.svg';
 export const tv = [
     { name: 'uza', img: UZA },
@@ -108,10 +111,10 @@ export const wallets = [
     { name: 'perfectmoney', img: PerfectMoney },
 ];
 export const communals = [
-    { name: 'gas', img: Qiwi },
-    { name: 'Garbage', img: Payeer },
-    { name: 'coldwater', img: Payeer },
-    { name: 'electricity', img: Depozit },
+    { name: 'gas', img: Gas },
+    { name: 'garbage', img: Payeer },
+    { name: 'coldwater', img: Coldwater },
+    { name: 'electricity', img: Electricity },
 ];
 export const mobileoperators = [
     { name: 'humans', img: HumansLogo },
@@ -128,6 +131,22 @@ export const mobileoperators = [
 export const cards = [
     { name: 'humo', img: Humo },
     { name: 'uzcard', img: UzCard },
+];
+export const regions = [
+    { value: 1, label: 'Toshkent shahar' },
+    { value: 2, label: 'Toshkent viloyati' },
+    { value: 3, label: 'Andijon viloyati' },
+    { value: 4, label: 'Buxoro viloyati' },
+    { value: 5, label: 'Jizzax viloyati' },
+    { value: 6, label: 'Sirdaryo viloyati' },
+    { value: 7, label: 'Navoiy  viloyati' },
+    { value: 8, label: 'Namangan viloyati' },
+    { value: 9, label: "Farg'ona viloyati" },
+    { value: 10, label: 'Samarqand viloyati' },
+    { value: 11, label: 'Qashqadaryo viloyati' },
+    { value: 12, label: 'Surxondaryo viloyati' },
+    { value: 13, label: 'Xorazm viloyati' },
+    { value: 14, label: "Qoraqalpog'iston Respublikasi" },
 ];
 export const districts = [
     { value: 1, label: '26280 - Olmazor EP' },

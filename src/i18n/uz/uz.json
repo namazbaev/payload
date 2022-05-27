@@ -33,6 +33,8 @@
     "warning": "Diqqat:",
     "block_pay": "Yuridik shaxslar uchun to'lov qilishning imkoni yo'q!",
     "pay": "To'lash",
+    "personal_number": "Shaxsiy raqam",
+    "district_warning": "Tumanni tanlashingiz shart",
     "card_pay_warning": "Hisobingizni to'ldirish uchun avval karta raqamini kiriting!",
     "transfer_amount": "O'tkazma summasi:",
     "card_number": "Karta raqami:",
@@ -40,5 +42,7 @@
     "popup_success_title": "Tabriklaymiz",
     "popup_success_desc": "Toʻlov muvaffaqiyatli yakunlandi. Bizning xizmatlarimizdan foydalanganingiz uchun tashakkur !",
     "popup_error_title": "Xatolik",
-    "popup_error_desc": "Xizmat uchun to'lovni amalga oshirib bo‘lmadi. Iltimos keyinroq qayta urinib ko'ring"
+    "popup_error_desc": "Xizmat uchun to'lovni amalga oshirib bo‘lmadi. Iltimos keyinroq qayta urinib ko'ring",
+    "please_select": "Iltimos, tanlang",
+    "phone_for_communication": "Aloqa uchun telefon"
 }
