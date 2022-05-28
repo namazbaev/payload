@@ -9,7 +9,6 @@ export const PROVIDERS = '/providers';
 export const COMMUNALS = '/communals';
 export const TVDETAILS = `${TV}/:name`;
 export const CARD_DETAIL = '/card-details';
-export const PAY_TO_DETAILS = `${PAY}/details`;
 export const WALLET_DETAILS = `${WALLET}/:name`;
 export const CARD_DETAILS = '/card-details/:name';
 export const MOBILEOPERATOR = '/mobile-operators';

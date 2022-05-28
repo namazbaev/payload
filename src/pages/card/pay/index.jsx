@@ -1,33 +1,27 @@
 import { useState } from 'react';
-import Keyboard from 'components/Keyboard';
 import { useTranslation } from 'react-i18next';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { Phone, Amount, Format, Formatting } from 'styles/globalStyles';
 import {
-	DataInfo,
-	DataInfoItem,
-	Label,
-	Footer,
-	Div,
-	Container,
-	ImageWrap,
-	Image,
 	Hr,
+	Div,
 	FIO,
+	Label,
+	Image,
+	Footer,
+	DataInfo,
+	ImageWrap,
+	Container,
 	FooterBtn,
+	DataInfoItem,
 } from './style';
 import Popup from 'components/Popup';
 export default () => {
 	const navigate = useNavigate();
 	const location = useLocation();
 	const { t } = useTranslation();
-	const [amount, setAmount] = useState('');
+	const [amount, setAmount] = useState('15000');
 	const [active, setActive] = useState(false);
-	const removeChar = () => {
-		if (amount === '') return;
-		const value = amount.slice(0, -1);
-		setAmount(value);
-	};
 	const status = Math.random() < 0.5;
 	const total = amount !== '' ? amount : 0;
 	const phone = location.state !== null ? location.state : '';
@@ -35,7 +29,6 @@ export default () => {
 		navigate(-1);
 		setActive(!active);
 	};
-	const length = amount === '';
 	const summa = amount.length > 0 ? amount : 0;
 	return (
 		<>
@@ -77,16 +70,10 @@ export default () => {
 				<Footer>
 					<FooterBtn onClick={goBack}>{t('back')}</FooterBtn>
 					<FooterBtn onClick={() => navigate('/')}>{t('main_page')}</FooterBtn>
-					<FooterBtn
-						disabled={amount === ''}
-						onClick={() => setActive(true)}
-						color={length ? '#D8D8D8' : '#00C35A'}
-						hoveredColor={length ? '#D8D8D8' : '#04B054'}
-					>
+					<FooterBtn color='#00C35A' onClick={() => setActive(true)}>
 						{t('pay')}
 					</FooterBtn>
 				</Footer>
-				<Keyboard setKey={setAmount} removeChar={removeChar} />
 			</Div>
 		</>
 	);

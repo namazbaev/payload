@@ -5,7 +5,6 @@ import CardPay from 'pages/card/pay';
 import { Wallets } from 'pages/wallet';
 import { TVS } from 'pages/services/tv';
 import CardDetails from 'pages/card/details';
-import PayToDetails from 'pages/pay/details';
 import SwitchWallet from 'pages/wallet/switch';
 import TVDetails from 'pages/services/tv/details';
 import { Communals } from 'pages/services/communal';
@@ -25,7 +24,6 @@ import {
     CARD_DETAILS,
     MOBILEOPERATOR,
     WALLET_DETAILS,
-    PAY_TO_DETAILS,
     PROVIDERDETAILS,
     MOBILEOPERATORS,
     COMMUNALS_DETAILS,
@@ -91,11 +89,6 @@ export const routes = [{
         path: WALLET_DETAILS,
         Component: SwitchWallet,
         title: 'SwitchWallet',
-    },
-    {
-        path: PAY_TO_DETAILS,
-        Component: PayToDetails,
-        title: 'PayToDetails',
     },
     {
         path: COMMUNALS,
