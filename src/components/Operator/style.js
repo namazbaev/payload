@@ -27,7 +27,6 @@ export const Operator = styled.button `
 		height: var(--card-min-height);
 		border-radius: var(--card-min-brd-radius);
 		background: #fff url(${({ img }) => img || ''}) center /
-			${({ size }) => size || '130%'} no-repeat;
-		background-size: cover;
+			${({ size }) => size || '115%'} no-repeat;
 	}
 `;

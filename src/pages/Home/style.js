@@ -195,17 +195,9 @@ export const KeyboardWrap = styled.div `
 		top: 13%;
 	}
 `;
-export const Hr = styled.hr `
-	border: 0;
-	margin: 40px 48px;
-	border-top: 2px solid var(--line-color);
-	@media ${device.tablet} {
-		margin: 20px 30px;
-	}
-`;
 export const MainSection = styled.div `
 	display: flex;
-	margin-top: 36px;
+	margin-top: 30px;
 	height: 530px;
 	padding: 0 48px;
 	@media ${device.tablet} {
@@ -272,9 +264,8 @@ export const Services = styled.div `
 	grid-template-columns: auto auto auto;
 	@media ${device.tablet} {
 		padding-left: 16px;
-		width: 100%;
-		grid-template-columns: repeat(3, 1fr);
-		gap: 1em;
+		grid-template-columns: repeat(3);
+		grid-gap: 0.8em;
 	}
 `;
 export const Service = styled.div `
@@ -306,27 +297,11 @@ export const Service = styled.div `
 		transition: var(--card-click-transition);
 		box-shadow: 0px 4px 20px rgba(34, 37, 48, 0.1);
 	}
-	@media ${device.tablet1} {
-		width: 220px;
-		padding: 20px;
-		&:focus,
-		&:active {
-			p {
-				font-size: 17.8px;
-			}
-			svg {
-				width: 27px;
-				height: 27px;
-			}
-			color: #000;
-			transition: var(--card-click-transition);
-			box-shadow: 0px 4px 20px rgba(34, 37, 48, 0.1);
-		}
-	}
 	@media ${device.tablet} {
 		width: 160px;
 		height: 70px;
 		padding: 20px;
+		border-radius: 4px;
 		&:focus,
 		&:active {
 			p {

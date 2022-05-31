@@ -92,7 +92,7 @@ export const Number = styled.span `
 	}
 `;
 export const DetailsCard = styled.div `
-	width: 211px;
+	width: 230px;
 	height: 128px;
 	cursor: pointer;
 	border-radius: 8px;

@@ -38,7 +38,7 @@ export const GlobalStyle = createGlobalStyle `
         --card-width: 210px;
         --card-height: 110px;
         --card-brd-radius: 8px;
-        --card-min-width: 120px;
+        --card-min-width: 100%;
         --card-min-height: 70px;
         --card-min-brd-radius: 4px;
         --card-text-color: #343437;
