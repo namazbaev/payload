@@ -55,9 +55,12 @@ import Payeer from 'assets/images/wallets/payeer.svg';
 import Depozit from 'assets/images/wallets/depozit.svg';
 import YooMoney from 'assets/images/wallets/yoomoney.svg';
 import WebMoney from 'assets/images/wallets/webmoney.svg';
+import Yoomoney from 'assets/images/operators/yoomoney.svg';
 import Coldwater from 'assets/images/communals/coldwater.png';
 import Electricity from 'assets/images/communals/electricity.jpg';
 import PerfectMoney from 'assets/images/wallets/perfectmoney1.svg';
+import HumansWhite from 'assets/images/operators/humans-white.svg';
+import { MOBILEOPERATOR } from 'routes/route';
 export const tv = [
     { name: 'uza', img: UZA },
     { name: 'istv', img: Istv },
@@ -160,6 +163,68 @@ export const districts = [
     { value: 9, label: '26292 - Yangi hayot EP' },
     { value: 10, label: '22077 - Shayxontohur EP' },
     { value: 11, label: "26269 - Mirzo-Ulug'bek EP" },
+];
+export const carouselTop = [{
+        id: 1,
+        image: HumansLogo,
+        path: `${MOBILEOPERATOR}/humans`,
+    },
+    {
+        id: 2,
+        image: MobiuzLogo,
+        path: `${MOBILEOPERATOR}/mobiuz`,
+    },
+    {
+        id: 3,
+        image: UcellLogo,
+        path: `${MOBILEOPERATOR}/ucell`,
+    },
+    {
+        id: 4,
+        image: UzmobileLogo,
+        path: `${MOBILEOPERATOR}/uztelecom`,
+    },
+    {
+        id: 5,
+        image: BeelineLogo,
+        path: `${MOBILEOPERATOR}/beeline`,
+    },
+    {
+        id: 6,
+        image: PerfectumLogo,
+        path: `${MOBILEOPERATOR}/perfectum`,
+    },
+];
+export const carouselBottom = [{
+        id: 1,
+        image: Uzdigital,
+        path: `${MOBILEOPERATOR}/uzdigital`,
+    },
+    {
+        id: 2,
+        image: Yoomoney,
+        path: `${MOBILEOPERATOR}/yoomoney`,
+    },
+    {
+        id: 3,
+        image: Turon,
+        path: `${MOBILEOPERATOR}/turon`,
+    },
+    {
+        id: 4,
+        image: HumansWhite,
+        path: `${MOBILEOPERATOR}/humans`,
+    },
+    {
+        id: 5,
+        image: BeelineLogo,
+        path: `${MOBILEOPERATOR}/beeline`,
+    },
+    {
+        id: 6,
+        image: PerfectumLogo,
+        path: `${MOBILEOPERATOR}/perfectum`,
+    },
 ];
 export const numberKeyboard = [];
 for (let i = 1; i < 10; i++) numberKeyboard.push({ key: i });

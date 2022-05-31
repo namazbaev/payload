@@ -1,15 +1,7 @@
-import Card from 'components/Card';
-import Keyboard from 'components/Keyboard';
 import 'react-multi-carousel/lib/styles.css';
-import { mobileoperators } from 'utils/json';
 import { LinkTo } from 'styles/globalStyles';
-import { useLocation } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import MobileOperators from 'components/Operator';
-import { searchAction } from 'redux/slices/search';
-import { useSelector, useDispatch } from 'react-redux';
-import LinkButton from 'components/Buttons/LinkButton';
-import { useState, useEffect, useCallback } from 'react';
 import {
 	TV,
 	WALLET,
@@ -19,7 +11,6 @@ import {
 	MOBILEOPERATOR,
 } from 'routes/route';
 import {
-	Hr,
 	TVS,
 	Home,
 	Taxi,
@@ -46,37 +37,13 @@ import {
 	MainSection,
 	UzcardLogos,
 	ServiceName,
-	KeyboardWrap,
 	HumoLogoLogos,
 } from './style';
-import { Wrap, Content, CardImage } from 'components/Card/style';
 export default () => {
 	const { t } = useTranslation();
-	const dispatch = useDispatch();
-	const location = useLocation();
-	const [key, setKey] = useState('');
-	const { writeText, removeText } = searchAction;
-	const text = useSelector((state) => state.search.text);
-	const isShow = useSelector((state) => state.search.isShowKeyboard);
-	useEffect(() => {
-		setKey(key);
-		dispatch(writeText(key));
-	}, [key]);
-	const removeChar = useCallback(() => {
-		setKey(text);
-		dispatch(removeText());
-	}, [key]);
-	const content = mobileoperators.map(({ img, name }) => (
-		<LinkTo key={name} to={`${name}`}>
-			<Content>
-				<CardImage prop={location.pathname} img={img} />
-			</Content>
-		</LinkTo>
-	));
 	return (
 		<Container>
 			<MobileOperators />
-			<Hr />
 			<MainSection>
 				<Cards>
 					<LinkTo to={`${CARD_DETAIL}/uzcard`}>
@@ -161,11 +128,6 @@ export default () => {
 					</Service>
 				</Services>
 			</MainSection>
-			{/* <KeyboardWrap show={isShow}>
-				<Keyboard setKey={setKey} removeChar={removeChar} />
-				<LinkButton path='/' text={t('main_page')} />
-				<Wrap>{content}</Wrap>
-			</KeyboardWrap> */}
 		</Container>
 	);
 };

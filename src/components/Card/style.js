@@ -50,10 +50,9 @@ export const Content = styled.div `
 		transition: 0.2s;
 		transform: translateY(1px);
 	}
-	@media ${device.tablet1} {
-	}
 	@media ${device.tablet} {
 		margin: 0;
+		width: 100%;
 		height: 75px;
 	}
 `;
@@ -77,6 +76,6 @@ export const CardImage = styled.span `
 		background-position: center center;
 		background-image: url(${({ img }) => img || ''});
 		background-size: ${({ prop }) =>
-			prop === MOBILEOPERATOR ? '115%' : '20vw 16vh'};
+			prop === MOBILEOPERATOR ? '115%' : '13vw 10vh'};
 	}
 `;

@@ -10,18 +10,15 @@ export const GlobalStyle = createGlobalStyle `
         background-color: #fff;
     }
     * {
-        /* @import url('./font.css'); */
         margin: 0;
         padding: 0;
         box-sizing: border-box;
         font-family: "Inter", sans-serif;
     }
     .carousel-container {
-        margin-left: 50px;
-        margin-top: 40px;
+		padding: 16px 0 10px 50px;
         @media ${device.tablet} {
-            margin-left: 30px;
-            margin-top: 20px;
+			padding: 10px 0 10px 30px;
         }
     }
     .carousel-container .carousel-item {
