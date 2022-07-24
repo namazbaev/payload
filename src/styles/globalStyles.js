@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 import Currency from 'react-currency-format';
 import { device } from 'utils/media/responsive';
 import styled, { css, createGlobalStyle } from 'styled-components';
-export const GlobalStyle = createGlobalStyle `
+export const GlobalStyle = createGlobalStyle`
     html, body, #root{
         height: 100vh;
         margin: 0 auto;
@@ -49,7 +49,7 @@ export const GlobalStyle = createGlobalStyle `
         --card-click-transition: .3s;
     }
 `;
-const infoCommon = css `
+const infoCommon = css`
 	font-size: 24px;
 	font-weight: 600;
 	line-height: 32px;
@@ -60,23 +60,23 @@ const infoCommon = css `
 	}
 `;
 export const LinkTo = styled(Link)
-`
+	`
 	color: #fff;
 	text-decoration: none;
 	pointer-events: ${({ length }) => (length ? 'none' : 'pointer')};
 `;
 export const Phone = styled(Currency)
-`
+	`
 	${infoCommon};
 	color: #132447;
 `;
 export const Amount = styled(Currency)
-`
+	`
 	${infoCommon};
 	color: var(--border-color);
 `;
 export const Format = styled(Currency)
-`
+	`
 	color: #3d3d4b;
 	font-size: ${({ size }) => size || '40px'};
 	font-weight: ${({ fontWeight }) => fontWeight || 700};
@@ -86,7 +86,7 @@ export const Format = styled(Currency)
 		line-height: 16px;
 	}
 `;
-export const Formatting = styled.span `
+export const Formatting = styled.span`
 	width: ${({ width }) => width || '100%'};
 	height: ${({ height }) => height || '80px'};
 	display: block;
@@ -110,6 +110,6 @@ export const Formatting = styled.span `
 		padding: 16px 0 16px 20px;
 		margin-top: ${({ marginTop }) => marginTop || '10px'};
 		border: ${({ active }) =>
-			active ? '3px solid #33baff' : '2px solid #33baff'};
+		active ? '3px solid #33baff' : '2px solid #33baff'};
 	}
 `;

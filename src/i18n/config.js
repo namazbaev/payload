@@ -1,12 +1,7 @@
 import { langTypes } from "constants/langTypes";
 import { RusFlagIcon, UzFlagIcon, EnFlagIcon } from 'components/Buttons/style';
 export const langCode = { uz: "uz", ru: "ru", en: "en" };
-export const langList = [
-    { value: 'uz', label: "O'zbek", flag: < UzFlagIcon / > },
-    { value: 'ru', label: 'Русский', flag: < RusFlagIcon / > },
-    { value: 'en', label: 'English', flag: < EnFlagIcon / > }
-]
-export const getLanguage = async(langState) => {
+export const getLanguage = async (langState) => {
     let lang;
     if (langState) {
         lang = langState;
@@ -33,3 +28,8 @@ export const getLanguage = async(langState) => {
     }
     return result;
 };
+export const langList = [
+    { value: 'uz', label: "O'zbek", flag: < UzFlagIcon /> },
+    { value: 'ru', label: 'Русский', flag: < RusFlagIcon /> },
+    { value: 'en', label: 'English', flag: < EnFlagIcon /> }
+]

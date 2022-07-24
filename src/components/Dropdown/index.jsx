@@ -24,13 +24,12 @@ export default ({ menu, position, prefixText, changeValue, defaultValue }) => {
 		<Dropdown.Menu position={position} active={active}>
 			{menu && menu.length > 0
 				? menu.map((item) => (
-						<Dropdown.MenuItem
-							key={item.value}
-							onClick={() => handleSelect(item.value)}
-						>
-							{item.flag} {item.label}
-						</Dropdown.MenuItem>
-				  ))
+					<Dropdown.MenuItem
+						key={item.value}
+						onClick={() => handleSelect(item.value)}>
+						{item.flag} {item.label}
+					</Dropdown.MenuItem>
+				))
 				: ''}
 		</Dropdown.Menu>
 	);
