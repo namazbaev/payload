@@ -164,67 +164,90 @@ export const districts = [
     { value: 10, label: '22077 - Shayxontohur EP' },
     { value: 11, label: "26269 - Mirzo-Ulug'bek EP" },
 ];
+export const carType = [
+    { value: 1, label: "Легковые автомобили" },
+    { value: 2, label: "Грузовой машины" },
+]
+export const insrYear = [
+    { value: 1, label: "1 год" },
+    { value: 2, label: "2 год" },
+    { value: 3, label: "3 год" },
+    { value: 4, label: "4 год" },
+    { value: 5, label: "5 год" },
+]
+export const insrAccidents = [
+    { value: 1, label: "Впервые(отсуствует)" },
+    { value: 2, label: "Эксплуатация автомобиля лицом, не указанным в полисе" },
+    { value: 3, label: "3 год" },
+    { value: 4, label: "4 год" },
+    { value: 5, label: "5 год" },
+]
+export const benefits = [
+    { value: 1, label: "Без льготы" },
+    { value: 2, label: "Инвалиды" },
+    { value: 3, label: "Пенсионеры" },
+]
 export const carouselTop = [{
-        id: 1,
-        image: HumansLogo,
-        path: `${MOBILEOPERATOR}/humans`,
-    },
-    {
-        id: 2,
-        image: MobiuzLogo,
-        path: `${MOBILEOPERATOR}/mobiuz`,
-    },
-    {
-        id: 3,
-        image: UcellLogo,
-        path: `${MOBILEOPERATOR}/ucell`,
-    },
-    {
-        id: 4,
-        image: UzmobileLogo,
-        path: `${MOBILEOPERATOR}/uztelecom`,
-    },
-    {
-        id: 5,
-        image: BeelineLogo,
-        path: `${MOBILEOPERATOR}/beeline`,
-    },
-    {
-        id: 6,
-        image: PerfectumLogo,
-        path: `${MOBILEOPERATOR}/perfectum`,
-    },
+    id: 1,
+    image: HumansLogo,
+    path: `${MOBILEOPERATOR}/humans`,
+},
+{
+    id: 2,
+    image: MobiuzLogo,
+    path: `${MOBILEOPERATOR}/mobiuz`,
+},
+{
+    id: 3,
+    image: UcellLogo,
+    path: `${MOBILEOPERATOR}/ucell`,
+},
+{
+    id: 4,
+    image: UzmobileLogo,
+    path: `${MOBILEOPERATOR}/uztelecom`,
+},
+{
+    id: 5,
+    image: BeelineLogo,
+    path: `${MOBILEOPERATOR}/beeline`,
+},
+{
+    id: 6,
+    image: PerfectumLogo,
+    path: `${MOBILEOPERATOR}/perfectum`,
+},
 ];
 export const carouselBottom = [{
-        id: 1,
-        image: Uzdigital,
-        path: `${MOBILEOPERATOR}/uzdigital`,
-    },
-    {
-        id: 2,
-        image: Yoomoney,
-        path: `${MOBILEOPERATOR}/yoomoney`,
-    },
-    {
-        id: 3,
-        image: Turon,
-        path: `${MOBILEOPERATOR}/turon`,
-    },
-    {
-        id: 4,
-        image: HumansWhite,
-        path: `${MOBILEOPERATOR}/humans`,
-    },
-    {
-        id: 5,
-        image: BeelineLogo,
-        path: `${MOBILEOPERATOR}/beeline`,
-    },
-    {
-        id: 6,
-        image: PerfectumLogo,
-        path: `${MOBILEOPERATOR}/perfectum`,
-    },
+    id: 1,
+    image: Uzdigital,
+    path: `${MOBILEOPERATOR}/uzdigital`,
+},
+{
+    id: 2,
+    image: Yoomoney,
+    path: `${MOBILEOPERATOR}/yoomoney`,
+},
+{
+    id: 3,
+    image: Turon,
+    path: `${MOBILEOPERATOR}/turon`,
+},
+{
+    id: 4,
+    image: HumansWhite,
+    path: `${MOBILEOPERATOR}/humans`,
+},
+{
+    id: 5,
+    image: BeelineLogo,
+    path: `${MOBILEOPERATOR}/beeline`,
+},
+{
+    id: 6,
+    image: PerfectumLogo,
+    path: `${MOBILEOPERATOR}/perfectum`,
+},
 ];
 export const numberKeyboard = [];
 for (let i = 1; i < 10; i++) numberKeyboard.push({ key: i });

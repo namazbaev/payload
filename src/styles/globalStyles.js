@@ -15,6 +15,14 @@ export const GlobalStyle = createGlobalStyle`
         box-sizing: border-box;
         font-family: "Inter", sans-serif;
     }
+	input::-webkit-outer-spin-button,
+	input::-webkit-inner-spin-button {
+  		-webkit-appearance: none;
+  		margin: 0;
+	}
+	input[type=number] {
+  		-moz-appearance: textfield;
+	}
     .carousel-container {
 		padding: 16px 0 10px 50px;
         @media ${device.tablet} {

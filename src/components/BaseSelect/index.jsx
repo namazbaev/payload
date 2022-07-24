@@ -8,7 +8,7 @@ import {
 	ArrowDownIcon,
 } from './style';
 
-export default ({ menu, changeValue, defaultValue, ...props }) => {
+export default ({ menu, changeValue, placeholder, defaultValue, ...props }) => {
 	const menuRef = useRef(null);
 	const { t } = useTranslation();
 	const useOutsideAlerter = (ref) => {
@@ -51,7 +51,8 @@ export default ({ menu, changeValue, defaultValue, ...props }) => {
 					<Dropdown.MenuItem
 						key={item.value}
 						active={selectedActive === item.value}
-						onClick={() => handleSelect(item.value)}>
+						onClick={() => handleSelect(item.value)}
+					>
 						{item.label}
 					</Dropdown.MenuItem>
 				))}
@@ -59,13 +60,16 @@ export default ({ menu, changeValue, defaultValue, ...props }) => {
 	);
 
 	return (
-		<Dropdown {...props}
-			ref={menuRef} active={active}
-			onClick={() => setActive(!active)}>
+		<Dropdown
+			{...props}
+			ref={menuRef}
+			active={active}
+			onClick={() => setActive(!active)}
+		>
 			{value !== undefined ? (
 				<Dropdown.Title>{value}</Dropdown.Title>
 			) : (
-				<Placeholder>{t('please_select')}</Placeholder>
+				<Placeholder>{placeholder ? placeholder : t('please_select')}</Placeholder>
 			)}
 			{menuList}
 			<IconWrap>
