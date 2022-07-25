@@ -1,14 +1,17 @@
 import { benefits } from 'utils/json';
 import Select from "components/BaseSelect";
 import { useState, useCallback } from 'react';
-import PNFL from 'assets/images/other/jshshir.jpg'
+import { useNavigate } from 'react-router-dom';
+import PNFL from 'assets/images/other/jshshir.jpg';
+import { Button, Footer } from '../calculator/style';
 import {
     Container, Header, Content, Title, Form, Info,
-    Input, FlexBox, CheckButton, Image
+    Input, FlexBox, CheckButton, Image, Flex
 } from "./style";
 
 
 export default () => {
+    const navigate = useNavigate();
     const [benefit, setBenefit] = useState('');
     const [selectedType, setSelectedType] = useState('');
     const changeActive = type => setSelectedType(type);
@@ -19,6 +22,7 @@ export default () => {
                 <Title uppercase>информация о заявителя</Title>
             </Header>
             <Content>
+                <Flex>
                 <Form>
                     <FlexBox>
                         <Input borderSize={2} basis="15%" maxLength={2} marginRight="12px" placeholder="Серия паспорта" />
@@ -58,8 +62,13 @@ export default () => {
                     <Title margin="12px 0 12px 0" size={20} align="center">
                         Номер ПИНФЛ находится в вашем паспорте
                     </Title>
-                    <Image src={PNFL} alt="" />
-                </Info>
+                    <Image src={PNFL} alt="pnfl image" />
+                    </Info>
+                </Flex>
+                <Footer align="start">
+                    <Button onClick={() => navigate(-1)} margin="0 48px">Назад</Button>
+                    <Button onClick={() => navigate('/')}>на главный</Button>
+                </Footer>
             </Content>
         </Container>
     )

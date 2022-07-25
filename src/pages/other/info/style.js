@@ -5,10 +5,12 @@ export const Container = styled.div`
 `
 export const Content = styled.div`
     padding: 16px 8px;
-    display: flex;
-    justify-content: space-between;
     background: rgb(87,87,87);
     background: linear-gradient(-45deg, rgba(87,87,87,1) 0%, rgba(161,161,161,1) 50%, rgba(87,87,87,1) 100%);
+`
+export const Flex = styled.div`
+    display: flex;
+    justify-content: space-between;
 `
 export const Header = styled.div`
     padding: 32px 24px;
@@ -51,6 +53,8 @@ export const Input = styled.input`
 export const FlexBox = styled.div`
     display: flex;
     align-items: center;
+    margin-top: ${({ marginTop }) => marginTop || 0};
+    justify-content: ${({ align }) => align === 'center' ? 'center' : align === 'start' ? 'flex-start' : align === 'end' ? 'flex-start' : ''};
     &:not(:last-child) {
         margin-bottom: 16px;
     }

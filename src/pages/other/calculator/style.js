@@ -23,7 +23,12 @@ export const Footer = styled.div`
     margin-top: 48px;
     display: flex;
     align-items: center;
-    justify-content: space-around;
+    justify-content: ${({ align }) =>
+    align === 'center' ? 'center' :
+        align === 'end' ? 'flex-end' :
+        align === 'start' ? 'flex-start' :
+        align === 'between' ? 'space-between' :
+            align === 'evenly' ? 'space-evenly' : 'space-around'};
 `
 export const Button = styled.button`
     color: #fff;
@@ -36,6 +41,7 @@ export const Button = styled.button`
     border-radius: 8px;
     text-transform: uppercase;
     background: rgb(5,152,208);
+    margin: ${({ margin }) => margin || 0};
     background: linear-gradient(-45deg, rgba(5,152,208,1) 0%, rgba(66,199,255,1) 50%, rgba(5,152,208,1) 100%);
 `
 export const LeftSection = styled.div`
