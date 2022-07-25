@@ -54,7 +54,10 @@ export const FlexBox = styled.div`
     display: flex;
     align-items: center;
     margin-top: ${({ marginTop }) => marginTop || 0};
-    justify-content: ${({ align }) => align === 'center' ? 'center' : align === 'start' ? 'flex-start' : align === 'end' ? 'flex-start' : ''};
+    justify-content: ${({ align }) =>
+    align === 'center' ? 'center' :
+        align === 'start' ? 'flex-start' :
+            align === 'end' ? 'flex-start' : 'space-between'};
     &:not(:last-child) {
         margin-bottom: 16px;
     }
