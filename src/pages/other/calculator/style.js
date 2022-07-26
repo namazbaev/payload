@@ -20,7 +20,7 @@ export const Wrapper = styled.div`
     justify-content: center;
 `
 export const Footer = styled.div`
-    margin-top: 48px;
+    margin-top: 40px;
     display: flex;
     align-items: center;
     justify-content: ${({ align }) =>
@@ -36,7 +36,7 @@ export const Button = styled.button`
     min-width: 200px;
     padding: 16px 24px;
     cursor: pointer;
-    font-size: 20px;
+    font-size: 18px;
     font-weight: 600;
     border-radius: 8px;
     text-transform: uppercase;

@@ -4,8 +4,8 @@ export const Container = styled.div`
     width: 100%;
 `
 export const Content = styled.div`
-    padding: 16px 8px;
-    background: rgb(87,87,87);
+    padding: 16px;
+    background-color: rgb(87,87,87);
     background: linear-gradient(-45deg, rgba(87,87,87,1) 0%, rgba(161,161,161,1) 50%, rgba(87,87,87,1) 100%);
 `
 export const Flex = styled.div`
@@ -13,8 +13,8 @@ export const Flex = styled.div`
     justify-content: space-between;
 `
 export const Header = styled.div`
-    padding: 32px 24px;
-    background: rgb(87,87,87);
+    padding: 24px;
+    background-color: rgb(87,87,87);
     background: linear-gradient(-45deg, rgba(87,87,87,1) 0%, rgba(161,161,161,1) 50%, rgba(87,87,87,1) 100%);
 `
 export const Title = styled.h1`
@@ -22,7 +22,7 @@ export const Title = styled.h1`
     margin: ${({ margin }) => margin || 0};
     text-align: ${({ align }) => align || "start"};
     color: ${({ color }) => color ? "#fdff14" : "#fff"};
-    font-size: ${({ size }) => size ? `${size}px` : "32px"};
+    font-size: ${({ size }) => size ? `${size}px` : "24px"};
     text-transform: ${({ uppercase }) => uppercase ? 'uppercase' : ''};
 `
 export const Form = styled.div`

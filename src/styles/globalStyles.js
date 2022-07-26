@@ -4,9 +4,9 @@ import { device } from 'utils/media/responsive';
 import styled, { css, createGlobalStyle } from 'styled-components';
 export const GlobalStyle = createGlobalStyle`
     html, body, #root{
+        width: 100%;
         height: 100vh;
         margin: 0 auto;
-        width: 100%;
         background-color: #fff;
     }
     * {

@@ -1,17 +1,15 @@
+import { regions } from 'utils/json';
 import { Form, Text, Wrap } from './style';
 import Select from "components/BaseSelect";
 import { useState, useCallback } from 'react';
-import { carType, regions } from 'utils/json';
 import { useNavigate } from 'react-router-dom';
 import { Footer, Button } from '../calculator/style';
 import { Header, Content, Container, Title, Input, CheckButton, FlexBox } from "../info/style";
 export default () => {
     const navigate = useNavigate();
-    const [car, setCar] = useState('');
     const [region, setRegion] = useState('');
     const [selectedType, setSelectedType] = useState('');
     const changeActive = type => setSelectedType(type);
-    const onSelectCar = useCallback((val) => setCar(val), [car]);
     const onSelectRegion = useCallback((val) => setRegion(val), [region]);
     return (
         <Container>
@@ -76,8 +74,9 @@ export default () => {
                                 onClick={() => changeActive('region')} />
                         </Wrap>
                     </FlexBox>
-                    <Footer align="start">
+                    <Footer align="around">
                         <Button onClick={() => navigate(-1)} margin="0 0 0 48px">Назад</Button>
+                        <Button>Добавить</Button>
                     </Footer>
                 </Form>
             </Content>
