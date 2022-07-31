@@ -3,7 +3,7 @@ import { List, Grid, GridItem, Div, Button } from "./style";
 import { Container, Header, Content, Title } from "../info/style";
 export default () => {
     const items = []
-    for (let i = 0; i < 50; i++) {
+    for (let i = 0; i < 11; i++) {
         items.push(i)
     }
     return (

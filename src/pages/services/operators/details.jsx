@@ -106,14 +106,10 @@ export default () => {
 			<Footer>
 				<LinkButton path={-1} text={t('back')} />
 				<LinkButton path='/' text={t('main_page')} />
-				<LinkButton
-					length={length}
-					state={fromPhone}
-					text={t('next')}
+				<LinkButton length={length} path={PAY}
+					text={t('next')} state={fromPhone}
 					color={length ? '#aeaeae' : '#00C35A'}
-					hoveredColor={length ? '#aeaeae' : '#04B054'}
-					path={PAY}
-				/>
+					hoveredColor={length ? '#aeaeae' : '#04B054'} />
 			</Footer>
 		</Div>
 	);

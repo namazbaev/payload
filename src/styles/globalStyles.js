@@ -104,9 +104,41 @@ export const Formatting = styled.span`
 	border: ${({ active }) =>
 		active ? '4px solid #33baff' : '2px solid #33baff'};
 	padding: 16px 20px 16px 24px;
+	display: flex;
+	align-items: center;
 	box-shadow: ${({ active }) =>
 		active && '0px 3px 26px -9px rgba(34, 60, 80, 0.2)'};
 	font-size: ${({ size }) => size || '40px'};
+	font-weight: ${({ fontWeight }) => fontWeight || 700};
+	border-radius: var(--card-brd-radius);
+	@media ${device.tablet} {
+		width: ${({ width }) => width || '100%'};
+		height: 50px;
+		font-size: 22px;
+		line-height: 16px;
+		border-radius: 4px;
+		padding: 16px 0 16px 20px;
+		margin-top: ${({ marginTop }) => marginTop || '10px'};
+		border: ${({ active }) =>
+		active ? '3px solid #33baff' : '2px solid #33baff'};
+	}
+`;
+export const Inputs = styled.span`
+	display: block;
+	color: #3d3d4b;
+	line-height: 45px;
+	width: ${({ width }) => width || '100%'};
+	height: ${({ height }) => height || '60px'};
+	flex-basis: ${({ basis }) => basis || "100%"};
+    margin-right: ${({ marginRight }) => marginRight || 0};
+	border: ${({ active }) =>
+		active ? '4px solid #33baff' : '2px solid #33baff'};
+	padding: 16px 20px 16px 24px;
+	display: flex;
+	align-items: center;
+	box-shadow: ${({ active }) =>
+		active && '0px 3px 26px -9px rgba(34, 60, 80, 0.2)'};
+	font-size: ${({ size }) => size || '24px'};
 	font-weight: ${({ fontWeight }) => fontWeight || 700};
 	border-radius: var(--card-brd-radius);
 	@media ${device.tablet} {

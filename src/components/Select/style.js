@@ -5,8 +5,8 @@ import { ReactComponent as ArrowDown } from 'assets/icons/down-arrow.svg';
 
 export const ArrowDownIcon = styled(ArrowDown)
 `
-	width: 36px;
-	height: 36px;
+	width: 28px;
+	height: 28px;
 	transition: all 0.2s ease;
 	transform: ${({ active }) => active && 'rotate(180deg)'};
 	@media ${device.tablet} {
@@ -16,8 +16,8 @@ export const ArrowDownIcon = styled(ArrowDown)
 `;
 export const RemoveIcon = styled(Remove)
 `
-	width: 28px;
-	height: 28px;
+	width: 20px;
+	height: 20px;
 	opacity: 0.5;
 	@media ${device.tablet} {
 		width: 18px;
@@ -27,10 +27,10 @@ export const RemoveIcon = styled(Remove)
 
 export const Dropdown = styled.div `
 	width: 100%;
-	height: 76px;
+	height: 60px;
 	display: flex;
 	cursor: pointer;
-	font-size: 30px;
+	font-size: 24px;
 	font-weight: 700;
 	line-height: 40px;
 	padding: 0px 18px;
@@ -38,11 +38,11 @@ export const Dropdown = styled.div `
 	align-items: center;
 	background-color: #fff;
 	color: var(--input-color);
+	border-radius: var(--card-brd-radius);
 	border: ${({ active }) =>
 		active ? '4px solid var(--border-color)' : '2px solid var(--border-color)'};
 	box-shadow: ${({ active }) =>
 		active && '0px 3px 26px -9px rgba(34, 60, 80, 0.2)'};
-	border-radius: var(--card-brd-radius);
 	@media ${device.tablet} {
 		height: 50px;
 		border: ${({ active }) =>
@@ -55,7 +55,7 @@ export const Dropdown = styled.div `
 Dropdown.Title = styled.span `
 	max-width: 500px;
 	display: inline-block;
-	font-size: 30px;
+	font-size: 24px;
 	font-weight: 700;
 	line-height: 40px;
 	margin-right: 9px;
@@ -69,7 +69,8 @@ Dropdown.Title = styled.span `
 	}
 `;
 
-Dropdown.Menu = styled.ul `
+Dropdown.Menu = styled.ul`
+	width: 100%;
 	max-height: 430px;
 	overflow-y: auto;
 	padding: 6px 0;
@@ -79,6 +80,7 @@ Dropdown.Menu = styled.ul `
 	left: 0;
 	top: 100%;
 	z-index: 30;
+	text-align: start;
 	transition: 0.3s;
 	border-radius: 4px;
 	background-color: #fff;
@@ -87,17 +89,17 @@ Dropdown.Menu = styled.ul `
 	visibility: ${({ active }) => (active ? 'visible' : 'hidden')};
 	transform: ${({ active }) => (active ? 'translateY(1rem)' : 'translateY(0)')};
 	::-webkit-scrollbar {
-		width: 8px;
+		width: 6px;
 		height: 4px;
 	}
 
 	::-webkit-scrollbar-track {
 		background: #f8f8f8;
-		border-radius: 8px;
+		border-radius: 6px;
 	}
 
 	::-webkit-scrollbar-thumb {
-		border-radius: 8px;
+		border-radius: 6px;
 		background: rgba(73, 75, 116, 0.1);
 	}
 	@media ${device.tablet} {
@@ -110,14 +112,13 @@ Dropdown.Menu = styled.ul `
 `;
 
 Dropdown.MenuItem = styled.li `
-	width: 600px;
-	height: 50px;
+	width: 100%;
 	cursor: pointer;
 	display: inline-block;
-	font-size: 30px;
+	font-size: 24px;
 	font-weight: 500;
 	color: #181c32;
-	line-height: 50px;
+	line-height: 40px;
 	padding: 0 16px;
 	overflow: hidden;
 	white-space: nowrap;
@@ -134,7 +135,7 @@ Dropdown.MenuItem = styled.li `
 `;
 export const IconWrap = styled.div `
 	position: absolute;
-	top: 26%;
+	top: 22%;
 	right: 4%;
 	@media ${device.tablet} {
 		top: 5%;
@@ -142,13 +143,13 @@ export const IconWrap = styled.div `
 `;
 export const Placeholder = styled.p `
 	margin: 0;
-	font-size: 30px;
+	font-size: 24px;
 	font-weight: 500;
-	line-height: 40px;
+	line-height: 20px;
 	color: #181c32;
 	opacity: 0.5;
 	@media ${device.tablet} {
 		font-size: 20px;
-		line-height: 18px;
+		line-height: 12px;
 	}
 `;

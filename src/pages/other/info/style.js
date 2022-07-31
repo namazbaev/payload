@@ -66,13 +66,12 @@ export const CheckButton = styled.button`
     color: #fff;
     border: none;
     cursor: pointer;
-    font-size: 20px;
+    font-size: 24px;
     font-weight: 600;
     min-width: 200px;
-    padding: 18px 24px;
+    padding: 16px 24px;
     border-radius: 8px;
-    background: rgb(5,152,208);
-    background: linear-gradient(-45deg, rgba(5,152,208,1) 0%, rgba(66,199,255,1) 50%, rgba(5,152,208,1) 100%);
+    background-color: #00C35A;
 `
 export const Image = styled.img`
     width: 100%;

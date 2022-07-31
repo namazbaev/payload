@@ -4,6 +4,8 @@ import { useState, useCallback } from 'react';
 import { useNavigate } from 'react-router-dom';
 import PNFL from 'assets/images/other/jshshir.jpg';
 import { Button, Footer } from '../calculator/style';
+import { Format, Inputs } from 'styles/globalStyles';
+import { Placeholder } from 'components/Select/style';
 import {
     Container, Header, Content, Title, Form, Info,
     Input, FlexBox, CheckButton, Image, Flex
@@ -12,8 +14,11 @@ import {
 
 export default () => {
     const navigate = useNavigate();
+    const [pinfl, setPinfl] = useState('12325344432423');
     const [benefit, setBenefit] = useState('');
     const [selectedType, setSelectedType] = useState('');
+    const [passporSeria, setPassportSeria] = useState('AA');
+    const [passporNumber, setPassportNumber] = useState('433412');
     const changeActive = type => setSelectedType(type);
     const onSelectBenf = useCallback((val) => setBenefit(val), [benefit]);
     return (
@@ -25,9 +30,21 @@ export default () => {
                 <Flex>
                 <Form>
                     <FlexBox>
-                        <Input borderSize={2} basis="15%" maxLength={2} marginRight="12px" placeholder="Серия паспорта" />
-                        <Input borderSize={2} basis="30%" type='number' maxLength={7} marginRight="12px" placeholder="Номер паспорта" />
-                        <Input borderSize={2} basis="45%" type='number' maxLength={14} marginRight="12px" placeholder="ПИНФЛ" />
+                            <Inputs basis="15%" marginRight="12px"
+                                active={selectedType === 'code1'}
+                                onClick={() => changeActive('code1')}>
+                                {passporSeria === '' ? <Placeholder>Серия</Placeholder> : passporSeria}
+                            </Inputs>
+                            <Inputs basis="35%" marginRight="12px"
+                                active={selectedType === 'code2'}
+                                onClick={() => changeActive('code2')}>
+                                {passporNumber === '' ? <Placeholder>Номер паспорта</Placeholder> : passporNumber}
+                            </Inputs>
+                            <Inputs basis="45%"
+                                active={selectedType === 'code'}
+                                onClick={() => changeActive('code')}>
+                                {pinfl === '' ? <Placeholder>ПИНФЛ</Placeholder> : pinfl}
+                            </Inputs>
                         <CheckButton>Проверить</CheckButton>
                     </FlexBox>
                     <FlexBox>

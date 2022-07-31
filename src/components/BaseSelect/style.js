@@ -16,12 +16,12 @@ export const ArrowDownIcon = styled(ArrowDown)
 `;
 export const RemoveIcon = styled(Remove)
 	`
-	width: 16px;
-	height: 16px;
+	width: 14px;
+	height: 14px;
 	opacity: 0.5;
 	@media ${device.tablet} {
-		width: 14px;
-		height: 14px;
+		width: 12px;
+		height: 12px;
 	}
 `;
 
@@ -37,6 +37,7 @@ export const Dropdown = styled.div`
 	box-shadow: ${({ active }) =>
 		active && '0px 3px 26px -9px rgba(34, 60, 80, 0.2)'};
 	border-radius: 4px;
+	border: 1px solid #aeaeae;
 	@media ${device.tablet} {
 		height: 50px;
 		border: ${({ active }) => active && '0px solid var(--border-color)'};

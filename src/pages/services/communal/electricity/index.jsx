@@ -112,20 +112,16 @@ export const Electricity = () => {
 							uniqeNumber
 						)}
 					</Formatting>
-					<Formatting
-						size='30px'
+					<Formatting size='30px'
 						active={selectedType === 'phone'}
 						onClick={() => changeActive('phone')}
 					>
 						{phone.length === 4 ? (
 							<Placeholder>{t('phone_for_communication')}</Placeholder>
 						) : (
-							<Format
-								size='30px'
-								value={phone}
-								displayType='text'
-								format='+### ## ### ## ##'
-							/>
+							<Format size='30px'
+							format='+### ## ### ## ##'
+							value={phone} displayType='text' />
 						)}
 					</Formatting>
 					<InfoText>
@@ -155,12 +151,7 @@ export const Electricity = () => {
 			<Footer>
 				<LinkButton path={-1} text={t('back')} />
 				<LinkButton path='/' text={t('main_page')} />
-				<LinkButton
-					path={CARDPAY}
-					state={fromData}
-					text={t('next')}
-					color='#00C35A'
-				/>
+				<LinkButton path={CARDPAY} state={fromData} text={t('next')} color='#00C35A' />
 			</Footer>
 		</Div>
 	);
