@@ -1,15 +1,15 @@
 import Remove from 'assets/icons/x-icon.png';
-import { List, Grid, GridItem, Div, Button } from "./style";
 import { Container, Header, Content, Title } from "../info/style";
+import { List, Grid, GridItem, Div, Button, TextWrap } from "./style";
 export default () => {
     const items = []
-    for (let i = 0; i < 11; i++) {
-        items.push(i)
-    }
+    for (let i = 0; i < 11; i++) items.push(i)
     return (
         <Container>
             <Header>
-                <Title uppercase>список родственников допускаемы для управления тс</Title>
+                <TextWrap>
+                    <Title uppercase>список родственников допускаемы для управления тс</Title>
+                </TextWrap>
             </Header>
             <Content>
                 <Grid>

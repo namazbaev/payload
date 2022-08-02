@@ -7,10 +7,15 @@ export const Grid = styled.div`
     grid-template-columns: repeat(4, 1fr);
     justify-items: center;
     &:not(:last-child) {
-        margin-bottom: 32px;
+        margin-bottom: 28px;
     }
 `
+export const TextWrap = styled.div`
+	display: flex;
+	justify-content: center;
+`
 export const GridItem = styled.div`
+		color: var(--black1);
     font-size: ${({size}) => size === 'large' ? '24px' : size === 'medium' ? '18px' : '16px'};
 `
 
@@ -19,13 +24,13 @@ export const List = styled.div`
     overflow: auto;
 `
 export const Button = styled.button`
-    color: #fff;
-    font-size: 20px;
     border: none;
-    padding: 8px 16px;
-    border-radius: 8px;
-    background-color: rgb(87,87,87);
-    background: linear-gradient(-45deg, rgba(87,87,87,1) 0%, rgba(161,161,161,1) 50%, rgba(87,87,87,1) 100%);
+		cursor: pointer;
+    font-size: 20px;
+		margin-top: 12px;
+    padding: 8px 24px;
+    border-radius: 6px;
+    color: var(--black1);
 `
 export const Div = styled.div`
     display: flex;

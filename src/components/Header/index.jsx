@@ -27,7 +27,7 @@ import LinkButton from 'components/Buttons/LinkButton';
 import { Wrap, Content, CardImage } from 'components/Card/style';
 import { MOBILEOPERATOR } from 'routes/route';
 
-export const Header = () => {
+export const Index = () => {
 	const location = useLocation();
 	const { t, i18n } = useTranslation();
 	const currentLang = localStorage.getItem('lang') || 'uz';

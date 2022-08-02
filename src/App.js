@@ -5,12 +5,12 @@ import { Provider } from 'react-redux';
 import store from 'redux/store/index.js';
 import { BrowserRouter } from 'react-router-dom';
 import { GlobalStyle } from 'styles/globalStyles';
-import { Header } from 'components/Header/Header.jsx';
+import { Index } from 'components/Header';
 const App = () => (
   <Provider store={store}>
     <GlobalStyle />
     <BrowserRouter>
-      <Header />
+      <Index />
       <Routes />
     </BrowserRouter>
   </Provider>

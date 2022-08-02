@@ -18,7 +18,7 @@ export const Wrapper = styled.div`
     justify-content: space-between;
 `
 export const Footer = styled.div`
-    margin-top: 220px;
+    margin-top: ${({marginTop}) => marginTop || "220px"};
     display: flex;
     align-items: center;
     justify-content: ${({ align }) =>
@@ -34,13 +34,12 @@ export const Button = styled.button`
     min-width: 200px;
     padding: 16px 24px;
     cursor: pointer;
-    font-size: 18px;
+    font-size: 22px;
     font-weight: 600;
     border-radius: 8px;
+    background-color: #00C35A;
     text-transform: capitalize;
-    background: rgb(5,152,208);
     margin: ${({ margin }) => margin || 0};
-    background: #BFBEBE;
 `
 export const LeftSection = styled.div`
     width: 60%;

@@ -5,8 +5,6 @@ export const Container = styled.div`
 `
 export const Content = styled.div`
     padding: 16px;
-    background-color: rgb(87,87,87);
-    background: linear-gradient(-45deg, rgba(87,87,87,1) 0%, rgba(161,161,161,1) 50%, rgba(87,87,87,1) 100%);
 `
 export const Flex = styled.div`
     display: flex;
@@ -14,15 +12,13 @@ export const Flex = styled.div`
 `
 export const Header = styled.div`
     padding: 24px;
-    background-color: rgb(87,87,87);
-    background: linear-gradient(-45deg, rgba(87,87,87,1) 0%, rgba(161,161,161,1) 50%, rgba(87,87,87,1) 100%);
 `
 export const Title = styled.h1`
     font-weight: 600;
     margin: ${({ margin }) => margin || 0};
     text-align: ${({ align }) => align || "start"};
-    color: ${({ color }) => color ? "#fdff14" : "#fff"};
     font-size: ${({ size }) => size ? `${size}px` : "24px"};
+    color: ${({ color }) => color ? "#fdff14" : 'var(--black1)'};
     text-transform: ${({ uppercase }) => uppercase ? 'uppercase' : ''};
 `
 export const Form = styled.div`

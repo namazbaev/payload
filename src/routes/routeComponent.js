@@ -15,7 +15,6 @@ import { MobileOperator } from 'pages/services/operators';
 import New from 'pages/other/new'
 import Info from 'pages/other/info'
 import List from 'pages/other/list'
-import ListTC from 'pages/other/listtc'
 import AllInfo from 'pages/other/allInfo'
 import Transport from 'pages/other/transport'
 import Calculator from 'pages/other/calculator'
@@ -126,11 +125,6 @@ export const routes = [{
     path: '/other/all-info',
     Component: AllInfo,
     title: 'AllInfo',
-},
-{
-    path: '/other/list-tc',
-    Component: ListTC,
-    title: 'ListTC',
 },
 {
     path: '/other/list',
