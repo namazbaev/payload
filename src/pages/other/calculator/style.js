@@ -3,8 +3,8 @@ import styled from 'styled-components';
 export const Content = styled.div`
     width: 100%;
     margin: 0 auto;
-    padding: 32px 16px 0 16px;
     border-radius: 24px;
+    padding: 32px 24px 0 24px;
 `
 export const Title = styled.h4`
     color: var(--black1);

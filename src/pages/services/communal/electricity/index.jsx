@@ -94,15 +94,12 @@ export const Electricity = () => {
 						active={selectedType === 'selec'}
 						onClick={() => changeActive('select')}
 					/>
-					<Formatting
-						size='30px'
+					<Formatting size='30px'
 						active={selectedType === 'code'}
-						onClick={() => changeActive('code')}
-					>
+						onClick={() => changeActive('code')}>
 						{code === '' ? <Placeholder>23234</Placeholder> : code}
 					</Formatting>
-					<Formatting
-						size='30px'
+					<Formatting size='30px'
 						active={selectedType === 'uniqeNumber'}
 						onClick={() => changeActive('uniqeNumber')}
 					>

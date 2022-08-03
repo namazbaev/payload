@@ -8,7 +8,7 @@ export default () => {
         <Container>
             <Header>
                 <TextWrap>
-                    <Title uppercase>список родственников допускаемы для управления тс</Title>
+                    <Title margin="0 0 24px 0" uppercase>список родственников допускаемы для управления тс</Title>
                 </TextWrap>
             </Header>
             <Content>

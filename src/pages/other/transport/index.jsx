@@ -1,13 +1,29 @@
 import { Form, Text } from './style';
-import Select from "components/BaseSelect";
+import Select from "components/Select";
+import { Footer } from '../calculator/style';
+import { Inputs } from 'styles/globalStyles';
 import { useState, useCallback } from 'react';
 import { carType, regions } from 'utils/json';
-import { useNavigate } from 'react-router-dom';
-import { Footer, Button } from '../calculator/style';
-import { Header, Content, Container, Title, Input, CheckButton, FlexBox } from "../info/style";
+import { useTranslation } from 'react-i18next';
+import { Placeholder } from '../../../components/Select/style';
+import LinkButton from '../../../components/Buttons/LinkButton';
+import { Header, Content, Container, Title, CheckButton, FlexBox } from "../info/style";
 export default () => {
-    const navigate = useNavigate();
+    const { t } = useTranslation();
     const [car, setCar] = useState('');
+    const [pinfl, setPinfl] = useState('');
+    const [lastName, setLastName] = useState('');
+    const [firstName, setFirstName] = useState('');
+    const [middleName, setMiddleName] = useState('');
+    const [bodyNumber, setBodyNumber] = useState('');
+    const [motorNumber, setMotorNumber] = useState('');
+    const [chassisNumber, setChassisNumber] = useState('');
+    const [yearOfRelease, setYearOfRelease] = useState('');
+    const [markModel, setMarkModel] = useState('');
+    const [capacityEngine, setCapacityEngine] = useState('');
+    const [stateNumber, setStateNumber] = useState('');
+    const [serieTechnical, setSerieTechnical] = useState('');
+    const [numberTechnical, setNumberTechnical] = useState('');
     const [region, setRegion] = useState('');
     const [selectedType, setSelectedType] = useState('');
     const changeActive = type => setSelectedType(type);
@@ -22,20 +38,55 @@ export default () => {
                 <Form>
                     <Text>укажите данные о транспортном средстве</Text>
                     <FlexBox marginTop="16px">
-                        <Input borderSize={2} marginRight="12px" placeholder="Гос.Номер" />
-                        <Input borderSize={2} marginRight="12px" placeholder="Серия и тех.паспорта" />
-                        <Input borderSize={2} marginRight="12px" placeholder="Номер и тех.паспорта" />
+                        <Inputs marginRight="12px"
+                                active={selectedType === 'stateNumber'}
+                                onClick={() => changeActive('stateNumber')}>
+                            {stateNumber === '' ? <Placeholder>Гос.Номер</Placeholder> : stateNumber}
+                        </Inputs>
+                        <Inputs marginRight="12px"
+                                active={selectedType === 'serieTechnical'}
+                                onClick={() => changeActive('serieTechnical')}>
+                            {serieTechnical === '' ? <Placeholder>Серия и тех.паспорта</Placeholder> : serieTechnical}
+                        </Inputs>
+                        <Inputs marginRight="12px"
+                                active={selectedType === 'numberTechnical'}
+                                onClick={() => changeActive('numberTechnical')}>
+                            {numberTechnical === '' ? <Placeholder>Номер и тех.паспорта</Placeholder> : numberTechnical}
+                        </Inputs>
                         <CheckButton>Проверить</CheckButton>
                     </FlexBox>
                     <FlexBox>
-                        <Input readOnly={true} marginRight="12px" placeholder="Марка/Модель" />
-                        <Input readOnly={true} basis="50%" marginRight="12px" placeholder="Объем двигателя" />
-                        <Input readOnly={true} basis="50%" placeholder="Год выпуска" />
+                        <Inputs marginRight="12px"
+                                active={selectedType === 'markModel'}
+                                onClick={() => changeActive('markModel')}>
+                            {markModel === '' ? <Placeholder>Марка/Модель</Placeholder> : markModel}
+                        </Inputs>
+                        <Inputs marginRight="12px"
+                                active={selectedType === 'capacityEngine'}
+                                onClick={() => changeActive('capacityEngine')}>
+                            {capacityEngine === '' ? <Placeholder>Объем двигателя</Placeholder> : capacityEngine}
+                        </Inputs>
+                        <Inputs active={selectedType === 'yearOfRelease'}
+                                onClick={() => changeActive('yearOfRelease')}>
+                            {yearOfRelease === '' ? <Placeholder>Год выпуска</Placeholder> : yearOfRelease}
+                        </Inputs>
                     </FlexBox>
                     <FlexBox>
-                        <Input readOnly={true} marginRight="12px" placeholder="Номер кузова" />
-                        <Input readOnly={true} marginRight="12px" placeholder="Номер шасси" />
-                        <Input readOnly={true} placeholder="Номер двигателя" />
+                        <Inputs marginRight="12px"
+                                active={selectedType === 'bodyNumber'}
+                                onClick={() => changeActive('bodyNumber')}>
+                            {bodyNumber === '' ? <Placeholder>Номер кузова</Placeholder> : bodyNumber}
+                        </Inputs>
+                        <Inputs marginRight="12px"
+                                active={selectedType === 'chassisNumber'}
+                                onClick={() => changeActive('chassisNumber')}>
+                            {chassisNumber === '' ? <Placeholder>Номер шасси</Placeholder> : chassisNumber}
+                        </Inputs>
+                        <Inputs
+                                active={selectedType === 'motorNumber'}
+                                onClick={() => changeActive('motorNumber')}>
+                            {motorNumber === '' ? <Placeholder>Номер двигателя</Placeholder> : motorNumber}
+                        </Inputs>
                     </FlexBox>
                     <FlexBox>
                         <Select
@@ -56,15 +107,29 @@ export default () => {
                     </FlexBox>
                     <Text margin="24px 0">информация о владельца тс</Text>
                     <FlexBox align="center">
-                        <Input readOnly={true} basis="70%" placeholder="ПИНФЛ" />
+                        <Inputs basis="70%" active={selectedType === 'pinfl'}
+                                onClick={() => changeActive('pinfl')}>
+                            {pinfl === '' ? <Placeholder>ПИНФЛ</Placeholder> : pinfl}
+                        </Inputs>
                     </FlexBox>
                     <FlexBox>
-                        <Input readOnly={true} marginRight="12px" placeholder="Фамилия" />
-                        <Input readOnly={true} marginRight="12px" placeholder="Имя" />
-                        <Input readOnly={true} placeholder="Отчество" />
+                        <Inputs marginRight="12px"
+                                active={selectedType === 'lastName'}
+                                onClick={() => changeActive('lastName')}>
+                            {lastName === '' ? <Placeholder>Фамилия</Placeholder> : lastName}
+                        </Inputs>
+                        <Inputs marginRight="12px"
+                                active={selectedType === 'firstName'}
+                                onClick={() => changeActive('firstName')}>
+                            {firstName === '' ? <Placeholder>Имя</Placeholder> : firstName}
+                        </Inputs>
+                        <Inputs active={selectedType === 'middleName'}
+                                onClick={() => changeActive('middleName')}>
+                            {middleName === '' ? <Placeholder>Отчество</Placeholder> : middleName}
+                        </Inputs>
                     </FlexBox>
-                    <Footer align="start">
-                        <Button onClick={() => navigate(-1)} margin="0 0 0 48px">Назад</Button>
+                    <Footer marginTop="100px" align="start">
+                        <LinkButton margin="0 100px 0 0" path={-1} text={t('back')} />
                     </Footer>
                 </Form>
             </Content>

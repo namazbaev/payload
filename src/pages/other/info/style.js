@@ -4,14 +4,14 @@ export const Container = styled.div`
     width: 100%;
 `
 export const Content = styled.div`
-    padding: 16px;
+    padding: 0 24px 16px 24px;
 `
 export const Flex = styled.div`
     display: flex;
     justify-content: space-between;
 `
 export const Header = styled.div`
-    padding: 24px;
+    padding: 16px 0 0 16px;
 `
 export const Title = styled.h1`
     font-weight: 600;

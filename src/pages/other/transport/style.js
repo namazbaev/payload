@@ -5,10 +5,10 @@ export const Form = styled.div`
     margin-top: 16px;
 `
 export const Text = styled.h3`
-    color: #fff;
-    font-size: 20px;
+    font-size: 24px;
     font-weight: 600;
     text-align: center;
+    color: var(--black);
     text-transform: uppercase;
     margin: ${({ margin }) => margin || 0};
 `

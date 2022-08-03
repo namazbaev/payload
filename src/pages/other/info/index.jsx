@@ -34,7 +34,7 @@ export default () => {
     return (
         <Container>
             <Header>
-                <Title uppercase>информация о заявителя</Title>
+                <Title margin="0 0 24px 0" uppercase>информация о заявителя</Title>
             </Header>
             <Content>
                 <Flex>

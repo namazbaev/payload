@@ -8,6 +8,25 @@ export const GlobalStyle = createGlobalStyle`
         height: 100vh;
         margin: 0 auto;
         background-color: #fff;
+      ::-webkit-scrollbar {
+        width: 4px;
+        height: 4px;
+      }
+
+      ::-webkit-scrollbar-track {
+        background: #F8F8F8;
+        border-radius: 8px;
+      }
+
+      ::-webkit-scrollbar-thumb {
+        background: rgba(73, 75, 116, 0.1);
+        border-radius: 8px;
+      }
+
+      ::-webkit-scrollbar-thumb:hover {
+        background: rgba(73, 75, 116, 1);
+        border-radius: 8px;
+      }
     }
     * {
         margin: 0;

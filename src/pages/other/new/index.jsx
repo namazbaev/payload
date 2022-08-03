@@ -10,19 +10,19 @@ import { Placeholder } from '../../../components/Select/style';
 export default () => {
     const navigate = useNavigate();
     const [pinfl, setPinfl] = useState('');
-    const [licenseDateIssue, setLicenseDateIssue] = useState('');
-    const [licenseNumber, setLicenseNumber] = useState('');
-    const [licenseSerie, setLicenseSerie] = useState('');
-    const [birthday, setBirthday] = useState('');
-    const [firstName, setFirstName] = useState('')
-    const [lastName, setLastName] = useState('')
-    const [middleName, setMiddleName] = useState('')
-    const [issuedBy, setIssuedBy] = useState('')
-    const [dateOfIssue, setDateOfIssue] = useState('')
-    const [passporSeria, setPassportSeria] = useState('');
-    const [passporNumber, setPassportNumber] = useState('');
     const [region, setRegion] = useState('');
+    const [birthday, setBirthday] = useState('');
+    const [lastName, setLastName] = useState('')
+    const [issuedBy, setIssuedBy] = useState('')
+    const [firstName, setFirstName] = useState('')
+    const [middleName, setMiddleName] = useState('')
+    const [dateOfIssue, setDateOfIssue] = useState('')
+    const [licenseSerie, setLicenseSerie] = useState('');
     const [selectedType, setSelectedType] = useState('');
+    const [passporSeria, setPassportSeria] = useState('');
+    const [licenseNumber, setLicenseNumber] = useState('');
+    const [passporNumber, setPassportNumber] = useState('');
+    const [licenseDateIssue, setLicenseDateIssue] = useState('');
     const changeActive = type => setSelectedType(type);
     const onSelectRegion = useCallback((val) => setRegion(val), [region]);
     return (
@@ -130,15 +130,14 @@ export default () => {
                     </FlexBox>
                     <FlexBox align="center">
                         <Wrap width="70%">
-                            <Select
-                                menu={regions}
+                            <Select menu={regions}
                                 defaultValue={region}
                                 changeValue={onSelectRegion}
                                 active={selectedType === 'region'}
                                 onClick={() => changeActive('region')} />
                         </Wrap>
                     </FlexBox>
-                    <Footer marginTop="0" align="around">
+                    <Footer marginTop="48px" align="around">
                         <Button onClick={() => navigate(-1)} margin="0 0 0 48px">Назад</Button>
                         <Button>Добавить</Button>
                     </Footer>
