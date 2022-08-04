@@ -50,5 +50,8 @@
     "time": "Time :",
     "paid": "Paid for :",
     "balance_replenished": "Balance topped up :",
-    "successfully": "Successfully"
+    "successfully": "Successfully",
+    "please_select_carType": "Please choose the type of car",
+    "please_select_region": "Please select province"
+
 }

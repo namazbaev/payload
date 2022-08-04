@@ -8,7 +8,7 @@ import {
 	ArrowDownIcon,
 } from './style';
 
-export default ({ menu, changeValue, defaultValue, ...props }) => {
+export default ({ menu, changeValue, placeholder, defaultValue, ...props }) => {
 	const menuRef = useRef(null);
 	const { t } = useTranslation();
 	const useOutsideAlerter = (ref) => {
@@ -65,7 +65,7 @@ export default ({ menu, changeValue, defaultValue, ...props }) => {
 			{value !== undefined ? (
 				<Dropdown.Title>{value}</Dropdown.Title>
 			) : (
-				<Placeholder>{t('please_select')}</Placeholder>
+				<Placeholder>{placeholder ? placeholder : t('please_select')}</Placeholder>
 			)}
 			{menuList}
 			<IconWrap>

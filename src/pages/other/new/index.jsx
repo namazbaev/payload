@@ -1,12 +1,13 @@
 import { regions } from 'utils/json';
 import Select from "components/Select";
 import { Form, Text, Wrap } from './style';
-import { useState, useCallback } from 'react';
 import { Inputs } from 'styles/globalStyles';
+import { useState, useCallback } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { http } from '../../../helper/useAxios';
 import { Footer, Button } from '../calculator/style';
-import { Header, Content, Container, Title, CheckButton, FlexBox } from "../info/style";
 import { Placeholder } from '../../../components/Select/style';
+import { Header, Content, Container, Title, CheckButton, FlexBox } from "../info/style";
 export default () => {
     const navigate = useNavigate();
     const [pinfl, setPinfl] = useState('');
@@ -25,6 +26,16 @@ export default () => {
     const [licenseDateIssue, setLicenseDateIssue] = useState('');
     const changeActive = type => setSelectedType(type);
     const onSelectRegion = useCallback((val) => setRegion(val), [region]);
+
+    const getAllData = async () => {
+        try {
+            const response = await http.get('api/getAllData')
+              .then((res) => console.log(res.data))
+        } catch (e) {
+            console.log(e);
+            throw new Error("error.unknown");
+        }
+    }
     return (
         <Container>
             <Header>

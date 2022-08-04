@@ -2,25 +2,12 @@ import { CARDPAY } from 'routes/route';
 import Select from 'components/Select';
 import { useState, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
+import { Placeholder } from 'components/Select/style';
 import { districts, numberKeyboard } from 'utils/json';
 import LinkButton from 'components/Buttons/LinkButton';
 import { Format, Formatting } from 'styles/globalStyles';
-import {
-	Div,
-	Logo,
-	Text,
-	Drop,
-	Delete,
-	Number,
-	Footer,
-	Keyboard,
-	InfoText,
-	DetailsInfo,
-	WarningText,
-	DetailsKeyboard,
-	DetailsContainer,
-} from './style';
-import { Placeholder } from 'components/Select/style';
+import { Div, Logo, Text, Drop, Delete, Number, Footer, Keyboard, InfoText,
+	DetailsInfo, WarningText, DetailsKeyboard, DetailsContainer } from './style';
 
 export const Electricity = () => {
 	const { t } = useTranslation();
@@ -32,8 +19,8 @@ export const Electricity = () => {
 	};
 	const phoneCode = '+998';
 	const [code, setCode] = useState('');
-	const [value, setValue] = useState('');
 	const [phone, setPhone] = useState(phoneCode);
+	const [value, setValue] = useState('');
 	const [uniqeNumber, setUniqueNumber] = useState('');
 	const [selectedType, setSelectedType] = useState('');
 	const onChangeNumber = (value) => {

@@ -1,34 +1,62 @@
-import { Form, Text } from './style';
+import { Form, Text, Fixed } from './style';
 import Select from "components/Select";
 import { Footer } from '../calculator/style';
 import { Inputs } from 'styles/globalStyles';
-import { useState, useCallback } from 'react';
+import { useState, useCallback, useEffect } from 'react';
 import { carType, regions } from 'utils/json';
 import { useTranslation } from 'react-i18next';
 import { Placeholder } from '../../../components/Select/style';
 import LinkButton from '../../../components/Buttons/LinkButton';
 import { Header, Content, Container, Title, CheckButton, FlexBox } from "../info/style";
+import Keyboard from '../../../components/Keyboard';
 export default () => {
     const { t } = useTranslation();
+    const [text, setText] = useState('');
     const [car, setCar] = useState('');
     const [pinfl, setPinfl] = useState('');
+    const [show, setShow] = useState(false);
+    const [region, setRegion] = useState('');
     const [lastName, setLastName] = useState('');
     const [firstName, setFirstName] = useState('');
+    const [markModel, setMarkModel] = useState('');
     const [middleName, setMiddleName] = useState('');
     const [bodyNumber, setBodyNumber] = useState('');
     const [motorNumber, setMotorNumber] = useState('');
+    const [stateNumber, setStateNumber] = useState('');
+    const [selectedType, setSelectedType] = useState('');
     const [chassisNumber, setChassisNumber] = useState('');
     const [yearOfRelease, setYearOfRelease] = useState('');
-    const [markModel, setMarkModel] = useState('');
     const [capacityEngine, setCapacityEngine] = useState('');
-    const [stateNumber, setStateNumber] = useState('');
     const [serieTechnical, setSerieTechnical] = useState('');
     const [numberTechnical, setNumberTechnical] = useState('');
-    const [region, setRegion] = useState('');
-    const [selectedType, setSelectedType] = useState('');
     const changeActive = type => setSelectedType(type);
     const onSelectCar = useCallback((val) => setCar(val), [car]);
     const onSelectRegion = useCallback((val) => setRegion(val), [region]);
+    const removeChar = () => {
+        if (stateNumber === '') return;
+        const value = stateNumber.slice(0, -1);
+        setStateNumber(value);
+    };
+    const types = {
+        stateNumber: 'stateNumber',
+        serieTechnical: 'serieTechnical',
+        numberTechnical: 'numberTechnical'
+    };
+    useEffect(() => {
+        // setText(text);
+        if (selectedType === types.stateNumber) {
+            if (stateNumber.length >= 5) return;
+            setStateNumber(text);
+        }
+        if (selectedType === types.serieTechnical) {
+            if (serieTechnical.length >= 10) return;
+            setSerieTechnical(text);
+        }
+        if (selectedType === types.numberTechnical) {
+            if (numberTechnical.length >= 13) return;
+            setNumberTechnical(text);
+        }
+    }, [text, stateNumber, selectedType]);
     return (
         <Container>
             <Header>
@@ -40,7 +68,10 @@ export default () => {
                     <FlexBox marginTop="16px">
                         <Inputs marginRight="12px"
                                 active={selectedType === 'stateNumber'}
-                                onClick={() => changeActive('stateNumber')}>
+                                onClick={() => {
+                                    setShow(!show);
+                                    changeActive('stateNumber');
+                                }}>
                             {stateNumber === '' ? <Placeholder>Гос.Номер</Placeholder> : stateNumber}
                         </Inputs>
                         <Inputs marginRight="12px"
@@ -94,6 +125,7 @@ export default () => {
                             defaultValue={car}
                             changeValue={onSelectCar}
                             active={selectedType === 'car'}
+                            placeholder={t('please_select_carType')}
                             onClick={() => changeActive('car')}
                         />
                     </FlexBox>
@@ -103,6 +135,7 @@ export default () => {
                             defaultValue={region}
                             changeValue={onSelectRegion}
                             active={selectedType === 'region'}
+                            placeholder={t('please_select_region')}
                             onClick={() => changeActive('region')} />
                     </FlexBox>
                     <Text margin="24px 0">информация о владельца тс</Text>
@@ -131,6 +164,9 @@ export default () => {
                     <Footer marginTop="100px" align="start">
                         <LinkButton margin="0 100px 0 0" path={-1} text={t('back')} />
                     </Footer>
+                    <Fixed show={show}>
+                        <Keyboard setKey={setText} removeChar={removeChar} />
+                    </Fixed>
                 </Form>
             </Content>
         </Container>
