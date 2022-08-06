@@ -33,30 +33,50 @@ export default () => {
     const onSelectCar = useCallback((val) => setCar(val), [car]);
     const onSelectRegion = useCallback((val) => setRegion(val), [region]);
     const removeChar = () => {
-        if (stateNumber === '') return;
-        const value = stateNumber.slice(0, -1);
-        setStateNumber(value);
+        if (selectedType === types.stateNumber) {
+            if (stateNumber === '') return;
+            const value = stateNumber.slice(0, -1);
+            setStateNumber(value);
+            value.length === 0 ? setText('') : setText(value)
+        }
+        if (selectedType === types.serieTechnical) {
+            if (serieTechnical === '') return;
+            const value = serieTechnical.slice(0, -1);
+            setSerieTechnical(value);
+            value.length === 0 ? setText('') : setText(value)
+        }
     };
     const types = {
         stateNumber: 'stateNumber',
         serieTechnical: 'serieTechnical',
         numberTechnical: 'numberTechnical'
     };
-    useEffect(() => {
-        // setText(text);
+    useEffect( () => {
         if (selectedType === types.stateNumber) {
-            if (stateNumber.length >= 5) return;
-            setStateNumber(text);
+            if (stateNumber.length !== 5) {
+                // setText('')
+                console.log('text statenum',text);
+                if (stateNumber.length >= 5) return;
+                setStateNumber(text);
+            } else {
+                setText('9898')
+            }
         }
         if (selectedType === types.serieTechnical) {
-            if (serieTechnical.length >= 10) return;
-            setSerieTechnical(text);
+            if (serieTechnical.length !== 10) {
+                // setText('')
+                console.log('text serieTechnical',text);
+                if (serieTechnical.length >= 10) return;
+                setSerieTechnical(text);
+            } else {
+                setText('')
+            }
         }
         if (selectedType === types.numberTechnical) {
             if (numberTechnical.length >= 13) return;
             setNumberTechnical(text);
         }
-    }, [text, stateNumber, selectedType]);
+    }, [text]);
     return (
         <Container>
             <Header>
@@ -76,7 +96,10 @@ export default () => {
                         </Inputs>
                         <Inputs marginRight="12px"
                                 active={selectedType === 'serieTechnical'}
-                                onClick={() => changeActive('serieTechnical')}>
+                                onClick={() => {
+                                    setShow(!show);
+                                    changeActive('serieTechnical');
+                                }}>
                             {serieTechnical === '' ? <Placeholder>Серия и тех.паспорта</Placeholder> : serieTechnical}
                         </Inputs>
                         <Inputs marginRight="12px"
