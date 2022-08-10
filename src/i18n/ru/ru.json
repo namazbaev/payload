@@ -52,5 +52,6 @@
     "balance_replenished": "Баланс пополнен :",
     "successfully": "Успешно",
     "please_select_carType": "Пожалуйста, выберите тип машины",
-    "please_select_region": "Пожалуйста, выберите регион"
+    "please_select_region": "Пожалуйста, выберите регион",
+    "add": "Добавить"
 }

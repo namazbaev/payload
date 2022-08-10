@@ -11,41 +11,45 @@ import { Header, Content, Container, Title, CheckButton, FlexBox } from "../info
 import Keyboard from '../../../components/Keyboard';
 export default () => {
     const { t } = useTranslation();
-    const [text, setText] = useState('');
     const [car, setCar] = useState('');
-    const [pinfl, setPinfl] = useState('');
+    const [text, setText] = useState('');
     const [show, setShow] = useState(false);
     const [region, setRegion] = useState('');
-    const [lastName, setLastName] = useState('');
-    const [firstName, setFirstName] = useState('');
-    const [markModel, setMarkModel] = useState('');
-    const [middleName, setMiddleName] = useState('');
-    const [bodyNumber, setBodyNumber] = useState('');
-    const [motorNumber, setMotorNumber] = useState('');
-    const [stateNumber, setStateNumber] = useState('');
     const [selectedType, setSelectedType] = useState('');
-    const [chassisNumber, setChassisNumber] = useState('');
-    const [yearOfRelease, setYearOfRelease] = useState('');
-    const [capacityEngine, setCapacityEngine] = useState('');
-    const [serieTechnical, setSerieTechnical] = useState('');
-    const [numberTechnical, setNumberTechnical] = useState('');
     const changeActive = type => setSelectedType(type);
     const onSelectCar = useCallback((val) => setCar(val), [car]);
     const onSelectRegion = useCallback((val) => setRegion(val), [region]);
     const removeChar = () => {
         if (selectedType === types.stateNumber) {
-            if (stateNumber === '') return;
-            const value = stateNumber.slice(0, -1);
-            setStateNumber(value);
+            if (obj.stateNumber === '') return;
+            const value = obj.stateNumber.slice(0, -1);
+            setObj((prev) => ({ ...prev, stateNumber: value }))
             value.length === 0 ? setText('') : setText(value)
         }
         if (selectedType === types.serieTechnical) {
-            if (serieTechnical === '') return;
-            const value = serieTechnical.slice(0, -1);
-            setSerieTechnical(value);
+            if (obj.serieTechnical === '') return;
+            const value = obj.serieTechnical.slice(0, -1);
+            setObj((prev) => ({ ...prev, serieTechnical: value }))
             value.length === 0 ? setText('') : setText(value)
         }
     };
+    const [obj, setObj] = useState({
+        pinfl: '',
+        show: '',
+        lastName: '',
+        firstName: '',
+        markModel: '',
+        middleName: '',
+        bodyNumber: '',
+        motorNumber: '',
+        stateNumber: '',
+        selectedType: '',
+        chassisNumber: '',
+        yearOfRelease: '',
+        capacityEngine: '',
+        serieTechnical: '',
+        numberTechnical: '',
+    })
     const types = {
         stateNumber: 'stateNumber',
         serieTechnical: 'serieTechnical',
@@ -53,28 +57,27 @@ export default () => {
     };
     useEffect( () => {
         if (selectedType === types.stateNumber) {
-            if (stateNumber.length !== 5) {
-                // setText('')
-                console.log('text statenum',text);
-                if (stateNumber.length >= 5) return;
-                setStateNumber(text);
+            if (obj.stateNumber.length !== 5) {
+                if (obj.stateNumber.length >= 5) return;
+                setObj((prev) => ({ ...prev, stateNumber: text }))
             } else {
-                setText('9898')
+                setText('')
             }
         }
         if (selectedType === types.serieTechnical) {
-            if (serieTechnical.length !== 10) {
-                // setText('')
-                console.log('text serieTechnical',text);
-                if (serieTechnical.length >= 10) return;
-                setSerieTechnical(text);
+            if (obj.stateNumber.length > 0) {
+                setText('')
+            }
+            if (obj.serieTechnical.length !== 10) {
+                if (obj.serieTechnical.length >= 10) return;
+                setObj((prev) => ({ ...prev, serieTechnical: text }))
             } else {
                 setText('')
             }
         }
         if (selectedType === types.numberTechnical) {
-            if (numberTechnical.length >= 13) return;
-            setNumberTechnical(text);
+            if (obj.numberTechnical.length >= 13) return;
+            setObj((prev) => ({ ...prev, numberTechnical: text }))
         }
     }, [text]);
     return (
@@ -92,7 +95,7 @@ export default () => {
                                     setShow(!show);
                                     changeActive('stateNumber');
                                 }}>
-                            {stateNumber === '' ? <Placeholder>Гос.Номер</Placeholder> : stateNumber}
+                            {obj.stateNumber === '' ? <Placeholder>Гос.Номер</Placeholder> : obj.stateNumber}
                         </Inputs>
                         <Inputs marginRight="12px"
                                 active={selectedType === 'serieTechnical'}
@@ -100,12 +103,12 @@ export default () => {
                                     setShow(!show);
                                     changeActive('serieTechnical');
                                 }}>
-                            {serieTechnical === '' ? <Placeholder>Серия и тех.паспорта</Placeholder> : serieTechnical}
+                            {obj.serieTechnical === '' ? <Placeholder>Серия и тех.паспорта</Placeholder> : obj.serieTechnical}
                         </Inputs>
                         <Inputs marginRight="12px"
                                 active={selectedType === 'numberTechnical'}
                                 onClick={() => changeActive('numberTechnical')}>
-                            {numberTechnical === '' ? <Placeholder>Номер и тех.паспорта</Placeholder> : numberTechnical}
+                            {obj.numberTechnical === '' ? <Placeholder>Номер и тех.паспорта</Placeholder> : obj.numberTechnical}
                         </Inputs>
                         <CheckButton>Проверить</CheckButton>
                     </FlexBox>
@@ -113,33 +116,33 @@ export default () => {
                         <Inputs marginRight="12px"
                                 active={selectedType === 'markModel'}
                                 onClick={() => changeActive('markModel')}>
-                            {markModel === '' ? <Placeholder>Марка/Модель</Placeholder> : markModel}
+                            {obj.markModel === '' ? <Placeholder>Марка/Модель</Placeholder> : obj.markModel}
                         </Inputs>
                         <Inputs marginRight="12px"
                                 active={selectedType === 'capacityEngine'}
                                 onClick={() => changeActive('capacityEngine')}>
-                            {capacityEngine === '' ? <Placeholder>Объем двигателя</Placeholder> : capacityEngine}
+                            {obj.capacityEngine === '' ? <Placeholder>Объем двигателя</Placeholder> : obj.capacityEngine}
                         </Inputs>
                         <Inputs active={selectedType === 'yearOfRelease'}
                                 onClick={() => changeActive('yearOfRelease')}>
-                            {yearOfRelease === '' ? <Placeholder>Год выпуска</Placeholder> : yearOfRelease}
+                            {obj.yearOfRelease === '' ? <Placeholder>Год выпуска</Placeholder> : obj.yearOfRelease}
                         </Inputs>
                     </FlexBox>
                     <FlexBox>
                         <Inputs marginRight="12px"
                                 active={selectedType === 'bodyNumber'}
                                 onClick={() => changeActive('bodyNumber')}>
-                            {bodyNumber === '' ? <Placeholder>Номер кузова</Placeholder> : bodyNumber}
+                            {obj.bodyNumber === '' ? <Placeholder>Номер кузова</Placeholder> : obj.bodyNumber}
                         </Inputs>
                         <Inputs marginRight="12px"
                                 active={selectedType === 'chassisNumber'}
                                 onClick={() => changeActive('chassisNumber')}>
-                            {chassisNumber === '' ? <Placeholder>Номер шасси</Placeholder> : chassisNumber}
+                            {obj.chassisNumber === '' ? <Placeholder>Номер шасси</Placeholder> : obj.chassisNumber}
                         </Inputs>
                         <Inputs
                                 active={selectedType === 'motorNumber'}
                                 onClick={() => changeActive('motorNumber')}>
-                            {motorNumber === '' ? <Placeholder>Номер двигателя</Placeholder> : motorNumber}
+                            {obj.motorNumber === '' ? <Placeholder>Номер двигателя</Placeholder> : obj.motorNumber}
                         </Inputs>
                     </FlexBox>
                     <FlexBox>
@@ -165,23 +168,23 @@ export default () => {
                     <FlexBox align="center">
                         <Inputs basis="70%" active={selectedType === 'pinfl'}
                                 onClick={() => changeActive('pinfl')}>
-                            {pinfl === '' ? <Placeholder>ПИНФЛ</Placeholder> : pinfl}
+                            {obj.pinfl === '' ? <Placeholder>ПИНФЛ</Placeholder> : obj.pinfl}
                         </Inputs>
                     </FlexBox>
                     <FlexBox>
                         <Inputs marginRight="12px"
                                 active={selectedType === 'lastName'}
                                 onClick={() => changeActive('lastName')}>
-                            {lastName === '' ? <Placeholder>Фамилия</Placeholder> : lastName}
+                            {obj.lastName === '' ? <Placeholder>Фамилия</Placeholder> : obj.lastName}
                         </Inputs>
                         <Inputs marginRight="12px"
                                 active={selectedType === 'firstName'}
                                 onClick={() => changeActive('firstName')}>
-                            {firstName === '' ? <Placeholder>Имя</Placeholder> : firstName}
+                            {obj.firstName === '' ? <Placeholder>Имя</Placeholder> : obj.firstName}
                         </Inputs>
                         <Inputs active={selectedType === 'middleName'}
                                 onClick={() => changeActive('middleName')}>
-                            {middleName === '' ? <Placeholder>Отчество</Placeholder> : middleName}
+                            {obj.middleName === '' ? <Placeholder>Отчество</Placeholder> : obj.middleName}
                         </Inputs>
                     </FlexBox>
                     <Footer marginTop="100px" align="start">

@@ -16,29 +16,36 @@ export default () => {
     const [benefit, setBenefit] = useState('');
     const [selected, setSelected] = useState(null);
     const [insurance, setInsurance] = useState('');
-    const [insAccident, setInsAccident] = useState('');
     const [selectedType, setSelectedType] = useState('');
+    const [obj, setObj] = useState({
+        car: '',
+        region: '',
+        benefit: '',
+        insurance: '',
+        insAccident: '',
+        selectedType: ''
+    })
     const changeActive = type => setSelectedType(type);
     const onSelect = useCallback((val) => {
         setSelectedType(val)
         if (selectedType === 'benefit') {
-            setBenefit(val)
+            setObj((prev) => ({ benefit: val }))
         }
         if (selectedType === 'region') {
-            setRegion(val)
+            setObj((prev) => ({ region: val }))
         }
         if (selectedType === 'car') {
-            setCar(val)
+            setObj((prev) => ({ car: val }))
         }
         if (selectedType === 'insurance') {
-            setInsurance(val)
+            setObj((prev) => ({ insurance: val }))
         }
     },[car, region, benefit, insurance])
-    const onSelectCar = useCallback((val) => setCar(val), [car]);
-    const onSelectRegion = useCallback((val) => setRegion(val), [region]);
-    const onSelectBenft = useCallback((val) => setBenefit(val), [benefit]);
-    const onSelectInsr = useCallback((val) => setInsurance(val), [insurance]);
-    const onSelectInsAccident = useCallback((val) => setInsAccident(val), [insAccident]);
+    const onSelectCar = useCallback((val) => setCar(val), [obj.car]);
+    const onSelectRegion = useCallback((val) => setObj((prev) => ({region: val})), [obj.region]);
+    const onSelectBenft = useCallback((val) => setBenefit(val), [obj.benefit]);
+    const onSelectInsr = useCallback((val) => setInsurance(val), [obj.insurance]);
+    const onSelectInsAccident = useCallback((val) => setInsAccident(val), [obj.insAccident]);
     return (
         <Content>
             <Wrapper>
@@ -62,7 +69,7 @@ export default () => {
                             </FlexItemLeft>
                             <FlexItemRight>
                                 <Select menu={carType}
-                                    defaultValue={car}
+                                    defaultValue={obj.car}
                                     changeValue={onSelectCar}
                                     active={selectedType === 'car'}
                                     onClick={() => changeActive('car')}
@@ -75,7 +82,7 @@ export default () => {
                             </FlexItemLeft>
                             <FlexItemRight>
                                 <Select menu={regions}
-                                    defaultValue={region}
+                                    defaultValue={obj.region}
                                     changeValue={onSelectRegion}
                                     active={selectedType === 'region'}
                                     onClick={() => changeActive('region')}
@@ -88,8 +95,8 @@ export default () => {
                             </FlexItemLeft>
                             <FlexItemRight>
                                 <Select menu={insrYear}
-                                    defaultValue={insurance}
                                     changeValue={onSelectInsr}
+                                    defaultValue={obj.insurance}
                                     active={selectedType === 'insurance'}
                                     onClick={() => changeActive('insurance')} />
                             </FlexItemRight>
@@ -100,7 +107,7 @@ export default () => {
                             </FlexItemLeft>
                             <FlexItemRight>
                                 <Select menu={benefits}
-                                    defaultValue={benefit}
+                                    defaultValue={obj.benefit}
                                     changeValue={onSelectBenft}
                                     active={selectedType === 'benefit'}
                                     onClick={() => changeActive('benefit')} />
@@ -112,11 +119,10 @@ export default () => {
                             </FlexItemLeft>
                             <FlexItemRight>
                                 <Select menu={insrAccidents}
-                                    defaultValue={insAccident}
+                                    defaultValue={obj.insAccident}
                                     changeValue={onSelectInsAccident}
                                     active={selectedType === 'insAccident'}
-                                    onClick={() => changeActive('insAccident')}
-                                />
+                                    onClick={() => changeActive('insAccident')} />
                             </FlexItemRight>
                         </FlexBox>
                     </Div>

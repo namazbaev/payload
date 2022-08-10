@@ -3,34 +3,40 @@ import Select from "components/Select";
 import { Form, Text, Wrap } from './style';
 import { Inputs } from 'styles/globalStyles';
 import { useState, useCallback } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import { http } from '../../../helper/useAxios';
 import { Footer, Button } from '../calculator/style';
 import { Placeholder } from '../../../components/Select/style';
+import LinkButton from '../../../components/Buttons/LinkButton';
 import { Header, Content, Container, Title, CheckButton, FlexBox } from "../info/style";
 export default () => {
-    const navigate = useNavigate();
-    const [pinfl, setPinfl] = useState('');
+    const { t } = useTranslation();
     const [region, setRegion] = useState('');
-    const [birthday, setBirthday] = useState('');
-    const [lastName, setLastName] = useState('')
-    const [issuedBy, setIssuedBy] = useState('')
-    const [firstName, setFirstName] = useState('')
-    const [middleName, setMiddleName] = useState('')
-    const [dateOfIssue, setDateOfIssue] = useState('')
-    const [licenseSerie, setLicenseSerie] = useState('');
     const [selectedType, setSelectedType] = useState('');
-    const [passporSeria, setPassportSeria] = useState('');
-    const [licenseNumber, setLicenseNumber] = useState('');
-    const [passporNumber, setPassportNumber] = useState('');
-    const [licenseDateIssue, setLicenseDateIssue] = useState('');
     const changeActive = type => setSelectedType(type);
+    const [obj, setObj] = useState({
+        pinfl: '',
+        birthday: '',
+        lastName: '',
+        issuedBy: '',
+        firstName: '',
+        middleName: '',
+        dateOfIssue: '',
+        licenseSerie: '',
+        passporSeria: '',
+        licenseNumber: '',
+        passporNumber: '',
+        licenseDateIssue: ''
+    })
     const onSelectRegion = useCallback((val) => setRegion(val), [region]);
 
     const getAllData = async () => {
         try {
             const response = await http.get('api/getAllData')
-              .then((res) => console.log(res.data))
+              .then((res) => {
+                  setObj(res.data)
+                  console.log(res.data)
+              })
         } catch (e) {
             console.log(e);
             throw new Error("error.unknown");
@@ -39,7 +45,7 @@ export default () => {
     return (
         <Container>
             <Header>
-                <Title uppercase>добавить нового родственника</Title>
+                <Title align="center" margin="0 0 24px 0" uppercase>добавить нового родственника</Title>
             </Header>
             <Content>
                 <Form>
@@ -56,17 +62,17 @@ export default () => {
                         <Inputs basis="15%" marginRight="12px"
                                 active={selectedType === 'passporSeria'}
                                 onClick={() => changeActive('passporSeria')}>
-                            {passporSeria === '' ? <Placeholder>Серия</Placeholder> : passporSeria}
+                            {obj.passporSeria === '' ? <Placeholder>Серия</Placeholder> : obj.passporSeria}
                         </Inputs>
                         <Inputs basis="35%" marginRight="12px"
                                 active={selectedType === 'passporNumber'}
                                 onClick={() => changeActive('passporNumber')}>
-                            {passporNumber === '' ? <Placeholder>Номер паспорта</Placeholder> : passporNumber}
+                            {obj.passporNumber === '' ? <Placeholder>Номер паспорта</Placeholder> : obj.passporNumber}
                         </Inputs>
                         <Inputs basis="45%" marginRight="12px"
                                 active={selectedType === 'pinfl'}
                                 onClick={() => changeActive('pinfl')}>
-                            {pinfl === '' ? <Placeholder>ПИНФЛ</Placeholder> : pinfl}
+                            {obj.pinfl === '' ? <Placeholder>ПИНФЛ</Placeholder> : obj.pinfl}
                         </Inputs>
                         <CheckButton>Получить</CheckButton>
                     </FlexBox>
@@ -74,59 +80,59 @@ export default () => {
                         <Inputs basis="40%" marginRight="12px"
                                 active={selectedType === 'dateOfIssue'}
                                 onClick={() => changeActive('dateOfIssue')}>
-                            {dateOfIssue === '' ? <Placeholder>Дата выдачи</Placeholder> : dateOfIssue}
+                            {obj.dateOfIssue === '' ? <Placeholder>Дата выдачи</Placeholder> : obj.dateOfIssue}
                         </Inputs>
                         <Inputs active={selectedType === 'issuedBy'}
                                 onClick={() => changeActive('issuedBy')}>
-                            {issuedBy === '' ? <Placeholder>Кем выдан</Placeholder> : issuedBy}
+                            {obj.issuedBy === '' ? <Placeholder>Кем выдан</Placeholder> : obj.issuedBy}
                         </Inputs>
                     </FlexBox>
                     <FlexBox>
                         <Inputs basis="33.3%" marginRight="12px"
                                 active={selectedType === 'lastName'}
                                 onClick={() => changeActive('lastName')}>
-                            {lastName === '' ? <Placeholder>Фамилия</Placeholder> : lastName}
+                            {obj.lastName === '' ? <Placeholder>Фамилия</Placeholder> : obj.lastName}
                         </Inputs>
                         <Inputs basis="33.3%" marginRight="12px"
                                 active={selectedType === 'firstName'}
                                 onClick={() => changeActive('firstName')}>
-                            {firstName === '' ? <Placeholder>Имя</Placeholder> : firstName}
+                            {obj.firstName === '' ? <Placeholder>Имя</Placeholder> : obj.firstName}
                         </Inputs>
                         <Inputs basis="33.3%"
                                 active={selectedType === 'middleName'}
                                 onClick={() => changeActive('middleName')}>
-                            {middleName === '' ? <Placeholder>Отчество</Placeholder> : middleName}
+                            {obj.middleName === '' ? <Placeholder>Отчество</Placeholder> : obj.middleName}
                         </Inputs>
                     </FlexBox>
                     <FlexBox align="center">
                         <Inputs active={selectedType === 'birthday'}
                                 onClick={() => changeActive('birthday')}
                                 basis="33.3%">
-                            {birthday === '' ? <Placeholder>Дата рождения</Placeholder> : birthday}
+                            {obj.birthday === '' ? <Placeholder>Дата рождения</Placeholder> : obj.birthday}
                         </Inputs>
                     </FlexBox>
                     <Text margin="12px 0">информация о водительском удостоверении</Text>
                     <FlexBox align="center">
                         <Inputs active={selectedType === 'pinfl'}
                                 onClick={() => changeActive('pinfl')} basis="70%">
-                            {pinfl === '' ? <Placeholder>ПИНФЛ</Placeholder> : pinfl}
+                            {obj.pinfl === '' ? <Placeholder>ПИНФЛ</Placeholder> : obj.pinfl}
                         </Inputs>
                     </FlexBox>
                     <FlexBox>
                         <Inputs basis="33.3%" marginRight="12px"
                                 active={selectedType === 'licenseSerie'}
                                 onClick={() => changeActive('licenseSerie')}>
-                            {licenseSerie === '' ? <Placeholder>Серия водитель удоств.</Placeholder> : licenseSerie}
+                            {obj.licenseSerie === '' ? <Placeholder>Серия водитель удоств.</Placeholder> : obj.licenseSerie}
                         </Inputs>
                         <Inputs basis="33.3%" marginRight="12px"
                                 active={selectedType === 'licenseNumber'}
                                 onClick={() => changeActive('licenseNumber')}>
-                            {licenseNumber === '' ? <Placeholder>Номер водитель удоств.</Placeholder> : licenseNumber}
+                            {obj.licenseNumber === '' ? <Placeholder>Номер водитель удоств.</Placeholder> : obj.licenseNumber}
                         </Inputs>
                         <Inputs basis="33.3%"
                                 active={selectedType === 'licenseDateIssue'}
                                 onClick={() => changeActive('licenseDateIssue')}>
-                            {licenseDateIssue === '' ? <Placeholder>Дата выдачи вод.удоств.</Placeholder> : licenseDateIssue}
+                            {obj.licenseDateIssue === '' ? <Placeholder>Дата выдачи вод.удоств.</Placeholder> : obj.licenseDateIssue}
                         </Inputs>
                     </FlexBox>
                     <FlexBox align="center">
@@ -148,9 +154,9 @@ export default () => {
                                 onClick={() => changeActive('region')} />
                         </Wrap>
                     </FlexBox>
-                    <Footer marginTop="48px" align="around">
-                        <Button onClick={() => navigate(-1)} margin="0 0 0 48px">Назад</Button>
-                        <Button>Добавить</Button>
+                    <Footer marginTop="36px" align="around">
+                        <LinkButton margin="0 100px 0 0" path={-1} text={t('back')} />
+                        <LinkButton path='/' text={t('add')} />
                     </Footer>
                 </Form>
             </Content>

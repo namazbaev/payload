@@ -52,6 +52,7 @@
     "balance_replenished": "Balance topped up :",
     "successfully": "Successfully",
     "please_select_carType": "Please choose the type of car",
-    "please_select_region": "Please select province"
+    "please_select_region": "Please select province",
+    "add": "Add"
 
 }
